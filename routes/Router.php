@@ -23,7 +23,7 @@ class Router
     public function run()
     {
         foreach ($this->routes[$_SERVER['REQUEST_METHOD']] as $route) {
-            // tant que notre route correspond à l'url 
+            // si notre route correspond à l'url 
             if ($route->matches($this->url)) {
                 // on exécute
                 $route->execute();
