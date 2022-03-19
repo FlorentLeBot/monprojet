@@ -14,8 +14,8 @@ $router = new Router($_GET['url']);
 // pour le blog
 
 // BlogController est le chemin et index est la méthode de classe 
-$router->get('/', 'BlogController@index');
-$router->get('/posts/:id', 'BlogController@showBlog');
+$router->get('/', 'App\Controllers\BlogController@index');
+$router->get('/posts/:id', 'App\Controllers\BlogController@showBlog');
 
 // pour les jeux de société
 
