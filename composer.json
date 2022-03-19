@@ -1,0 +1,15 @@
+{
+    "name": "kercode/monprojet",
+    "autoload": {
+        "psr-4": {
+            "Router\\": "routes/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Florent LE BOT",
+            "email": "florent.lebot.pro@gmail.com"
+        }
+    ],
+    "require": {}
+}
