@@ -2,13 +2,13 @@
 
 namespace App\Controllers;
 
-class BlogController{
+class BlogController extends Controller{
 
     public function index(){
-        echo "Je suis l'accueil";
+        return $this->view('blog.index');
 
     }
     public function showBlog(int $id){
-        echo "Je suis le post " . $id;
+        return $this->view('blog.show', compact('id'));
     }
 }

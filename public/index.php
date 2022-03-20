@@ -4,6 +4,11 @@ use Router\Router;
 
 require '../vendor/autoload.php';
 
+// je définis les constantes
+
+define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR . 'Front'. DIRECTORY_SEPARATOR);
+define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
+
 // création d'une nouvelle instance de la classe Router 
 // paramètre $_GET['url'] configurer dans .htaccess
 
