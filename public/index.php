@@ -4,7 +4,7 @@ use Router\Router;
 
 require '../vendor/autoload.php';
 
-if ($_SERVER['HTTP_HOST'] !=  "monserveur.com") {
+if ($_SERVER['HTTP_HOST'] ===  "localhost") {
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->load();
 }
