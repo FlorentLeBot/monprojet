@@ -3,7 +3,8 @@
     "autoload": {
         "psr-4": {
             "Router\\": "routes/",
-            "App\\": "app/"
+            "App\\": "app/",
+            "Database\\": "database/"
         }
     },
     "authors": [
@@ -12,5 +13,7 @@
             "email": "florent.lebot.pro@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
 }

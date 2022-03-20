@@ -26,7 +26,7 @@ class Router
             // si notre route correspond à l'url 
             if ($route->matches($this->url)) {
                 // on exécute
-                $route->execute();
+                return $route->execute();
             }
         }
         return header('HTTP/1.0 404 Not Found');

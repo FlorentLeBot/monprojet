@@ -1,12 +1,17 @@
-<?php 
+<?php
 
 use Router\Router;
 
 require '../vendor/autoload.php';
 
+if ($_SERVER['HTTP_HOST'] !=  "monserveur.com") {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+}
+
 // je définis les constantes
 
-define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR . 'Front'. DIRECTORY_SEPARATOR);
+define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR . 'Front' . DIRECTORY_SEPARATOR);
 define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
 
 // création d'une nouvelle instance de la classe Router 
