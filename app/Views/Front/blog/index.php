@@ -1,5 +1,8 @@
-<h1>Page d'accueil</h1>
+<h1>Les derniers articles</h1>
 
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dolorum eaque qui odit similique autem consequatur nulla dolores esse accusantium?</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dolorum eaque qui odit similique autem consequatur nulla dolores esse accusantium?</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dolorum eaque qui odit similique autem consequatur nulla dolores esse accusantium?</p>
+<?php foreach ($params['articles'] as $article) : ?>
+    <h2><?= $article->title ?></h2>
+    <small><?= $article->created_at ?></small>
+    <p><?= $article->content ?></p>
+    <a href="/articles/<?= $article->id ?>">Lire plus</a>
+<?php endforeach ?>

@@ -1,1 +1,2 @@
-<h1>Mon article <?= $params['id'] ?></h1>
+
+<h1>Mon article <?= $params['article']->id ?></h1>

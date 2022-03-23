@@ -2,23 +2,23 @@
 
 namespace App\Controllers;
 
-use Article;
-use Database\DBConnection;
+use App\Models\BlogModel;
 
-class BlogController extends Controller{
+class BlogController extends Controller
+{
 
-    public function index(){
-        return $this->view('blog.index');
+    public function index()
+    {
+        $req = new BlogModel; 
+        $articles = $req->articles();
+        return $this->view('blog.index', compact('articles'));
 
     }
-    public function showBlog(int $id){
-        $db = new DBConnection('monprojet','localhost','root','');
-        var_dump($db->getPDO());
-        $req = $db->getPDO()->query("SELECT * FROM articles");
-        var_dump($req);
-        $articles = $req->fetchAll();
-        var_dump($articles);
-        return $this->view('blog.show', compact('id'));
+    public function show(int $id){
+        
+        $req = new BlogModel;
+        $article = $req->article($id);
+        return $this->view('blog.show', compact('article'));
     }
-    
+     
 }

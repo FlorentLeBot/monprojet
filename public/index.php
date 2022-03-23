@@ -4,10 +4,10 @@ use Router\Router;
 
 require '../vendor/autoload.php';
 
-if ($_SERVER['HTTP_HOST'] ===  "localhost") {
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-    $dotenv->load();
-}
+// if ($_SERVER['HTTP_HOST'] ===  "localhost") {
+//     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+//     $dotenv->load();
+// }
 
 // je définis les constantes
 
@@ -19,17 +19,20 @@ define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
 
 $router = new Router($_GET['url']);
 
+
 // les routes en get
 
 // pour le blog
 
-// BlogController est le chemin et index est la méthode de classe 
-$router->get('/', 'App\Controllers\BlogController@index');
-$router->get('/posts/:id', 'App\Controllers\BlogController@showBlog');
+// BlogController est le chemin et index est la méthode de la classe 
+
+$router->get('/', 'App\Controllers\WelcomeController@welcome');
+$router->get('/articles', 'App\Controllers\BlogController@index');
+$router->get('/articles/:id', 'App\Controllers\BlogController@show');
+
 
 // pour les jeux de société
 
-// $router->get('/', 'BoardGameController@index');
 
 // les routes en post
 

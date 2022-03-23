@@ -1,0 +1,6 @@
+@import "../Utils/_variables";
+@import "../Utils/mixins.scss";
+
+header{
+    @include style-header($colour-primary, 200px, $colour-secondary);
+}

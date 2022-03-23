@@ -1,0 +1,38 @@
+@import "./variables";
+
+@mixin style-header($bg, $height, $color) {
+    background-color: $bg;
+    height: $height;
+    color: $color;
+}
+
+@mixin style-article {
+    background-color: $colour-secondary;
+    color: $colour-white;
+}
+
+$txt-input-palette: (active: (bg: $colour-primary,
+        border: $colour-primary,
+        txt: $colour-white,
+
+    ),
+    focus: (bg: $colour-primary,
+        border: $colour-primary,
+        txt: $colour-white,
+    ),
+    invalid: (bg: $colour-invalid,
+        border: $colour-white,
+        txt: $colour-white,
+    ));
+
+@mixin txt-input-palette($palettes) {
+
+    @each $state,
+    $palette in $palettes {
+        &:#{$state} {
+            border: .1rem solid map-get($palette, border);
+            background-color: map-get($palette, bg);
+            color: map-get($palette, txt);
+        }
+    }
+}

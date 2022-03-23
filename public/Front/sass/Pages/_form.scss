@@ -1,0 +1,10 @@
+@import "../Utils/_variables.scss";
+@import "../Utils/_mixins.scss";
+
+.form {
+    &__field {
+        & input {
+            @include txt-input-palette($txt-input-palette);
+        }
+    }
+}
