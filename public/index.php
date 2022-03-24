@@ -31,7 +31,7 @@ $router->get('/', 'App\Controllers\WelcomeController@welcome');
 $router->get('/articles', 'App\Controllers\BlogController@index');
 $router->get('/articles/:id', 'App\Controllers\BlogController@show');
 
-$router->get('/', 'App\Controllers\AdminController@index');
+$router->get('/tags/:id', 'App\Controllers\TagController@tag');
 
 
 // pour les jeux de société

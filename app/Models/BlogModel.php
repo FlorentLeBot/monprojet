@@ -34,8 +34,7 @@ class BlogModel extends Model
     {
         return $this->query("SELECT t.* FROM tags t
                             INNER JOIN article_tag art ON art.tag_id = t.id
-                            INNER JOIN articles a ON art.article_id = a.id
-                            WHERE a.id = ?
+                            WHERE art.article_id = ?
                             ", $this->id);
     }
       

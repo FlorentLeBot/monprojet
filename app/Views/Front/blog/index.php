@@ -6,7 +6,7 @@
 <div>
     <?php foreach($article->getTags() as $tag) : ?>
     <span>
-        <?= $tag->name ?>
+        <a href="/tags/<?= $tag->id ?>"><?= $tag->name ?></a>
     </span>
     <?php endforeach ?>
 </div>

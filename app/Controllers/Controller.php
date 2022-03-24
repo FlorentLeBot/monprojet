@@ -5,7 +5,7 @@ namespace App\Controllers;
 use Database\DBConnection;
 
 abstract class Controller{
-    // TO DO
+    
     public $db;
 
     public function __construct(DBConnection $db){
