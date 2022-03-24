@@ -1,6 +1,10 @@
 <?php
 
+
 use Router\Router;
+use Exceptions\NotFoundException;
+
+
 
 require '../vendor/autoload.php';
 
@@ -12,7 +16,8 @@ require '../vendor/autoload.php';
 // je définis les constantes
 
 define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR . 'Front' . DIRECTORY_SEPARATOR);
-define('VIEWSADMIN', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR . 'Admin' . DIRECTORY_SEPARATOR);
+define('VIEWSERRORS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR . 'errors' . DIRECTORY_SEPARATOR);
+define('VIEWSADMIN', dirname(__DIR__) . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR . 'Admin' . DIRECTORY_SEPARATOR);
 define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
 
 // création d'une nouvelle instance de la classe Router 
@@ -39,4 +44,8 @@ $router->get('/tags/:id', 'App\Controllers\TagController@tag');
 
 // les routes en post
 
-$router->run();
+try {
+    $router->run();
+} catch (NotFoundException $e) {
+    return $e->error404();
+}

@@ -2,6 +2,8 @@
 
 namespace Router;
 
+use Exceptions\NotFoundException;
+
 class Router
 {
     public $url;
@@ -15,7 +17,7 @@ class Router
     }
     // méthode get permettant de récupérer le chemin et l'action 
     public function get(string $path, string $action)
-    {  
+    {
         $this->routes['GET'][] = new Route($path, $action);
     }
 
@@ -29,6 +31,6 @@ class Router
                 return $route->execute();
             }
         }
-        return header('HTTP/1.0 404 Not Found');
+        throw new NotFoundException();
     }
 }
