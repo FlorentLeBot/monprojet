@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Database\DBConnection;
 
-class BlogModel extends Model
+class GameModel extends Model
 {
     
-    protected $table = 'articles';
+    protected $table = 'board_game_card';
 
     
 }

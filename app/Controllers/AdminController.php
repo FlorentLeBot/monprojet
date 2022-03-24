@@ -1,12 +1,13 @@
 <?php
 
-// namespace App\Controllers;
+namespace App\Controllers;
 
 
-// use Database\DBConnection;
+use Database\DBConnection;
 
-// class AdminController extends Controller{
-//     public function indexAdmin(){
-//         return $this->view('dashboard.indexAdmin');
-//     }
-// }
+class AdminController extends Controller{
+    public function index()
+    {
+        return $this->view('dashboard.index');
+    }
+}

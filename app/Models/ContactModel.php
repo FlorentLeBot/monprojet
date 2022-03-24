@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Database\DBConnection;
 
-class BlogModel extends Model
+class ContactModel extends Model
 {
     
-    protected $table = 'articles';
+    protected $table = 'contact';
 
     
 }

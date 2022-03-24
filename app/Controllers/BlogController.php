@@ -10,14 +10,14 @@ class BlogController extends Controller
     public function index()
     {
         $req = new BlogModel; 
-        $articles = $req->articles();
+        $articles = $req->all();
         return $this->view('blog.index', compact('articles'));
 
     }
     public function show(int $id){
         
         $req = new BlogModel;
-        $article = $req->article($id);
+        $article = $req->findById($id);
         return $this->view('blog.show', compact('article'));
     }
      

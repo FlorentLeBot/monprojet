@@ -16,10 +16,8 @@
     <nav>
         <ul>
             <li><a href="/">Accueil</a></li>
-            <!-- <li><a href="/">Blog</a></li> -->
-            <!-- <li><a href="/">Blog</a></li> -->
-            <li><a href="/articles">Blog</a></li>
             <li><a href="/games">Jeux de société</a></li>
+            <li><a href="/articles">Blog</a></li>
             <li><a href="/contact">Contact</a></li>
         </ul>
     </nav>

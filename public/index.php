@@ -12,6 +12,7 @@ require '../vendor/autoload.php';
 // je définis les constantes
 
 define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR . 'Front' . DIRECTORY_SEPARATOR);
+define('VIEWSADMIN', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR . 'Admin' . DIRECTORY_SEPARATOR);
 define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
 
 // création d'une nouvelle instance de la classe Router 
@@ -29,6 +30,8 @@ $router = new Router($_GET['url']);
 $router->get('/', 'App\Controllers\WelcomeController@welcome');
 $router->get('/articles', 'App\Controllers\BlogController@index');
 $router->get('/articles/:id', 'App\Controllers\BlogController@show');
+
+$router->get('/', 'App\Controllers\AdminController@index');
 
 
 // pour les jeux de société
