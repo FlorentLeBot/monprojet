@@ -20,5 +20,6 @@ class BlogController extends Controller
         $article = $req->findById($id);
         return $this->view('blog.show', compact('article'));
     }
+   
      
 }
