@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use PDO;
 use Database\DBConnection;
 
 abstract class Model{
@@ -13,17 +14,30 @@ abstract class Model{
     {
         $this->db =  DBConnection::getPDO();
     }
+
+    public function query(string $sql, int $param = null, bool $single = null)
+    {
+
+        $method = is_null($param) ? 'query' : 'prepare';
+        $fetch = is_null($single) ? 'fetchAll' : 'fetch';
+        $stmt = $this->db->$method($sql);
+        $stmt->setFetchMode(PDO::FETCH_CLASS, get_class($this), [$this->db]);
+
+        if ($method === 'query') {
+            return $stmt->$fetch();
+        } else {
+            $stmt->execute([$param]);
+            return $stmt->$fetch();
+        }
+    }
     public  function all() : array
     {
-        $stmt = $this->db->query("SELECT * FROM {$this->table} ORDER BY created_at DESC");
-        $posts = $stmt->fetchAll();
-        return $posts;
+        return $this->query("SELECT * FROM {$this->table} ORDER BY created_at DESC");
+
     }
 
     public function findById(int $id)
     {
-        $stmt = $this->db->prepare("SELECT * FROM {$this->table} WHERE id = ?");  
-        $stmt->execute([$id]);
-        return $stmt->fetch();
+        return $this->query("SELECT * FROM {$this->table} WHERE id = ?", $id, true);  
     }
 }
