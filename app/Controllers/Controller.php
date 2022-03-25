@@ -24,7 +24,22 @@ abstract class Controller{
         require VIEWS . $path . '.php';
         // je stocke ma vue dans la variable $content
         $content = ob_get_clean();
-        require VIEWS . DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR . 'layout.php';
+        
+        require VIEWS . DIRECTORY_SEPARATOR .  'front' . DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR . 'layout.php';
+    }
+
+    protected function viewAdmin(string $path, array $params = null){
+
+        // système de buffering, enregistrement dans la mémoire tampon
+        ob_start();
+        // je remplace les . par des /
+        $path = str_replace('.', DIRECTORY_SEPARATOR, $path);
+       
+        require VIEWSADMIN . DIRECTORY_SEPARATOR . $path . '.php';
+        // je stocke ma vue dans la variable $admincontent
+        $adminContent = ob_get_clean();
+        
+        require VIEWSADMIN . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR . 'layout.php';
     }
 
     

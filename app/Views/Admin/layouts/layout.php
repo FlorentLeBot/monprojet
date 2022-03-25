@@ -4,7 +4,7 @@ require_once 'nav.php';
 ?>
 
 <main class="main-content">
-    <?php $content ?>
+    <?= $adminContent ?>
 </main>
 
 <?php

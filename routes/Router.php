@@ -20,6 +20,11 @@ class Router
     {
         $this->routes['GET'][] = new Route($path, $action);
     }
+    // méthode post permettant de récupérer le chemin et l'action 
+    public function post(string $path, string $action)
+    {
+        $this->routes['POST'][] = new Route($path, $action);
+    }
 
     // méthode permettant de lancer l'action 
     public function run()

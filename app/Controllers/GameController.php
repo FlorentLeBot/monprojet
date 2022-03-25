@@ -5,7 +5,7 @@ namespace App\Controllers;
 
 use Database\DBConnection;
 
-class BlogController extends Controller{
+class GameController extends Controller{
 
     
 
