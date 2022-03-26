@@ -53,7 +53,7 @@ $router->post('/admin/articles/delete/:id', 'App\Controllers\Admin\AdminControll
 // Editer un article
 
 $router->get('/admin/articles/edit/:id', 'App\Controllers\Admin\AdminController@edit');
-$router->post('/admin/articles/edit/:id', 'App\Controllers\Admin\AdminController@edit');
+$router->post('/admin/articles/edit/:id', 'App\Controllers\Admin\AdminController@update');
 
 // La page game : toutes les fiches des jeux de société
 
