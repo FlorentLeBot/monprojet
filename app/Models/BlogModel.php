@@ -6,7 +6,7 @@ use DateTime;
 use Database\DBConnection;
 
 class BlogModel extends Model
-{   
+{
     protected $table = 'articles';
 
     public function getCreatedAt(): string
@@ -36,5 +36,24 @@ class BlogModel extends Model
                             WHERE art.article_id = ?
                             ", [$this->id]);
     }
-      
+    public function update(int $id, array $data, ?array $relations = null)
+    {
+        // mettre à jour la table BlogModel
+        parent::update($id, $data);
+
+        // supprimer les tags actuels
+        $stmt = $this->db->prepare("DELETE FROM article_tag WHERE article_id = ?");
+        $res = $stmt->execute([$id]);
+
+        // réinsertion des données
+        foreach ($relations as $tagId) {
+            $stmt = $this->db->prepare("INSERT article_tag (article_id, tag_id) VALUES (?, ?)");
+            $stmt->execute([$id, $tagId]);
+        }
+
+        // si c'est bon returne true
+        if($res){
+            return true;
+        }
+    }
 }

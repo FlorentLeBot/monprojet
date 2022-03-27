@@ -15,8 +15,22 @@
         <input type="file" name="img">
     </div>
 
+    <div>
+        <label for="tags">Tags de l'article</label>
+        <select multiple name="tags[]" id="tags">
+            <?php foreach ($params['tags'] as $tag) : ?>
+                <option value="<?= $tag->id ?>" <?php if (isset($params['article'])) : ?> 
+                    <?php foreach ($params['article']->getTags() as $articleTag) {
+                        echo ($tag->id === $articleTag->id) ? 'selected' : '';
+                    }
+                    ?> <?php endif ?>><?= $tag->name ?></option>
+            <?php endforeach ?>
+        </select>
+    </div>
+
+
     <button type="submit">Enregistrer les modifications</a></button>
-        <div>
-            <?= $params['article']->img ?>
-        </div>
+    <div>
+        <?= $params['article']->img ?>
+    </div>
 </form>
