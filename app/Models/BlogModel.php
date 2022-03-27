@@ -6,8 +6,7 @@ use DateTime;
 use Database\DBConnection;
 
 class BlogModel extends Model
-{
-    
+{   
     protected $table = 'articles';
 
     public function getCreatedAt(): string

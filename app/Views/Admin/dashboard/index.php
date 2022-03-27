@@ -26,6 +26,7 @@
             <form action="/admin/articles/delete/<?= $article->id ?>" method="post">
                 <button type="submit">Supprimer</button>
             </form>
+            
         </li>
     </ul>
 </div>

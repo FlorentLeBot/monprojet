@@ -55,23 +55,8 @@ abstract class Model
     {
         return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id]);
     }
-    // public function update(int $id, array $data){
-        
-    //     $sqlRequestPart = "";
-    //     $i = 1;
 
-    //     foreach ($data as $key => $value){
-    //         $comma = $i === count($data) ? " " : ', ';
-    //         $sqlRequestPart .= "{$key} = :{$key}{$comma}";
-    //         $i++;
-    //     }
-    //     var_dump($sqlRequestPart); die();
-
-    //     $data['id'] = $id;
-
-    //     return $this->query("UPDATE {$this->table} SET {$sqlRequestPart} WHERE id = :id, $data");
-    // }
-    public function update(int $id, array $data, ?array $relations = null){
+    public function update(int $id, array $data){
 
         $sqlRequestPart = "";
         $i = 1;
@@ -80,14 +65,19 @@ abstract class Model
             $comma = $i === count($data) ? ' ' : ', ';
             $sqlRequestPart .= "{$key} = :{$key}{$comma}";
             $i++;
+            //var_dump($data); die();
         }
-       var_dump($sqlRequestPart); die;
         $data['id'] = $id;
-
+        //var_dump($data['id']); die();
         return $this->query("UPDATE {$this->table} SET {$sqlRequestPart} 
                             WHERE id = :id", $data);
 
     }
+    public function upload()
+    {
+        return $this->query("INSERT INTO articles (img) VALUES (?)");
+    }
+   
     
 
 }
