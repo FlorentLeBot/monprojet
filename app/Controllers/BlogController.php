@@ -12,7 +12,6 @@ class BlogController extends Controller
         $req = new BlogModel; 
         $articles = $req->all();
         return $this->view('front.blog.index', compact('articles'));
-
     }
     // méthode permettant l'affichage d'un article
     public function show(int $id){

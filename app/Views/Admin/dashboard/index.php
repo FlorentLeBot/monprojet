@@ -5,7 +5,10 @@
     <input type="text" onkeyup="search()" name="search" id="search" placeholder="chercher" />
 </div>
 
-<h2 class="main-title">Database</h2>
+<h2 class="main-title">Création et Edition d'un article</h2>
+
+<button><a href="/admin/articles/create">Créer un article</a></button>
+
 <div class="table">
     <h3 class="table-title">Id</h3>
     <h3 class="table-title">Titre</h3>

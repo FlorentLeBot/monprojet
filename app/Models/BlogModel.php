@@ -36,24 +36,104 @@ class BlogModel extends Model
                             WHERE art.article_id = ?
                             ", [$this->id]);
     }
-    public function update(int $id, array $data, ?array $relations = null)
-    {
-        // mettre à jour la table BlogModel
-        parent::update($id, $data);
+    // public function update(int $id, array $data, ?array $relations = null)
+    // {
+    //     // mettre à jour la table BlogModel
+    //     // TO DO
+    //     // parent::update($id, $data);
+        
+    //     // supprimer les tags actuels
+    //     $stmt = $this->db->prepare("DELETE FROM article_tag WHERE article_id = ?");
+    //     $res = $stmt->execute([$id]);
 
+    //     // réinsertion des données
+    //     foreach ($relations as $tagId) {
+    //         $stmt = $this->db->prepare("INSERT article_tag (article_id, tag_id) VALUES (?, ?)");
+    //         $stmt->execute([$id, $tagId]);
+    //     }
+
+    //     // insertion de l'image dans la base de donnée
+    //     $stmt = $this->db->prepare("INSERT articles (img) VALUES (?)");
+    //     $stmt->execute([$id]);
+
+    //     // si c'est bon retourne true
+    //     if($res){
+    //         return true;
+    //     }
+    // }
+    public function updateKiss(int $id, array $tags){
+        $title = htmlspecialchars($_POST['title']);
+        $content = htmlspecialchars($_POST['content']);
+
+        // récupération des valeurs de $_FILES
+        if (isset($_FILES['img'])) {
+            $name = $_FILES['img']['name'];
+            $tmpName = $_FILES['img']['tmp_name'];
+            $error = $_FILES['img']['error'];
+            $size = $_FILES['img']['size'];
+        }
+        
+        // séparation du nom de l'image et de son extension 
+        $tabExtension = explode('.', $name);
+        // transformation de l'extension en minuscule
+        $extension = strtolower(end($tabExtension));
+        // extensions accepté
+        $extensions = ['jpg', 'png', 'jpeg', 'gif'];
+        // taille maximum d'une image
+        $maxSize = 400000;
+        // si le nom de l'extension, la taille maximum et le code d'erreur est égal à 0 (aucune erreur de téléchargement)...
+        if (in_array($extension, $extensions) && $size <= $maxSize && $error == 0) {
+            // créer un nom unique ...
+            $uniqueName = uniqid('', true);
+            // rajouter le point et le nom de l'extension 
+            $file = $uniqueName . "." . $extension;
+            // télécharger l'image      
+            move_uploaded_file($tmpName, './upload/' . $file);    
+            $path = "/public/upload/" . $file;
+        }else{
+            echo 'Une erreur est survenue';
+        }
+        //var_dump($path);
+
+        $path = htmlspecialchars($path);
+
+        //mettre à jour la table BlogModel
+        //TO DO
+        // parent::update($id, $data);
+        
         // supprimer les tags actuels
         $stmt = $this->db->prepare("DELETE FROM article_tag WHERE article_id = ?");
         $res = $stmt->execute([$id]);
 
         // réinsertion des données
-        foreach ($relations as $tagId) {
+        foreach ($tags as $tagId) {
             $stmt = $this->db->prepare("INSERT article_tag (article_id, tag_id) VALUES (?, ?)");
-            $stmt->execute([$id, $tagId]);
+            $stmt->execute([$id, htmlspecialchars($tagId)]);
         }
+        
+        parent::update([
+            "id" => $id,
+            "title" => $title, 
+            "content" => $content, 
+            "img" => $path
+        ]);
 
-        // si c'est bon returne true
+
+        // mise à jour dans la base de donnée
+        //var_dump($_POST['title']); die();
+        // $stmt = $this->db->prepare("UPDATE articles SET title=:title, content=:content, img=:img WHERE id=:id");
+        // $stmt->execute([
+        //     ':title' => htmlspecialchars($_POST['title']),
+        //     ':content' => htmlspecialchars($_POST['content']),
+        //     ':img' => $path,
+        //     ':id' => $id
+        // ]);
+        //var_dump($stmt); die();
+        
+        // si c'est bon retourne true
         if($res){
             return true;
         }
+        
     }
 }

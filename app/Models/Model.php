@@ -28,12 +28,14 @@ abstract class Model
             || strpos($sql, 'UPDATE') === 0
             || strpos($sql, 'INSERT') === 0
         ) {
+
             // création d'une requête prepare
             $stmt = $this->db->$method($sql);
+
             $stmt->setFetchMode(PDO::FETCH_CLASS, get_class($this), [$this->db]);
             return $stmt->execute($param);
         }
-        // si $fetch est null alors faire une fetchAll sinon faire un fetch 
+        // si $fetch est null alors faire un fetchAll sinon faire un fetch 
         $fetch = is_null($single) ? 'fetchAll' : 'fetch';
         $stmt = $this->db->$method($sql);
         $stmt->setFetchMode(PDO::FETCH_CLASS, get_class($this), [$this->db]);
@@ -62,29 +64,26 @@ abstract class Model
     {
         return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id]);
     }
+
     // mettre à jour dans la table les champs en fonction de l'id
-    public function update(int $id, array $data, ?array $relations = null){
+    public function update(array $data){
 
         $sqlRequestPart = "";
         $i = 1;
 
-        // récupération des champs  
+        //récupération des champs  
         foreach ($data as $key => $value){
-            $comma = $i === count($data) ? ' ' : ', ';
-            $sqlRequestPart .= "{$key} = :{$key}{$comma}";
+            $comma = $i === count($data) ? '' : ', ';
             $i++;
-            //var_dump($data); die();
+            if($key === "id" ) { continue; }
+            $sqlRequestPart .= "{$key} = :{$key}{$comma}";
         }
-        $data['id'] = $id;
-        //var_dump($data['id']); die();
+
         return $this->query("UPDATE {$this->table} SET {$sqlRequestPart} 
                             WHERE id = :id", $data);
 
     }
-    // public function upload()
-    // {
-    //     return $this->query("INSERT INTO file (img) VALUES (?)");
-    // }
+    
    
     
 

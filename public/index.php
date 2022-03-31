@@ -50,6 +50,11 @@ $router->get('/admin/articles', 'App\Controllers\Admin\AdminController@index');
 
 $router->post('/admin/articles/delete/:id', 'App\Controllers\Admin\AdminController@delete');
 
+// Création d'un article
+
+ $router->get('/admin/articles/create', 'App\Controllers\Admin\AdminController@create');
+ $router->post('/admin/articles/create', 'App\Controllers\Admin\AdminController@createPost');
+
 // Editer un article
 
 $router->get('/admin/articles/edit/:id', 'App\Controllers\Admin\AdminController@edit');
