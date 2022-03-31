@@ -36,31 +36,7 @@ class BlogModel extends Model
                             WHERE art.article_id = ?
                             ", [$this->id]);
     }
-    // public function update(int $id, array $data, ?array $relations = null)
-    // {
-    //     // mettre à jour la table BlogModel
-    //     // TO DO
-    //     // parent::update($id, $data);
-        
-    //     // supprimer les tags actuels
-    //     $stmt = $this->db->prepare("DELETE FROM article_tag WHERE article_id = ?");
-    //     $res = $stmt->execute([$id]);
-
-    //     // réinsertion des données
-    //     foreach ($relations as $tagId) {
-    //         $stmt = $this->db->prepare("INSERT article_tag (article_id, tag_id) VALUES (?, ?)");
-    //         $stmt->execute([$id, $tagId]);
-    //     }
-
-    //     // insertion de l'image dans la base de donnée
-    //     $stmt = $this->db->prepare("INSERT articles (img) VALUES (?)");
-    //     $stmt->execute([$id]);
-
-    //     // si c'est bon retourne true
-    //     if($res){
-    //         return true;
-    //     }
-    // }
+    
     public function updateKiss(int $id, array $tags){
         $title = htmlspecialchars($_POST['title']);
         $content = htmlspecialchars($_POST['content']);
@@ -93,14 +69,8 @@ class BlogModel extends Model
         }else{
             echo 'Une erreur est survenue';
         }
-        //var_dump($path);
-
         $path = htmlspecialchars($path);
 
-        //mettre à jour la table BlogModel
-        //TO DO
-        // parent::update($id, $data);
-        
         // supprimer les tags actuels
         $stmt = $this->db->prepare("DELETE FROM article_tag WHERE article_id = ?");
         $res = $stmt->execute([$id]);
@@ -118,19 +88,6 @@ class BlogModel extends Model
             "img" => $path
         ]);
 
-
-        // mise à jour dans la base de donnée
-        //var_dump($_POST['title']); die();
-        // $stmt = $this->db->prepare("UPDATE articles SET title=:title, content=:content, img=:img WHERE id=:id");
-        // $stmt->execute([
-        //     ':title' => htmlspecialchars($_POST['title']),
-        //     ':content' => htmlspecialchars($_POST['content']),
-        //     ':img' => $path,
-        //     ':id' => $id
-        // ]);
-        //var_dump($stmt); die();
-        
-        // si c'est bon retourne true
         if($res){
             return true;
         }

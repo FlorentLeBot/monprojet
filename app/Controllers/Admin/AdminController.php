@@ -34,50 +34,35 @@ class AdminController extends Controller
     {
         return $this->viewAdmin('admin.dashboard.formImage');
     }
-    // public function uploadImage(int $id){
-
-        
-    //     // var_dump($res); die();
-    //     // return $this->viewAdmin('admin.dashboard.index');
-
-    //     // return $this->viewAdmin('admin.')
-    // }
-
-    //  création d'un article
-    // TO DO 
-    // public function create(){
-    //     return $this->viewAdmin('admin.dashboard.formBlog');
-    // }
 
     // méthode permettant d'éditer un article du blog par id
     public function edit(int $id)
     {
         $article = (new BlogModel($this->db))->findById($id);
         $tags = (new TagModel($this->db))->all();
-        
+
         $res = $this->viewAdmin('admin.dashboard.formBlog', compact('article', 'tags'));
         return $res;
     }
-    
+
     // méthode permettant la mise à jour d'un article ou d'une fiche jeu de société
     public function update(int $id)
     {
-           
+
         // var_dump($_POST ); die();
         $article = new BlogModel($this->db);
         // array_pop() dépile et retourne la valeur du dernier élément du tableau array, le raccourcissant d'un élément.
         $tags = array_pop($_POST);
-       
+
         $res = $article->updateKiss($id, $tags);
-        
+
         // redirection
         if ($res) {
             return header('Location: /admin/articles');
         }
     }
 
-  
-// méthode permettant de supprimer 
+    // méthode permettant de supprimer 
     public function delete(int $id)
     {
         $article = new BlogModel($this->db);
@@ -87,7 +72,4 @@ class AdminController extends Controller
             return header("Location: /admin/articles");
         }
     }
-    
-        
-    
 }
