@@ -36,8 +36,23 @@ class BlogModel extends Model
                             WHERE art.article_id = ?
                             ", [$this->id]);
     }
-    
-    public function updateKiss(int $id, array $tags){
+    public function create(array $data, array $tags = null)
+    {
+         parent::create($data);
+         var_dump($data); die();
+         $id = $this->db->lastInsertId();
+
+         foreach ($tags as $tagId) {
+            $stmt = $this->db->prepare("INSERT article_tag (article_id, tag_id) VALUES (?, ?)");
+            $stmt->execute([$id, htmlspecialchars($tagId)]);
+        }
+        return true;
+
+
+    }
+
+    public function updateKiss(int $id, array $tags)
+    {
         $title = htmlspecialchars($_POST['title']);
         $content = htmlspecialchars($_POST['content']);
 
@@ -48,7 +63,7 @@ class BlogModel extends Model
             $error = $_FILES['img']['error'];
             $size = $_FILES['img']['size'];
         }
-        
+
         // séparation du nom de l'image et de son extension 
         $tabExtension = explode('.', $name);
         // transformation de l'extension en minuscule
@@ -64,9 +79,9 @@ class BlogModel extends Model
             // rajouter le point et le nom de l'extension 
             $file = $uniqueName . "." . $extension;
             // télécharger l'image      
-            move_uploaded_file($tmpName, './upload/' . $file);    
+            move_uploaded_file($tmpName, './upload/' . $file);
             $path = "/public/upload/" . $file;
-        }else{
+        } else {
             echo 'Une erreur est survenue';
         }
         $path = htmlspecialchars($path);
@@ -80,17 +95,16 @@ class BlogModel extends Model
             $stmt = $this->db->prepare("INSERT article_tag (article_id, tag_id) VALUES (?, ?)");
             $stmt->execute([$id, htmlspecialchars($tagId)]);
         }
-        
+
         parent::update([
             "id" => $id,
-            "title" => $title, 
-            "content" => $content, 
+            "title" => $title,
+            "content" => $content,
             "img" => $path
         ]);
 
-        if($res){
+        if ($res) {
             return true;
         }
-        
     }
 }

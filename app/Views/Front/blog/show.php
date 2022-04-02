@@ -7,5 +7,6 @@
         <?= $tag->name ?>
     </span>
     <?php endforeach ?>
+    <img src="<?=$params['article']->img ?? "" ?>" alt="">
 </div>
 <button><a href="/articles">Revenir sur tous les articles</a></button>

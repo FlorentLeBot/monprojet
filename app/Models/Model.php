@@ -66,12 +66,12 @@ abstract class Model
     }
 
     // mettre à jour dans la table les champs en fonction de l'id
-    public function update(array $data){
+    public function update(array $data, $tag = null){
 
         $sqlRequestPart = "";
         $i = 1;
 
-        //récupération des champs  
+        //récupération des champs d'un formulaire 
         foreach ($data as $key => $value){
             $comma = $i === count($data) ? '' : ', ';
             $i++;
@@ -83,7 +83,25 @@ abstract class Model
                             WHERE id = :id", $data);
 
     }
+
+    // création d'un article de manière dynamique
     
+    public function  create(array $data, array $tags = null){
+      
+        // les parenthèses de la requete
+        $firstParenthesis = "";
+        $secondParenthesis = "";
+        $i= 1;
+
+        foreach ($data as $key => $value){
+            $comma = $i === count($data) ? "" : ", ";
+            $firstParenthesis .= "{$key}{$comma}";
+            $secondParenthesis .= ":{$key}{$comma}";
+            $i++;
+        }
+        //var_dump($firstParenthesis,$secondParenthesis); die();
+        return $this->query("INSERT INTO {$this->table} ($firstParenthesis) VALUES ($secondParenthesis)");
+    }
    
     
 

@@ -53,7 +53,7 @@ $router->post('/admin/articles/delete/:id', 'App\Controllers\Admin\AdminControll
 // Création d'un article
 
  $router->get('/admin/articles/create', 'App\Controllers\Admin\AdminController@create');
- $router->post('/admin/articles/create', 'App\Controllers\Admin\AdminController@createPost');
+ $router->post('/admin/articles/create', 'App\Controllers\Admin\AdminController@createArticle');
 
 // Editer un article
 

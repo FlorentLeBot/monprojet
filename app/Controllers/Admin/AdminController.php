@@ -10,6 +10,9 @@ use App\Models\TagModel;
 
 class AdminController extends Controller
 {
+
+    /* ---LES VUES--- */
+
     // méthode affichage de la page index dans le dashboard administration du blog
     public function index()
     {
@@ -29,12 +32,31 @@ class AdminController extends Controller
         $contact = (new ContactModel($this->db))->all();
         return $this->viewAdmin('admin.dashboard.contact', compact('contact'));
     }
-    // méthode affichage de la page contact récupération du formulaire de contact
-    public function image()
-    {
-        return $this->viewAdmin('admin.dashboard.formImage');
+
+    /* ---LES METHODES EDITER, CREER...--- */
+
+    // méthode de création d'un article
+
+    public function create(){
+        $tags = (new TagModel($this->db))->all();
+        return $this->viewAdmin('admin.dashboard.formBlog', compact('tags'));   
     }
 
+    public function createArticle(){
+        $article = new BlogModel($this->db);
+        // array_pop() dépile et retourne la valeur du dernier élément du tableau array, le raccourcissant d'un élément.
+        $tags = array_pop($_POST);
+
+        
+        var_dump($_POST); die();
+        $res = $article->create($_POST, $tags);
+
+        // redirection
+        if ($res) {
+            return header('Location: /admin/articles');
+        }
+    }
+    
     // méthode permettant d'éditer un article du blog par id
     public function edit(int $id)
     {
@@ -48,8 +70,6 @@ class AdminController extends Controller
     // méthode permettant la mise à jour d'un article ou d'une fiche jeu de société
     public function update(int $id)
     {
-
-        // var_dump($_POST ); die();
         $article = new BlogModel($this->db);
         // array_pop() dépile et retourne la valeur du dernier élément du tableau array, le raccourcissant d'un élément.
         $tags = array_pop($_POST);
@@ -72,4 +92,5 @@ class AdminController extends Controller
             return header("Location: /admin/articles");
         }
     }
+
 }
