@@ -9,6 +9,7 @@ class BlogModel extends Model
 {
     protected $table = 'articles';
 
+
     public function getCreatedAt(): string
     {
         // création d'un nouvelle instance DateTime avec comme paramètre mes created_at 
@@ -36,26 +37,9 @@ class BlogModel extends Model
                             WHERE art.article_id = ?
                             ", [$this->id]);
     }
-    public function create(array $data, array $tags = null)
-    {
-         parent::create($data);
-         var_dump($data); die();
-         $id = $this->db->lastInsertId();
-
-         foreach ($tags as $tagId) {
-            $stmt = $this->db->prepare("INSERT article_tag (article_id, tag_id) VALUES (?, ?)");
-            $stmt->execute([$id, htmlspecialchars($tagId)]);
-        }
-        return true;
-
-
-    }
 
     public function updateKiss(int $id, array $tags)
     {
-        $title = htmlspecialchars($_POST['title']);
-        $content = htmlspecialchars($_POST['content']);
-
         // récupération des valeurs de $_FILES
         if (isset($_FILES['img'])) {
             $name = $_FILES['img']['name'];
@@ -84,7 +68,11 @@ class BlogModel extends Model
         } else {
             echo 'Une erreur est survenue';
         }
+
         $path = htmlspecialchars($path);
+        $title = htmlspecialchars($_POST['title']);
+        $content = htmlspecialchars($_POST['content']);
+        // $path = htmlspecialchars($_POST['img']);
 
         // supprimer les tags actuels
         $stmt = $this->db->prepare("DELETE FROM article_tag WHERE article_id = ?");
@@ -106,5 +94,57 @@ class BlogModel extends Model
         if ($res) {
             return true;
         }
+    }
+
+
+    public function create(array $data, ?array $tags = null)
+    {
+        // récupération des valeurs de $_FILES
+        if (isset($_FILES['img'])) {
+            $name = $_FILES['img']['name'];
+            $tmpName = $_FILES['img']['tmp_name'];
+            $error = $_FILES['img']['error'];
+            $size = $_FILES['img']['size'];
+        }
+
+        // séparation du nom de l'image et de son extension 
+        $tabExtension = explode('.', $name);
+        // transformation de l'extension en minuscule
+        $extension = strtolower(end($tabExtension));
+        // extensions accepté
+        $extensions = ['jpg', 'png', 'jpeg', 'gif'];
+        // taille maximum d'une image
+        $maxSize = 400000;
+        // si le nom de l'extension, la taille maximum et le code d'erreur est égal à 0 (aucune erreur de téléchargement)...
+        if (in_array($extension, $extensions) && $size <= $maxSize && $error == 0) {
+            // créer un nom unique ...
+            $uniqueName = uniqid('', true);
+            // rajouter le point et le nom de l'extension 
+            $file = $uniqueName . "." . $extension;
+            // télécharger l'image      
+            move_uploaded_file($tmpName, './upload/' . $file);
+            $path = "/public/upload/" . $file;
+        } else {
+            echo 'Une erreur est survenue';
+        }
+
+        $path = htmlspecialchars($path);
+        $title = htmlspecialchars($_POST['title']);
+        $content = htmlspecialchars($_POST['content']);
+        
+        parent::create([
+            "title" => $title,
+            "content" => $content,
+            "img" => $path
+        ]);
+
+        $id = $this->db->lastInsertId();
+
+
+        foreach ($tags as $tagId) {
+            $stmt = $this->db->prepare("INSERT article_tag (article_id, tag_id) VALUES (?, ?)");
+            $stmt->execute([$id, htmlspecialchars($tagId)]);
+        }
+        return true;
     }
 }

@@ -22,6 +22,15 @@ define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
 
 $router = new Router($_GET['url']);
 
+// connexion compte utilisateur ou compte administrateur
+
+$router->get('login', 'App\Controllers\UserController@login');
+$router->post('login', 'App\Controllers\UserController@loginPost');
+
+$router->get('logout', 'App\Controllers\UserController@logout');
+
+$router->get('register', 'App\Controllers\UserController@register');
+$router->post('register', 'App\Controllers\UserController@registerPost');
 /* -----FRONT----- */
 
 // La page d'accueil

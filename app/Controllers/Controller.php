@@ -9,6 +9,13 @@ abstract class Controller{
     public $db;
 
     public function __construct(DBConnection $db){
+
+        // si on n'a pas de session on la démarre
+        if(session_status() === PHP_SESSION_NONE){
+            session_start();
+        }
+        
+        
         $this->db = $db;
     }
     
@@ -40,6 +47,14 @@ abstract class Controller{
         $adminContent = ob_get_clean();
         
         require VIEWSADMIN . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR . 'layout.php';
+    }
+
+    protected function isAdmin(){
+        if(isset($_SESSION['auth']) && $_SESSION['auth'] === 1){
+            return true;
+        }else{
+            return header('Location: /login');
+        }
     }
 
     

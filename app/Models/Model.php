@@ -87,7 +87,7 @@ abstract class Model
     // création d'un article de manière dynamique
     
     public function  create(array $data, array $tags = null){
-      
+        
         // les parenthèses de la requete
         $firstParenthesis = "";
         $secondParenthesis = "";
@@ -100,7 +100,7 @@ abstract class Model
             $i++;
         }
         //var_dump($firstParenthesis,$secondParenthesis); die();
-        return $this->query("INSERT INTO {$this->table} ($firstParenthesis) VALUES ($secondParenthesis)");
+        return $this->query("INSERT INTO {$this->table} ($firstParenthesis) VALUES ($secondParenthesis)", $data);
     }
    
     
