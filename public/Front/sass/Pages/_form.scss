@@ -1,5 +1,7 @@
-@import "../Utils/_variables.scss";
+@import "../Utils/_variables";
 @import "../Utils/_mixins.scss";
+@import "../Utils/_placeholders.scss";
+@import "../Utils/_functions.scss";
 
 .form {
     &__field {

@@ -21,7 +21,7 @@ class Validator
                         case 'required':
                             $this->required($name, $this->data[$name]);
                             break;
-                        case substr($rule, 0, 8) === 'min':
+                        case substr($rule,0,3) === 'min':
                             $this->min($name, $this->data[$name], $rule);
                         default:
                             # code...

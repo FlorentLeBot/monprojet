@@ -40,36 +40,8 @@ class BlogModel extends Model
 
     public function updateKiss(int $id, array $tags)
     {
-        // récupération des valeurs de $_FILES
-        if (isset($_FILES['img'])) {
-            $name = $_FILES['img']['name'];
-            $tmpName = $_FILES['img']['tmp_name'];
-            $error = $_FILES['img']['error'];
-            $size = $_FILES['img']['size'];
-        }
 
-        // séparation du nom de l'image et de son extension 
-        $tabExtension = explode('.', $name);
-        // transformation de l'extension en minuscule
-        $extension = strtolower(end($tabExtension));
-        // extensions accepté
-        $extensions = ['jpg', 'png', 'jpeg', 'gif'];
-        // taille maximum d'une image
-        $maxSize = 400000;
-        // si le nom de l'extension, la taille maximum et le code d'erreur est égal à 0 (aucune erreur de téléchargement)...
-        if (in_array($extension, $extensions) && $size <= $maxSize && $error == 0) {
-            // créer un nom unique ...
-            $uniqueName = uniqid('', true);
-            // rajouter le point et le nom de l'extension 
-            $file = $uniqueName . "." . $extension;
-            // télécharger l'image      
-            move_uploaded_file($tmpName, './upload/' . $file);
-            $path = "/public/upload/" . $file;
-        } else {
-            echo 'Une erreur est survenue';
-        }
-
-        $path = htmlspecialchars($path);
+        $path = $this->upload($_FILES);
         $title = htmlspecialchars($_POST['title']);
         $content = htmlspecialchars($_POST['content']);
         // $path = htmlspecialchars($_POST['img']);
@@ -96,15 +68,14 @@ class BlogModel extends Model
         }
     }
 
-
-    public function create(array $data, ?array $tags = null)
+    private function upload(array $file)
     {
         // récupération des valeurs de $_FILES
-        if (isset($_FILES['img'])) {
-            $name = $_FILES['img']['name'];
-            $tmpName = $_FILES['img']['tmp_name'];
-            $error = $_FILES['img']['error'];
-            $size = $_FILES['img']['size'];
+        if (isset($file['img'])) {
+            $name = $file['img']['name'];
+            $tmpName = $file['img']['tmp_name'];
+            $error = $file['img']['error'];
+            $size = $file['img']['size'];
         }
 
         // séparation du nom de l'image et de son extension 
@@ -115,6 +86,7 @@ class BlogModel extends Model
         $extensions = ['jpg', 'png', 'jpeg', 'gif'];
         // taille maximum d'une image
         $maxSize = 400000;
+        $path = "";
         // si le nom de l'extension, la taille maximum et le code d'erreur est égal à 0 (aucune erreur de téléchargement)...
         if (in_array($extension, $extensions) && $size <= $maxSize && $error == 0) {
             // créer un nom unique ...
@@ -127,11 +99,16 @@ class BlogModel extends Model
         } else {
             echo 'Une erreur est survenue';
         }
-
         $path = htmlspecialchars($path);
+        return $path;
+    }
+    public function create(array $data, ?array $tags = null)
+    {
+
+        $path = $this->upload($_FILES);
         $title = htmlspecialchars($_POST['title']);
         $content = htmlspecialchars($_POST['content']);
-        
+
         parent::create([
             "title" => $title,
             "content" => $content,

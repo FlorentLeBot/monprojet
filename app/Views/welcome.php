@@ -1,8 +1,15 @@
+<h1>Bienvenue</h1>
 
+<article>
+    <h1>Les derniers jeux</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque minus excepturi deleniti vero, ex distinctio minima corrupti, optio accusamus adipisci eaque placeat dignissimos enim ullam, repudiandae odit quaerat. Facilis, explicabo.</p>
+    <img src="" alt="">
+    <a href="">Lire la suite</a>
+</article>
 
-<h1>Page d'accueil</h1>
-
-
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dolorum eaque qui odit similique autem consequatur nulla dolores esse accusantium?</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dolorum eaque qui odit similique autem consequatur nulla dolores esse accusantium?</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dolorum eaque qui odit similique autem consequatur nulla dolores esse accusantium?</p>
+<article>
+    <h1>Les derniers articles</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque minus excepturi deleniti vero, ex distinctio minima corrupti, optio accusamus adipisci eaque placeat dignissimos enim ullam, repudiandae odit quaerat. Facilis, explicabo.</p>
+    <img src="" alt="">
+    <a href="">Lire la suite</a>
+</article>

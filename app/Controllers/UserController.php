@@ -29,7 +29,7 @@ class UserController extends Controller
     {
         $validator = new Validator($_POST);
         $errors = $validator->validate([
-            "username" => ['required', 'min:8'],
+            "username" => ['required', 'min:3'],
             'password' => ['required']
         ]);
         //var_dump($errors); die();
@@ -40,7 +40,8 @@ class UserController extends Controller
         }
 
         $user = (new UserModel($this->db))->getByUsername($_POST['username']);
-        var_dump($user->password); die();
+        //var_dump($_POST['password']); die();
+        //var_dump($user->password); die();
         if (password_verify($_POST['password'], $user->password) && $user->role === 1) {
             $_SESSION['auth'] = (int) $user->role;
             return header('Location: /admin/articles?success=true');

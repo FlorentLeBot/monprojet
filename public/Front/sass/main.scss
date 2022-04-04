@@ -1,6 +1,24 @@
-*{
-    box-sizing: border-box;
-}
-body{
-    background-color: palegoldenrod;
-}
+
+// @import "./utils/variables";
+// @import "./utils/functions";
+// @import "./utils/mixins";
+// @import "./utils/extensions";
+// @import "./base/base";
+// @import "./base/typography";
+// @import "./components/buttons";
+// @import "./layouts/header";
+// @import "./layouts/nav";
+// @import "./layouts/container";
+// @import "./layouts/form";
+// @import "./pages/work";
+// @import "./pages/about";
+// @import "./pages/project";
+
+
+@import "./Utils/variables";
+@import "./Utils/functions";
+@import "./Utils/mixins";
+@import "./Base/general-layout";
+@import "./Layouts/header";
+@import "./Pages/blog-article";
+@import "./Layouts/footer";

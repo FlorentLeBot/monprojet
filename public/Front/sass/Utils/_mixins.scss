@@ -6,9 +6,13 @@
     color: $color;
 }
 
-@mixin style-article {
-    background-color: $colour-secondary;
-    color: $colour-white;
+@mixin style-article($width, $height, $border-raduis, $box-shadow, $bg, $color) {
+    width: $width;
+    height: $height;
+    border-radius: $border-raduis;
+    box-shadow: $box-shadow;
+    background-color: $bg;
+    color: $color;
 }
 
 $txt-input-palette: (active: (bg: $colour-primary,

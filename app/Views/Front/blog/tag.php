@@ -1,9 +1,11 @@
-<h1><?= $params['tag']->name ?></h1>
+<h1 class="tag-title"><?= $params['tag']->name ?></h1>
 
 <?php foreach ($params['tag']->getArticles() as $article) : ?>
 
-<div>
+<article>
     <a href="/articles/<?= $article->id ?>"><?= $article->title ?></a>
-</div>
+    <p><?= $article->content ?></p>
+    <img src="<?=$article->img ?? "" ?>" alt="">
+</article>
 
 <?php endforeach ?>

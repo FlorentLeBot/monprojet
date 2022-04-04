@@ -1,12 +1,24 @@
+@import "../Utils/_variables";
+@import "../Utils/_mixins.scss";
+@import "../Utils/_placeholders.scss";
+@import "../Utils/_functions.scss";
+
 /* mini reset css */
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 20px;
 }
-.container{
-    max-width: 1200px;
-    margin: 0 auto;
+
+ul{
+    list-style-type: none;
 }
+
+a{
+    text-decoration: none;
+    color: $colour-white;
+}
+
 

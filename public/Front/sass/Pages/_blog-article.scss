@@ -1,31 +1,24 @@
-@import "../Utils/mixins.scss";
-@import "../Utils/placeholders.scss";
+@import "../Utils/_variables";
+@import "../Utils/_mixins.scss";
+@import "../Utils/_placeholders.scss";
+@import "../Utils/_functions.scss";
 
 /* gestion des articles du blog */
 
-#article{
-    // c'est génial (grid)
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
-    grid-gap: 10px;
-    justify-content: center;
-    padding: 20px;
-    height: auto;
-}
-.blog-article{
-    @include style-article;
-    border-radius: 5px; 
-    .bloc-img{
-        @extend %flex-center;
-        width: 100%;   
-    }
-    p{
-        font-size: 1.3rem; 
-        padding: 5px; 
-    }
-    >h2{
+.blog-article {
+   
+    @include style-article(300px, auto, 10px, $box-shadow, $colour-secondary, $colour-white);
+    margin: 0.7rem auto;
+    &__title{
         text-align: center;
-        font-size: 2rem;
-        
+        padding: 1rem;
+        font-size: 1.4rem;
+    
+    }&__content{
+        padding: 0.5rem;
     }
+    
 }
+       
+
+  
