@@ -3,10 +3,3 @@
 @import "../Utils/_placeholders.scss";
 @import "../Utils/_functions.scss";
 
-.form {
-    &__field {
-        & input {
-            @include txt-input-palette($txt-input-palette);
-        }
-    }
-}

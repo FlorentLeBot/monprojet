@@ -1,6 +1,6 @@
 <h1>Inscription</h1>
 
-<form action="/register" method="POST">
+<form action="/monprojet/register" method="POST">
     <div>
         <label for="username">Nom d'utilisateur</label>
         <input type="text" id="username" name="username">

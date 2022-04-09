@@ -1,0 +1,22 @@
+@import "../Utils/_variables";
+@import "../Utils/_mixins.scss";
+@import "../Utils/_placeholders.scss";
+@import "../Utils/_functions.scss";
+
+.btn{ 
+    padding: 0 5px;
+    height: 30px;
+    background-color: $primary-color;
+    @extend %flex-center;
+    margin: 20px auto 0;
+    color: $white-color;
+    & a{
+        color: $white-color;
+    }
+    
+    &:hover{
+        transform: scale(1.02);
+        transition: 0.3s ease-in-out;
+        background-color: darken($primary-color, 10%);
+    }
+}

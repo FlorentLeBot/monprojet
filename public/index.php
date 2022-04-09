@@ -14,7 +14,7 @@ require '../vendor/autoload.php';
 
 define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR);
 define('VIEWSERRORS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR . 'errors' . DIRECTORY_SEPARATOR);
-define('VIEWSADMIN', dirname(__DIR__). DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views');
+define('VIEWSADMIN', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views');
 define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
 
 // création d'une nouvelle instance de la classe Router 
@@ -27,55 +27,70 @@ $router = new Router($_GET['url']);
 $router->get('login', 'App\Controllers\UserController@login');
 $router->post('login', 'App\Controllers\UserController@loginPost');
 
+// déconnexion 
+
 $router->get('logout', 'App\Controllers\UserController@logout');
+
+// inscription
 
 $router->get('register', 'App\Controllers\UserController@register');
 $router->post('register', 'App\Controllers\UserController@registerPost');
+
+// commentaire
+
+$router->get('comment', 'App\Controllers\UserController@comment');
+$router->post('comment', 'App\Controllers\UserController@comentPost');
+
 /* -----FRONT----- */
 
 // La page d'accueil
 
 $router->get('/', 'App\Controllers\WelcomeController@welcome');
 
-// La page blog : tous les articles du blog
+// Tous les articles / Tous les jeux
 
 $router->get('/articles', 'App\Controllers\BlogController@index');
+$router->get('/games', 'App\Controllers\GameController@index');
 
-// Un article du blog
+// Un article / Un jeu
 
 $router->get('/articles/:id', 'App\Controllers\BlogController@show');
+$router->get('/games/:id', 'App\Controllers\GameController@show');
 
-// Les articles par tag
+
+// Les articles par tag / Les jeux par catégorie
 
 $router->get('/tags/:id', 'App\Controllers\TagController@tag');
+$router->get('/categories/:id', 'App\Controllers\CategoryController@category');
 
 /* -----ADMINISTRATION----- */
 
-// La page d'index : tous les articles du blog
+// les 3 pages de l'administration
 
-$router->get('/admin/articles', 'App\Controllers\Admin\AdminController@index');
-
-// Supprimer un article
-
-$router->post('/admin/articles/delete/:id', 'App\Controllers\Admin\AdminController@delete');
-
-// Création d'un article
-
- $router->get('/admin/articles/create', 'App\Controllers\Admin\AdminController@create');
- $router->post('/admin/articles/create', 'App\Controllers\Admin\AdminController@createArticle');
-
-// Editer un article
-
-$router->get('/admin/articles/edit/:id', 'App\Controllers\Admin\AdminController@edit');
-$router->post('/admin/articles/edit/:id', 'App\Controllers\Admin\AdminController@update');
-
-// La page game : toutes les fiches des jeux de société
-
+$router->get('/admin/articles', 'App\Controllers\Admin\AdminController@article');
 $router->get('/admin/games', 'App\Controllers\Admin\AdminController@game');
-
-// La page contact : tous les messages 
-
 $router->get('/admin/contact', 'App\Controllers\Admin\AdminController@contact');
+
+// Supprimer
+
+$router->post('/admin/articles/delete/:id', 'App\Controllers\Admin\AdminController@deleteArticle');
+$router->post('/admin/games/delete/:id', 'App\Controllers\Admin\AdminController@deleteGame');
+
+// Créer
+
+$router->get('/admin/articles/create', 'App\Controllers\Admin\AdminController@createTag');
+$router->post('/admin/articles/create', 'App\Controllers\Admin\AdminController@createArticle');
+
+$router->get('/admin/games/create', 'App\Controllers\Admin\AdminController@createCategory');
+$router->post('/admin/games/create', 'App\Controllers\Admin\AdminController@createGame');
+
+// Editer et Mettre à jour
+
+$router->get('/admin/articles/edit/:id', 'App\Controllers\Admin\AdminController@editArticle');
+$router->post('/admin/articles/edit/:id', 'App\Controllers\Admin\AdminController@updateArticle');
+
+$router->get('/admin/games/edit/:id', 'App\Controllers\Admin\AdminController@editGame');
+$router->post('/admin/games/edit/:id', 'App\Controllers\Admin\AdminController@updateGame');
 
 // Récupération des erreurs 
 

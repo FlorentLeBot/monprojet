@@ -1,4 +1,50 @@
 @charset "UTF-8";
+figure, .container-article .tags, .blog-articles .tags, .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-article .tags .tag, padding .blog-articles .tags .tag {
+  margin: 20px 10px 0;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background: greenyellow;
+}
+
+.btn {
+  padding: 0 5px;
+  height: 30px;
+  background-color: rgba(37, 84, 138, 0.991);
+  margin: 20px auto 0;
+  color: #FFF;
+}
+.btn a {
+  color: #FFF;
+}
+.btn:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease-in-out;
+  background-color: rgba(26, 60, 98, 0.991);
+}
+
+figure, .container-article .tags, .blog-articles .tags, .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-article .tags .tag, padding .blog-articles .tags .tag {
+  margin: 20px 10px 0;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background: greenyellow;
+}
+
 /* mini reset css */
 * {
   margin: 0;
@@ -7,19 +53,74 @@
   font-size: 20px;
 }
 
+body {
+  background-color: antiquewhite;
+}
+
 ul {
   list-style-type: none;
 }
 
 a {
   text-decoration: none;
-  color: #FFF;
+}
+
+button {
+  border: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+hr {
+  color: rgba(37, 84, 138, 0.991);
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 100;
+  padding: 1rem;
+}
+
+h2, h3, h4 {
+  text-align: center;
+  font-size: 1.7rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  padding: 0.7rem;
+}
+
+figure, .container-article .tags, .blog-articles .tags, .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-article .tags .tag, padding .blog-articles .tags .tag {
+  margin: 20px 10px 0;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background: greenyellow;
 }
 
 header {
   background-color: rgba(37, 84, 138, 0.991);
-  height: 200px;
+  height: auto;
   color: rgba(3, 40, 100, 0.971);
+}
+header figure {
+  width: 40%;
+  padding: 20px 0 20px 20px;
+}
+header figure .logo {
+  width: 100%;
 }
 
 .menu-wrap {
@@ -49,7 +150,7 @@ header {
   width: 40px;
   height: 40px;
   opacity: 0.5;
-  background: #a12d1c;
+  background: greenyellow;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,7 +180,6 @@ div ~ p{
   transition: all 0.4s ease-in-out;
 }
 
-/* top and bottom line */
 .menu-wrap .hamburger > div::before,
 .menu-wrap .hamburger > div::after {
   content: "";
@@ -91,7 +191,6 @@ div ~ p{
   background: inherit;
 }
 
-/* moves line down */
 .menu-wrap .hamburger > div:after {
   top: 10px;
 }
@@ -122,7 +221,6 @@ div ~ p{
 
 .menu-wrap .toggler:checked ~ .menu > div {
   transform: scale(1);
-  transition-duration: var(--menu-speed);
 }
 
 .menu-wrap .toggler:checked ~ .menu > div > div {
@@ -144,10 +242,10 @@ div ~ p{
 }
 
 .menu-wrap .menu .menus {
-  background: var(--blanc);
+  background: #FFF;
   opacity: 0.9;
-  width: 100%;
-  height: 100%;
+  width: 100vh;
+  height: 100vh;
   flex: none;
   align-items: center;
   justify-content: center;
@@ -155,23 +253,113 @@ div ~ p{
   transition: all 0.4s ease;
 }
 
-/* gestion des articles du blog */
-.blog-article {
+.menu-wrap .menu .menus #main-menu,
+.menu-wrap .menu .menus #register-menu {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu .menus #main-menu ul li,
+.menu-wrap .menu .menus #register-menu ul li {
+  padding: 10px;
+}
+
+.menu-wrap .menu .menus #main-menu ul li a,
+.menu-wrap .menu .menus #register-menu ul li a {
+  color: black;
+  font-size: 1.3rem;
+}
+
+.menu-wrap .menu .menus #main-menu ul li a:hover,
+.menu-wrap .menu .menus #register-menu ul li a:hover {
+  background-color: rgba(3, 40, 100, 0.971);
+  padding: 10px 2px;
+  color: #FFF;
+}
+
+figure, .container-article .tags, .blog-articles .tags, .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-article .tags .tag, padding .blog-articles .tags .tag {
+  margin: 20px 10px 0;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background: greenyellow;
+}
+
+/* gestion des articles du blog (index) */
+.blog-articles {
+  width: 300px;
+  background-color: #FFF;
+  margin: 0 auto 1rem;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.blog-articles__excerpt {
+  width: 80%;
+  margin: 1rem auto;
+}
+padding .blog-articles .tags .tag a {
+  color: black;
+  font-size: 0.7rem;
+}
+.blog-articles .tags .tag:hover {
+  transition: 0.2s ease-in-out;
+  transform: scale(1.1);
+}
+
+/* gestion d'un article du blog (show) */
+.blog-article .title {
+  padding: 2rem;
+  font-style: italic;
+}
+
+.container-article {
   width: 300px;
   height: auto;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  background-color: rgba(3, 40, 100, 0.971);
-  color: #FFF;
-  margin: 0.7rem auto;
-}
-.blog-article__title {
-  text-align: center;
+  border-radius: 0 0 30px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: #FFF;
+  color: black;
+  margin: 0 auto 3rem;
   padding: 1rem;
-  font-size: 1.4rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
-.blog-article__content {
-  padding: 0.5rem;
+.container-article__content {
+  margin-top: 1rem;
+}
+
+figure {
+  width: 100%;
+}
+figure .blog-img {
+  width: 300px;
+  border-radius: 25px 0 0 0;
+}
+
+.btn, .blog-articles .tags, .container-article .tags, figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+padding .blog-articles .tags .tag, .container-article .tags .tag {
+  margin: 20px 10px 0;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background: greenyellow;
 }
 
 footer {

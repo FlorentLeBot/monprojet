@@ -3,7 +3,19 @@
 namespace App\Models;
 
 use PDO;
+use DateTime;
 use Database\DBConnection;
+
+/* Sommaire des méthodes:
+- query
+- all
+- findById
+- delete
+- update
+- create
+- getCreatedAt
+- getExcerpt
+*/
 
 abstract class Model
 {
@@ -28,7 +40,6 @@ abstract class Model
             || strpos($sql, 'UPDATE') === 0
             || strpos($sql, 'INSERT') === 0
         ) {
-
             // création d'une requête prepare
             $stmt = $this->db->$method($sql);
 
@@ -66,7 +77,7 @@ abstract class Model
     }
 
     // mettre à jour dans la table les champs en fonction de l'id
-    public function update(array $data, $tag = null){
+    public function update(array $data, $tag = null, $category = null){
 
         $sqlRequestPart = "";
         $i = 1;
@@ -86,7 +97,7 @@ abstract class Model
 
     // création d'un article de manière dynamique
     
-    public function  create(array $data, array $tags = null){
+    public function  create(array $data, ?array $tags = null, ?array $categories = null){
         
         // les parenthèses de la requete
         $firstParenthesis = "";
@@ -101,6 +112,19 @@ abstract class Model
         }
         //var_dump($firstParenthesis,$secondParenthesis); die();
         return $this->query("INSERT INTO {$this->table} ($firstParenthesis) VALUES ($secondParenthesis)", $data);
+    }
+    public function getCreatedAt(): string
+    {
+        // création d'un nouvelle instance DateTime avec comme paramètre mes created_at 
+        // retourne une chaîne de caractère
+        // puis je la formate
+        return $date = (new DateTime($this->created_at))->format('d/m/Y à H:i');
+    }
+    public function getExcerpt(): string
+    {
+        // substr retourne un segnement de la chaîne de caractère
+        // paramètre la chaîne de caractère, le début de la chaîne et sa fin
+        return substr($this->content, 0, 120) . '...';
     }
    
     

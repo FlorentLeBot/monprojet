@@ -15,28 +15,28 @@
     color: $color;
 }
 
-$txt-input-palette: (active: (bg: $colour-primary,
-        border: $colour-primary,
-        txt: $colour-white,
+// $txt-input-palette: (active: (bg: $colour-primary,
+//         border: $colour-primary,
+//         txt: $colour-white,
 
-    ),
-    focus: (bg: $colour-primary,
-        border: $colour-primary,
-        txt: $colour-white,
-    ),
-    invalid: (bg: $colour-invalid,
-        border: $colour-white,
-        txt: $colour-white,
-    ));
+//     ),
+//     focus: (bg: $colour-primary,
+//         border: $colour-primary,
+//         txt: $colour-white,
+//     ),
+//     invalid: (bg: $colour-invalid,
+//         border: $colour-white,
+//         txt: $colour-white,
+//     ));
 
-@mixin txt-input-palette($palettes) {
+// @mixin txt-input-palette($palettes) {
 
-    @each $state,
-    $palette in $palettes {
-        &:#{$state} {
-            border: .1rem solid map-get($palette, border);
-            background-color: map-get($palette, bg);
-            color: map-get($palette, txt);
-        }
-    }
-}
+//     @each $state,
+//     $palette in $palettes {
+//         &:#{$state} {
+//             border: .1rem solid map-get($palette, border);
+//             background-color: map-get($palette, bg);
+//             color: map-get($palette, txt);
+//         }
+//     }
+// }

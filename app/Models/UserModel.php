@@ -2,8 +2,13 @@
 
 namespace App\Models;
 
+/* Sommaire des méthodes :
 
+- getByUsername
+- registerUser
+- commentUser
 
+*/
 
 class UserModel extends Model
 {
@@ -21,5 +26,10 @@ class UserModel extends Model
         VALUES (?,?,?)");
         $stmt = $stmt->execute([$userName, $password, $email]);
         return $stmt;
+    }
+    public function commentUser(){
+        $stmt = $this->db->prepare('INSERT INTO `comment` (`content`) 
+                                    SELECT `id_user` FROM user 
+                                    INNER JOIN  ');
     }
 }

@@ -3,10 +3,21 @@
 @import "../Utils/_placeholders.scss";
 @import "../Utils/_functions.scss";
 
-header{
-    @include style-header($colour-primary, 200px, $colour-secondary);
+header {
+    @include style-header($primary-color, auto, $secondary-color);
+
+    & figure {
+        width: 40%;
+        padding: 20px 0 20px 20px;
+
+        & .logo {
+            width: 100%;
+
+        }
+    }
 }
-// /* le menu */
+
+// positionnement du menu burger
 
 .menu-wrap {
     position: fixed;
@@ -16,6 +27,9 @@ header{
     z-index: 1000;
 
 }
+
+// style du menu burger
+
 .menu-wrap .toggler {
     position: absolute;
     top: 0;
@@ -35,7 +49,7 @@ header{
     width: 40px;
     height: 40px;
     opacity: 0.5;
-    background: #a12d1c;
+    background: greenyellow;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,6 +71,8 @@ div ~ p{
 	les éléments p frère des éléments div
 } */
 
+// style des lignes du burger
+
 .menu-wrap .hamburger>div {
     position: relative;
     width: 30px;
@@ -68,7 +84,7 @@ div ~ p{
     transition: all 0.4s ease-in-out;
 }
 
-/* top and bottom line */
+// création de la ligne du haut puis du milieu
 
 .menu-wrap .hamburger>div::before,
 .menu-wrap .hamburger>div::after {
@@ -81,7 +97,7 @@ div ~ p{
     background: inherit;
 }
 
-/* moves line down */
+//  création de la ligne du bas 
 
 .menu-wrap .hamburger>div:after {
     top: 10px;
@@ -118,7 +134,7 @@ div ~ p{
 
 .menu-wrap .toggler:checked~.menu>div {
     transform: scale(1);
-    transition-duration: var(--menu-speed);
+    //transition-duration: var(--menu-speed);
 }
 
 .menu-wrap .toggler:checked~.menu>div>div {
@@ -140,10 +156,10 @@ div ~ p{
 }
 
 .menu-wrap .menu .menus {
-    background: var(--blanc);
+    background: $white-color;
     opacity: .9;
-    width: 100%;
-    height: 100%;
+    width: 100vh;
+    height: 100vh;
     flex: none;
     align-items: center;
     justify-content: center;
@@ -151,3 +167,32 @@ div ~ p{
     transition: all 0.4s ease;
 }
 
+.menu-wrap .menu .menus #main-menu, 
+.menu-wrap .menu .menus #register-menu {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu .menus #main-menu ul li,
+.menu-wrap .menu .menus #register-menu ul li {
+    padding: 10px;
+}
+
+.menu-wrap .menu .menus #main-menu ul li a,
+.menu-wrap .menu .menus #register-menu ul li a  {
+    color: black;
+    font-size: 1.3rem;
+}
+
+
+.menu-wrap .menu .menus #main-menu ul li a:hover,
+.menu-wrap .menu .menus #register-menu ul li a:hover {
+    background-color: $secondary-color;
+    padding: 10px 2px;
+    color: $white-color;
+}

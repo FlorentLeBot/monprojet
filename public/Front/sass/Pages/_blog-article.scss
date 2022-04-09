@@ -3,22 +3,91 @@
 @import "../Utils/_placeholders.scss";
 @import "../Utils/_functions.scss";
 
-/* gestion des articles du blog */
+
+// -------------------------------------------------------------------
+
+/* gestion des articles du blog (index) */
+
+.blog-articles {
+
+    width: 300px;
+    background-color: $white-color;
+    margin: 0 auto 1rem;
+
+    border-radius: 8px;
+    box-shadow: $box-shadow;
+
+    &__excerpt {
+        width: 80%;
+        margin: 1rem auto;
+    }
+
+    & .tags {
+        @extend %flex-center;
+
+        & .tag {
+            @extend %tag;
+
+            & a {
+                color: black;
+                font-size: 0.7rem;
+            }
+        }
+
+        & .tag:hover {
+            transition: 0.2s ease-in-out;
+            transform: scale(1.1);
+        }
+    }
+}
+
+// -------------------------------------------------------------------
+
+/* gestion d'un article du blog (show) */
 
 .blog-article {
-   
-    @include style-article(300px, auto, 10px, $box-shadow, $colour-secondary, $colour-white);
-    margin: 0.7rem auto;
-    &__title{
-        text-align: center;
-        padding: 1rem;
-        font-size: 1.4rem;
-    
-    }&__content{
-        padding: 0.5rem;
+    & .title {
+        padding: 2rem;
+        font-style: italic
     }
-    
 }
-       
 
-  
+.container-article {
+
+    @include style-article(300px, auto, 0 0 30px, $box-shadow, $white-color, black);
+    margin: 0 auto 3rem;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
+    & .tags {
+        @extend %flex-center;
+
+        & .tag {
+            @extend %tag;
+        }
+    }
+
+    &__content {
+        margin-top: 1rem;
+    }
+
+
+
+
+
+
+
+
+}
+
+figure {
+    width: 100%;
+    @extend %flex-center;
+
+    & .blog-img {
+        width: 300px;
+        border-radius: 25px 0 0 0;
+    }
+
+
+}

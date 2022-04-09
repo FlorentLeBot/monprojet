@@ -1,13 +1,20 @@
 <article id="article" class="blog-article">
-    <h1 class="blog-article__title" ><?= $params['article']->title ?></h1>
-    <p class="blog-article__content"><?= $params['article']->content ?></p>
-    <div class="tag">
-        <?php foreach($params['article']->getTags() as $tag) : ?>
-        <span>
-            <?= $tag->name ?>
-        </span>
-        <?php endforeach ?>
-        <img src="<?=$params['article']->img ?? "" ?>" alt="">
+    <h1 class="title"><?= $params['article']->title ?></h1>
+
+    <figure>
+        <img class="blog-img" src="/monprojet/<?=$params['article']->img ?? "" ?>" alt="">
+    </figure>
+    <div class="container-article">
+        <div class="tags">
+            <?php foreach($params['article']->getTags() as $tag) : ?>
+            <span class="tag">
+                <?= $tag->name ?>
+            </span>
+            <?php endforeach ?>
+
+        </div>
+        <p class="blog-article__content"><?= $params['article']->content ?></p>
+
+        <button class="btn "><a href="/monprojet/articles">Tous les articles</a></button>
     </div>
-    <button class="blog-article--btn"><a href="/articles">Revenir sur tous les articles</a></button>
 </article>

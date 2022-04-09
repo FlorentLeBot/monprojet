@@ -9,27 +9,16 @@ class BlogModel extends Model
 {
     protected $table = 'articles';
 
-
-    public function getCreatedAt(): string
-    {
-        // création d'un nouvelle instance DateTime avec comme paramètre mes created_at 
-        // retourne une chaîne de caractère
-        // puis je la formate
-        return $date = (new DateTime($this->created_at))->format('d/m/Y à H:i');
-    }
-    public function getExcerpt(): string
-    {
-        // substr retourne un segnement de la chaîne de caractère
-        // paramètre la chaîne de caractère, le début de la chaîne et sa fin
-        return substr($this->content, 0, 120) . '...';
-    }
+    // affichage du bouton Lire plus dans l'index du blog
     public function getButton(): string
     {
         // syntaxe Heredoc (<<< / un identifiant / une nouvelle ligne / la chaîne de caractère / le même identifiant pour fermer la citation
         return <<<HTML
-        <button><a href="/articles/$this->id">Lire plus</a></button>
+        <button class="btn"><a href="/monprojet/articles/$this->id">Lire plus</a></button>
         HTML;
     }
+
+    // récupération des tags
     public function getTags()
     {
         return $this->query("SELECT t.* FROM tags t
@@ -38,9 +27,9 @@ class BlogModel extends Model
                             ", [$this->id]);
     }
 
+    // mise à jour d'un article du blog
     public function updateKiss(int $id, array $tags)
     {
-
         $path = $this->upload($_FILES);
         $title = htmlspecialchars($_POST['title']);
         $content = htmlspecialchars($_POST['content']);
@@ -68,6 +57,7 @@ class BlogModel extends Model
         }
     }
 
+    // enregistrement d'une image
     private function upload(array $file)
     {
         // récupération des valeurs de $_FILES
@@ -83,9 +73,9 @@ class BlogModel extends Model
         // transformation de l'extension en minuscule
         $extension = strtolower(end($tabExtension));
         // extensions accepté
-        $extensions = ['jpg', 'png', 'jpeg', 'gif'];
+        $extensions = ['jpg', 'png', 'jpeg', 'gif', 'webp'];
         // taille maximum d'une image
-        $maxSize = 400000;
+        $maxSize = 40000000;
         $path = "";
         // si le nom de l'extension, la taille maximum et le code d'erreur est égal à 0 (aucune erreur de téléchargement)...
         if (in_array($extension, $extensions) && $size <= $maxSize && $error == 0) {
@@ -102,7 +92,9 @@ class BlogModel extends Model
         $path = htmlspecialchars($path);
         return $path;
     }
-    public function create(array $data, ?array $tags = null)
+
+    
+    public function create(array $data, array $tags = null, array $categories = null)
     {
 
         $path = $this->upload($_FILES);
@@ -116,7 +108,6 @@ class BlogModel extends Model
         ]);
 
         $id = $this->db->lastInsertId();
-
 
         foreach ($tags as $tagId) {
             $stmt = $this->db->prepare("INSERT article_tag (article_id, tag_id) VALUES (?, ?)");

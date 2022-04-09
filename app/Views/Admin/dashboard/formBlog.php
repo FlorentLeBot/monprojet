@@ -1,7 +1,7 @@
 <h1><?= $params['article']->title ??  'Créer un nouvel article ' ?></h1>
 
 <form enctype="multipart/form-data" method="POST"
-    action="<?= isset($params['article']) ? "/admin/articles/edit/{$params['article']->id}" : "/admin/articles/create" ?>">
+    action="<?= isset($params['article']) ? "/monprojet/admin/articles/edit/{$params['article']->id}" : "/monprojet/admin/articles/create" ?>">
     <!-- TITRE -->
     <div>
         <label for="title">Titre de l'article</label>
@@ -25,18 +25,15 @@
         <label for="tags">Tags de l'article</label>
         <select multiple name="tags[]" id="tags">
             <?php foreach ($params['tags'] as $tag) : ?>
-            <option value="<?= $tag->id ?>" 
-            <?php if (isset($params['article'])) : ?> 
-                <?php foreach ($params['article']->getTags() as $articleTag) {
+            <option value="<?= $tag->id ?>" <?php if (isset($params['article'])) : ?> <?php foreach ($params['article']->getTags() as $articleTag) {
                     echo ($tag->id === $articleTag->id) ? 'selected' : '';
                     }
-                    ?>
-                    <?php endif ?>><?= $tag->name ?></option>
+                    ?> <?php endif ?>><?= $tag->name ?></option>
             <?php endforeach ?>
         </select>
     </div>
     <!-- VALIDATION -->
-    
-    <button type="submit"><?= isset($params['article']) ?  'Enregister les modifications' : 'Enregistrer mon article'?></a></button>
+    <button
+        type="submit"><?= isset($params['article']) ?  'Enregister les modifications' : 'Enregistrer mon article'?></button>
 
 </form>

@@ -10,20 +10,20 @@
                     <div><p>Vous êtes connecté !</p></div>
                 <?php endif ?>
             </div>
-            <a href="/admin/articles" class="bloc-link">
+            <a href="/monprojet/admin/articles" class="bloc-link">
                 <i class="fa-brands fa-dashcube"></i>
                 <span class="nav-links">Article</span>
             </a>
-            <a href="/admin/games" class="bloc-link">
+            <a href="/monprojet/admin/games" class="bloc-link">
                 <i class="fa-solid fa-envelope"></i>
                 <span class="nav-links">Fiches jeux</span>
             </a>
-            <a href="/admin/contact" class="bloc-link">
+            <a href="/monprojet/admin/contact" class="bloc-link">
                 <i class="fa-solid fa-database"></i>
                 <span class="nav-links">Contact</span>
             </a>
             <?php if (isset($_SESSION['auth'])): ?>
-            <a href="/logout" class="bloc-link">
+            <a href="/monprojet/logout" class="bloc-link">
                 <i class="fa-solid fa-database"></i>
                 <span class="nav-links">Se déconnecter</span>
             </a>

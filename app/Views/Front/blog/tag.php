@@ -3,7 +3,7 @@
 <?php foreach ($params['tag']->getArticles() as $article) : ?>
 
 <article>
-    <a href="/articles/<?= $article->id ?>"><?= $article->title ?></a>
+    <a href="/monprojet/articles/<?= $article->id ?>"><?= $article->title ?></a>
     <p><?= $article->content ?></p>
     <img src="<?=$article->img ?? "" ?>" alt="">
 </article>

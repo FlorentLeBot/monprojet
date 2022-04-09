@@ -17,7 +17,7 @@
 
 <h1>Connexion</h1>
 
-<form action="/login" method="POST">
+<form action="/monprojet/login" method="POST">
     <div>
         <label for="username">Nom d'utilisateur</label>
         <input type="text" id="username" name="username">
