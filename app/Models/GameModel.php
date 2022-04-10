@@ -62,41 +62,6 @@ class GameModel extends Model
         }
     }
 
-    // enregistrement d'une image
-    private function upload(array $file)
-    {
-        // récupération des valeurs de $_FILES
-        if (isset($file['img'])) {
-            $name = $file['img']['name'];
-            $tmpName = $file['img']['tmp_name'];
-            $error = $file['img']['error'];
-            $size = $file['img']['size'];
-        }
-
-        // séparation du nom de l'image et de son extension 
-        $tabExtension = explode('.', $name);
-        // transformation de l'extension en minuscule
-        $extension = strtolower(end($tabExtension));
-        // extensions accepté
-        $extensions = ['jpg', 'png', 'jpeg', 'gif', 'webp'];
-        // taille maximum d'une image
-        $maxSize = 40000000;
-        $path = "";
-        // si le nom de l'extension, la taille maximum et le code d'erreur est égal à 0 (aucune erreur de téléchargement)...
-        if (in_array($extension, $extensions) && $size <= $maxSize && $error == 0) {
-            // créer un nom unique ...
-            $uniqueName = uniqid('', true);
-            // rajouter le point et le nom de l'extension 
-            $file = $uniqueName . "." . $extension;
-            // télécharger l'image      
-            move_uploaded_file($tmpName, './upload/' . $file);
-            $path = "/public/upload/" . $file;
-        } else {
-            echo 'Une erreur est survenue';
-        }
-        $path = htmlspecialchars($path);
-        return $path;
-    }
 
     public function create(array $data, ?array $tags = null, ?array $categories = null)
     {

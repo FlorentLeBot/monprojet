@@ -2,7 +2,7 @@
     <h1 class="title"><?= $params['article']->title ?></h1>
 
     <figure>
-        <img class="blog-img" src="/monprojet/<?=$params['article']->img ?? "" ?>" alt="">
+        <img title="" class="blog-img" src="/monprojet/<?=$params['article']->img ?? "" ?>" alt="">
     </figure>
     <div class="container-article">
         <div class="tags">

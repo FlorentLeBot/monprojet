@@ -4,22 +4,28 @@
     action="<?= isset($params['article']) ? "/monprojet/admin/articles/edit/{$params['article']->id}" : "/monprojet/admin/articles/create" ?>">
     <!-- TITRE -->
     <div>
-        <label for="title">Titre de l'article</label>
-        <input id='title' type="text" name="title" value="<?= $params['article']->title ?? '' ?>">
+        <label for="title-article">Titre de l'article</label>
+        <input id='title-article' type="text" name="title" value="<?= $params['article']->title ?? '' ?>">
     </div>
     <!-- CONTENU -->
     <div>
-        <label for="content">Contenu de l'article</label>
-        <textarea name="content" id="content" cols="30" rows="8"><?= $params['article']->content ?? ' ' ?></textarea>
+        <label for="content-article">Contenu de l'article</label>
+        <textarea name="content" id="content-article" cols="30" rows="8"><?= $params['article']->content ?? ' ' ?></textarea>
     </div>
     <!-- IMAGE -->
     <div>
-        <label for="img">Ajouter une image</label>
-        <input type="file" name="img" id="img">
+        <label for="img-article">Ajouter une image</label>
+        <input type="file" name="img" id="img-article">
     </div>
+    <!-- <div>
+        <img src="../../..><?=$params['article']->img ?? "" ?>">
+    </div> -->
+    <!-- NOM DE L'IMAGE -->
     <div>
-        <img src="../../..><?=$params['article']->img ?? "" ?>" alt="">
+        <label for="img-name-article">Donner un nom à l'image</label>
+        <input type="text" name="img_name" id="img-name-article">
     </div>
+    
     <!-- TAG -->
     <div>
         <label for="tags">Tags de l'article</label>
