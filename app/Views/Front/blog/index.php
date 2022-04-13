@@ -20,12 +20,14 @@
 
 <!-- Commentaire -->
 
-<?php if($_SESSION) : ?>
+<?php if(isset($_SESSION['id'])) : ?>
 
-<form action="/monprojet/comment">
-    <label for="">Ecrire un commentaire</label>
-    <textarea name="" id="" cols="20" rows="6" placeholder="Commentaire"></textarea>
-    <input type="submit">
+<form id="form-comment" action="/monprojet/comment" method="POST">
+    <div>
+        <label for="comment">Ecrire un commentaire</label>
+        <textarea name="content" id="comment" cols="20" rows="6" placeholder="Commentaire"></textarea>
+        <input class="btn" type="submit">
+    </div>
 </form>
 
 <?php endif ?>

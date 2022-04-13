@@ -1,15 +1,25 @@
-<h1>Bienvenue</h1>
+<h1 class="title" >Bienvenue</h1>
 
-<article>
-    <h1>Les derniers jeux</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque minus excepturi deleniti vero, ex distinctio minima corrupti, optio accusamus adipisci eaque placeat dignissimos enim ullam, repudiandae odit quaerat. Facilis, explicabo.</p>
-    <img src="" alt="">
-    <a href="">Lire la suite</a>
-</article>
+<!-- affichage des 3 derniers jeux -->
 
-<article>
-    <h1>Les derniers articles</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque minus excepturi deleniti vero, ex distinctio minima corrupti, optio accusamus adipisci eaque placeat dignissimos enim ullam, repudiandae odit quaerat. Facilis, explicabo.</p>
-    <img src="" alt="">
-    <a href="">Lire la suite</a>
+<h2>Les derniers jeux</h2>
+
+<?php foreach ($params['games'] as $game) : ?>
+<article class="article-welcome">
+    <h3><?= $game->title ?></h3>
+    <p><?= $game->content ?></p>
 </article>
+<?php endforeach ?>
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- affichage des 3 derniers articles -->
+
+<h2>Les derniers articles</h2>
+
+<?php foreach ($params['articles'] as $article) : ?>
+<article class="article-welcome">
+    <h3><?= $article->title ?></h3>
+    <p><?= $article->content ?></p>      
+</article>
+<?php endforeach ?>

@@ -1,12 +1,13 @@
 @charset "UTF-8";
-figure, .container-article .tags, .blog-articles .tags, .btn {
+#form-register p,
+#form-login p, #form-contact .form-contact p, .container-article .tags, .blog-articles .tags, figure, .btn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container-article .tags .tag, padding .blog-articles .tags .tag {
-  margin: 20px 10px 0;
+.container-article .tags .tag, .blog-articles .tags .tag {
+  margin: 10px 0;
   padding: 5px;
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -30,14 +31,15 @@ figure, .container-article .tags, .blog-articles .tags, .btn {
   background-color: rgba(26, 60, 98, 0.991);
 }
 
-figure, .container-article .tags, .blog-articles .tags, .btn {
+#form-register p,
+#form-login p, #form-contact .form-contact p, .container-article .tags, .blog-articles .tags, figure, .btn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container-article .tags .tag, padding .blog-articles .tags .tag {
-  margin: 20px 10px 0;
+.container-article .tags .tag, .blog-articles .tags .tag {
+  margin: 10px 0;
   padding: 5px;
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -86,7 +88,9 @@ hr {
   padding: 1rem;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   text-align: center;
   font-size: 1.7rem;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -95,14 +99,19 @@ h2, h3, h4 {
   padding: 0.7rem;
 }
 
-figure, .container-article .tags, .blog-articles .tags, .btn {
+::placeholder {
+  text-align: center;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .container-article .tags, .blog-articles .tags, figure, .btn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container-article .tags .tag, padding .blog-articles .tags .tag {
-  margin: 20px 10px 0;
+.container-article .tags .tag, .blog-articles .tags .tag {
+  margin: 10px 0;
   padding: 5px;
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -282,14 +291,73 @@ div ~ p{
   color: #FFF;
 }
 
-figure, .container-article .tags, .blog-articles .tags, .btn {
+#form-register p,
+#form-login p, #form-contact .form-contact p, .container-article .tags, .blog-articles .tags, figure, .btn {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container-article .tags .tag, padding .blog-articles .tags .tag {
-  margin: 20px 10px 0;
+.container-article .tags .tag, .blog-articles .tags .tag {
+  margin: 10px 0;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background: greenyellow;
+}
+
+.article-welcome {
+  width: 300px;
+  height: auto;
+  border-radius: 0 0 30px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: #FFF;
+  color: black;
+  margin: 0 auto 3rem;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .container-article .tags, .blog-articles .tags, figure, .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-article .tags .tag, .blog-articles .tags .tag {
+  margin: 10px 0;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background: greenyellow;
+}
+
+figure {
+  width: 100%;
+}
+figure .img-game {
+  width: 300px;
+}
+
+#games, #game {
+  width: 300px;
+  background-color: #FFF;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  margin: 10px auto;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .container-article .tags, .blog-articles .tags, .btn, figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-article .tags .tag, .blog-articles .tags .tag {
+  margin: 10px 0;
   padding: 5px;
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -309,7 +377,7 @@ figure, .container-article .tags, .blog-articles .tags, .btn {
   width: 80%;
   margin: 1rem auto;
 }
-padding .blog-articles .tags .tag a {
+.blog-articles .tags .tag a {
   color: black;
   font-size: 0.7rem;
 }
@@ -347,14 +415,110 @@ figure .blog-img {
   border-radius: 25px 0 0 0;
 }
 
-.btn, .blog-articles .tags, .container-article .tags, figure {
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, figure, .blog-articles .tags, .container-article .tags {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-padding .blog-articles .tags .tag, .container-article .tags .tag {
-  margin: 20px 10px 0;
+.blog-articles .tags .tag, .container-article .tags .tag {
+  margin: 10px 0;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background: greenyellow;
+}
+
+#form-comment {
+  width: 100%;
+}
+#form-comment div {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+#form-comment div textarea {
+  width: 300px;
+  height: 100px;
+  border: none;
+  margin: 10px 0;
+}
+#form-comment div input {
+  margin: 0 0 10px 0;
+}
+
+#form-contact {
+  width: 100%;
+}
+#form-contact legend {
+  font-size: 2rem;
+  font-style: italic;
+}
+#form-contact .form-contact p {
+  flex-wrap: wrap;
+}
+#form-contact .form-contact p label {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+#form-contact .form-contact p .btn {
+  margin: 10px 0;
+}
+
+.form-contact:hover {
+  box-shadow: 0px 0px 5px rgba(37, 84, 138, 0.991);
+}
+
+#form-register,
+#form-login {
+  width: 100%;
+}
+#form-register p,
+#form-login p {
+  margin: 10px 20px 0 0;
+  flex-wrap: wrap;
+}
+#form-register input,
+#form-login input {
+  width: 200px;
+}
+#form-register .btn,
+#form-login .btn {
+  margin: 20px auto;
+}
+
+#form-login #username-login {
+  margin-left: 10px;
+}
+#form-login #password-login {
+  margin-left: 42px;
+}
+
+#form-register #username {
+  margin-left: 10px;
+}
+#form-register #password {
+  margin-left: 42px;
+}
+#form-register #email {
+  margin-left: 100px;
+}
+
+.btn, figure, .blog-articles .tags, .container-article .tags, #form-contact .form-contact p, #form-register p,
+#form-login p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-articles .tags .tag, .container-article .tags .tag {
+  margin: 10px 0;
   padding: 5px;
   text-transform: uppercase;
   font-size: 0.8rem;

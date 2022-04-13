@@ -1,0 +1,23 @@
+@import "../Utils/_variables";
+@import "../Utils/_mixins.scss";
+@import "../Utils/_placeholders.scss";
+@import "../Utils/_functions.scss";
+
+figure {
+    width: 100%;
+    @extend %flex-center;
+
+    & .img-game {
+        width: 300px;
+        
+    }
+}
+#games, #game{
+    width: 300px;
+    background-color: $white-color;
+    box-shadow: $box-shadow;
+    margin: 10px auto;
+    
+}
+
+

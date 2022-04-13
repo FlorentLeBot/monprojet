@@ -163,7 +163,5 @@ abstract class Model
         $path = htmlspecialchars($path);
         return $path;
     }
-   
-    
 
 }

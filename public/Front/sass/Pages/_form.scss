@@ -3,3 +3,99 @@
 @import "../Utils/_placeholders.scss";
 @import "../Utils/_functions.scss";
 
+// formulaire commentaire 
+
+#form-comment {
+    width: 100%;
+
+    & div {
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+
+        & textarea {
+            width: 300px;
+            height: 100px;
+            border: none;
+            margin: 10px 0;
+        }
+
+        & input {
+            margin: 0 0 10px 0;
+        }
+    }
+}
+
+// formulaire de contact
+
+#form-contact {
+    width: 100%;
+
+    & legend {
+        font-size: 2rem;
+        font-style: italic;
+    }
+
+    & .form-contact p {
+        @extend %flex-center;
+        flex-wrap: wrap;
+
+        & label {
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+        }
+
+        & .btn {
+            margin: 10px 0;
+        }
+    }
+}
+
+.form-contact:hover {
+    box-shadow: 0px 0px 5px $primary-color;
+}
+
+// formulaire connexion / inscription
+
+#form-register,
+#form-login {
+    width: 100%;
+
+    & p {
+        margin: 10px 20px 0 0;
+        @extend %flex-center;
+        flex-wrap: wrap;
+    }
+
+    & input {
+        width: 200px;
+    }
+
+    & .btn {
+        margin: 20px auto;
+    }
+}
+
+#form-login {
+    & #username-login{
+        margin-left: 10px;
+    }
+    & #password-login {
+        margin-left: 42px;
+    }
+}
+#form-register{
+    & #username{
+        margin-left: 10px;
+    }
+    & #password{
+        margin-left: 42px;
+    }
+    & #email{
+        margin-left: 100px;
+    }
+}

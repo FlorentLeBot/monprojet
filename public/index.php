@@ -22,7 +22,7 @@ define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
 
 $router = new Router($_GET['url']);
 
-// connexion compte utilisateur ou compte administrateur
+// connexion compte utilisateur / compte administrateur
 
 $router->get('login', 'App\Controllers\UserController@login');
 $router->post('login', 'App\Controllers\UserController@loginPost');
@@ -36,16 +36,19 @@ $router->get('logout', 'App\Controllers\UserController@logout');
 $router->get('register', 'App\Controllers\UserController@register');
 $router->post('register', 'App\Controllers\UserController@registerPost');
 
-// commentaire
-
-$router->get('comment', 'App\Controllers\UserController@comment');
-$router->post('comment', 'App\Controllers\UserController@comentPost');
-
 /* -----FRONT----- */
+
+
+
+
+
+
+
 
 // La page d'accueil
 
 $router->get('/', 'App\Controllers\WelcomeController@welcome');
+
 
 // Tous les articles / Tous les jeux
 
@@ -62,6 +65,32 @@ $router->get('/games/:id', 'App\Controllers\GameController@show');
 
 $router->get('/tags/:id', 'App\Controllers\TagController@tag');
 $router->get('/categories/:id', 'App\Controllers\CategoryController@category');
+
+// Page contact / envoyer un email
+
+$router->get('contact', 'App\Controllers\ContactController@contact');
+$router->post('contact', 'App\Controllers\ContactController@postMail');
+
+
+
+
+
+
+
+
+// Commentaire / envoyer un commentaire
+
+$router->get('comment', 'App\Controllers\UserController@comment');
+$router->post('comment', 'App\Controllers\UserController@postComment');
+
+
+
+
+
+
+
+
+
 
 /* -----ADMINISTRATION----- */
 

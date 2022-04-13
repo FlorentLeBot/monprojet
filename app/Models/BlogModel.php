@@ -34,7 +34,6 @@ class BlogModel extends Model
         $title = htmlspecialchars($_POST['title']);
         $content = htmlspecialchars($_POST['content']);
         $imgName = htmlspecialchars($_POST['img_name']);
-        // $path = htmlspecialchars($_POST['img']);
 
         // supprimer les tags actuels
         $stmt = $this->db->prepare("DELETE FROM article_tag WHERE article_id = ?");
@@ -63,7 +62,6 @@ class BlogModel extends Model
 
     public function create(array $data, array $tags = null, array $categories = null)
     {
-
         $path = $this->upload($_FILES);
         $title = htmlspecialchars($_POST['title']);
         $content = htmlspecialchars($_POST['content']);
