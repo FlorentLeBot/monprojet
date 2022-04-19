@@ -43,11 +43,7 @@
         @extend %flex-center;
         flex-wrap: wrap;
 
-        & label {
-            width: 100%;
-            text-align: center;
-            padding: 10px;
-        }
+       
 
         & .btn {
             margin: 10px 0;
@@ -74,28 +70,12 @@
     & input {
         width: 200px;
     }
-
+    & label{
+        display: block;
+        width: 200px;
+    }
     & .btn {
         margin: 20px auto;
     }
 }
 
-#form-login {
-    & #username-login{
-        margin-left: 10px;
-    }
-    & #password-login {
-        margin-left: 42px;
-    }
-}
-#form-register{
-    & #username{
-        margin-left: 10px;
-    }
-    & #password{
-        margin-left: 42px;
-    }
-    & #email{
-        margin-left: 100px;
-    }
-}

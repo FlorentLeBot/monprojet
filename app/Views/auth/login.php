@@ -1,13 +1,13 @@
 <?php if (isset($_SESSION['errors'])) : ?>
-<?php foreach ($_SESSION['errors'] as $errorsArray) : ?>
-<?php foreach ($errorsArray as $errors) : ?>
-<div>
-    <?php foreach ($errors as $error) : ?>
-    <li><?= $error ?></li>
+    <?php foreach ($_SESSION['errors'] as $errorsArray) : ?>
+        <?php foreach ($errorsArray as $errors) : ?>
+            <div>
+                <?php foreach ($errors as $error) : ?>
+                    <li><?= $error ?></li>
+                <?php endforeach ?>
+            </div>
+        <?php endforeach ?>
     <?php endforeach ?>
-</div>
-<?php endforeach ?>
-<?php endforeach ?>
 <?php endif ?>
 
 <!-- supprimer les erreurs en session -->

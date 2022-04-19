@@ -21,24 +21,20 @@ class UserModel extends Model
     }
     public function registerUser(string $userName, string $password, string $email)
     {
-        // $data = [
-        //     'username' => $userName,
-        //     'password' => $password,
-        //     'email'    => $email
-        // ];
-        //var_dump($data); die;
-        $stmt = $this->db->prepare("INSERT INTO {$this->table} (`username`, `password`,`email`) 
-        VALUES (?,?,?)");
-        $stmt = $stmt->execute([$userName, $password, $email]);
+        $stmt = $this->query("INSERT INTO {$this->table} (`username`, `password`,`email`) 
+        VALUES (?,?,?)",[$userName, $password, $email], true);
         return $stmt;
     }
 
-    public function registerComment($comment){
+    public function registerComment(string $comment){
         
-        $stmt = $this->db->prepare("INSERT INTO `comment` (`content`) 
-                                    VALUES (?)");
-        $stmt = $stmt->execute([$comment]);
-        
+        $stmt = $this->query("INSERT INTO `comment` (`content`) 
+                                    VALUES (?)",[$comment], true);   
         return $stmt;
     }
+    public function getComment(){
+        $stmt = $this->query("SELECT `content` FROM `comment`");
+    }
+    
+    
 }

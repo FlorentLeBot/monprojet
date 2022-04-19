@@ -6,7 +6,7 @@ use App\Models\TagModel;
 
 class TagController extends Controller
 {
-    // méthode permettant l'affichage des articles par id
+    // affichage des articles par id
     public function tag(int $id)
     {
         $tag = (new TagModel($this->db))->findById($id);

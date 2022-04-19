@@ -76,8 +76,8 @@ class UserController extends Controller
         return $this->view('auth.comment'); 
     }
     
-    public function postComment(){
-        
+    public function postComment()
+    {
         $comment = (new UserModel($this->db))->registerComment($_POST['content']);
         // return $this->view('auth.comment');;
     }

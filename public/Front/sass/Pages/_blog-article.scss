@@ -52,42 +52,68 @@
     }
 }
 
-.container-article {
+// .container-article {
 
-    @include style-article(300px, auto, 0 0 30px, $box-shadow, $white-color, black);
-    margin: 0 auto 3rem;
-    padding: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+//     @include style-article(300px, auto, 0 0 30px, $box-shadow, $white-color, black);
+//     margin: 0 auto 3rem;
+//     padding: 1rem;
+//     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 
-    & .tags {
-        @extend %flex-center;
+//     & .tags {
+//         @extend %flex-center;
 
-        & .tag {
-            @extend %tag;
-        }
-    }
+//         & .tag {
+//             @extend %tag;
+//         }
+//     }
 
-    &__content {
-        margin-top: 1rem;
-    }
+//     &__content {
+//         margin-top: 1rem;
+//     }
+// }
+
+// figure {
+//     width: 100%;
+//     @extend %flex-center;
+
+//     & .blog-img {
+//         width: 300px;
+//         border-radius: 25px 0 0 0;
+//     }
+
+// }
+
+// @media screen and (min-width: 768px) {
+//     #article {
+//         width: 100%;
+//         display: flex;
+//         @include style-article(auto, auto, 0 0 0px, $box-shadow, $white-color, black);
+//         margin: 50px auto ;
+//         max-height: auto;
+//         background-color: $white-color;
+        
+//         & h1 {
+//             display: block;
+//             width: 300px;
+            
+           
+            
+//         }
+       
 
 
 
 
 
-
-
-
-}
-
-figure {
-    width: 100%;
-    @extend %flex-center;
-
-    & .blog-img {
-        width: 300px;
-        border-radius: 25px 0 0 0;
-    }
-
-
-}
+//         & .container-article {
+            
+           
+//             // width: $width;
+//             // height: $height;
+//             // border-radius: $border-raduis;
+//             // box-shadow: $box-shadow;
+//             // background-color: $bg;
+//             // color: $color;
+//         }
+//     }
+// }

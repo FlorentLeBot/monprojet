@@ -25,8 +25,7 @@ abstract class Controller{
 
     // FRONT
     
-    // méthode permettant d'afficher les vues avec comme arguments le chemin et un paramètre optionnel
-    // permettant par exemple la récupération de l'id
+    // affichage les vues avec comme arguments le chemin et un paramètre optionnel (ex: id)
     protected function view(string $path, array $params = null){
 
         // système de buffering, enregistrement dans la mémoire tampon
@@ -43,7 +42,7 @@ abstract class Controller{
 
     // ADMINISTRATION
 
-    // méthode permettant d'afficher les vues de l'administration
+    // affichage les vues de l'administration
     protected function viewAdmin(string $path, array $params = null){
 
         ob_start();
@@ -57,8 +56,8 @@ abstract class Controller{
         require VIEWSADMIN . DIRECTORY_SEPARATOR . 'admin' . DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR . 'layout.php';
     }
 
- 
     protected function isAdmin(){
+        
         if(isset($_SESSION['auth']) && $_SESSION['auth'] === 1){
             return true;
         }else{

@@ -19,7 +19,6 @@ use App\Controllers\Controller;
 - createGame
 - editArticle
 - editGame
--
 */
 
 class AdminController extends Controller
@@ -159,7 +158,6 @@ class AdminController extends Controller
         $this->isAdmin();
         $article = new BlogModel($this->db);
         $res = $article->delete($id);
-
         if ($res) {
             return header("Location: /monprojet/admin/articles");
         }
@@ -170,7 +168,6 @@ class AdminController extends Controller
         $this->isAdmin();
         $game = new GameModel($this->db);
         $res = $game->delete($id);
-
         if ($res) {
             return header("Location: /monprojet/admin/games");
         }

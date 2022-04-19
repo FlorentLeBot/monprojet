@@ -41,8 +41,8 @@ class BlogModel extends Model
 
         // réinsertion des données
         foreach ($tags as $tagId) {
-            $stmt = $this->db->prepare("INSERT article_tag (article_id, tag_id) VALUES (?, ?)");
-            $stmt->execute([$id, htmlspecialchars($tagId)]);
+            $stmt = $this->query("INSERT article_tag (article_id, tag_id) VALUES (?, ?)", [$id, htmlspecialchars($tagId)], true);
+           
         }
 
         parent::update([

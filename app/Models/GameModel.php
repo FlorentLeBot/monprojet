@@ -17,6 +17,8 @@ class GameModel extends Model
 {
     protected $table = 'board_game_card';
 
+    
+
     // affichage du bouton Lire plus
     public function getButton(): string
     {

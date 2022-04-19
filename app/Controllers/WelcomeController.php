@@ -4,8 +4,6 @@ namespace App\Controllers;
 
 use App\Models\WelcomeModel;
 
-// affichage de la page d'accueil
-
 class WelcomeController extends Controller
 {
     // affichage de la page d'accueil

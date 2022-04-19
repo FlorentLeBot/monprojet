@@ -1,17 +1,8 @@
 <footer>
     <aside id="main-footer" class="container">
 
-        <!-- les boutons des réseaux sociaux -->
-
-        <div id="">
-            <div class="btn-social-networks"><a href="#facebook"><i class="fab fa-facebook"></i></a></div>
-            <div class="btn-social-networks"><a href="#twitter"><i class="fab fa-twitter"></i></a></div>
-            <div class="btn-social-networks"><a href="#instagram"><i class="fab fa-instagram"></i></a></div>
-        </div>
-
         <!-- les liens -->
 
-        <div id="">
             <div id="">
                 <a href="#">
                     <p>Politique de confidentialité</p>
@@ -23,9 +14,8 @@
 
             <!-- la fleche retour en haut -->
 
-            <!-- <div id="fleche"><a href="index.php"><i class="fas fa-arrow-circle-up "></i></a></div>
-        </div> -->
-
+            <div id="fleche"><a href="index.php"><i class="fas fa-arrow-circle-up "></i></a></div>
+        
     </aside>
 
     <!-- le copyright -->
@@ -35,8 +25,9 @@
     </div>
 </footer>
 
-<!-- <script type="text/javascript" src="navigation.js"></script>
-<script src="api-gouv.js"></script> -->
+<script src="<?= SCRIPTS . 'Front' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . 'mousemove.js' ?>"></script>
+<script src="<?= SCRIPTS . 'Front' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . 'game.js' ?>"></script>
+
 
 </body>
 

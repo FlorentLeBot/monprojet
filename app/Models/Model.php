@@ -52,7 +52,7 @@ abstract class Model
         $stmt = $this->db->$method($sql);
         $stmt->setFetchMode(PDO::FETCH_CLASS, get_class($this), [$this->db]);
 
-        // si la méthode est query retourne une simple requête
+        // si la méthode est query retourne une requête simple
         if ($method === 'query') {
             return $stmt->$fetch();
             // sinon faire une requête préparée
@@ -66,11 +66,18 @@ abstract class Model
     {
         return $this->query("SELECT * FROM {$this->table} ORDER BY created_at DESC");
     }
+    public function allCategories(): array{
+        return $this->query("SELECT * FROM {$this->table}");
+    }
     // sélectionne tout dans la table en fonction de l'id
     public function findById(int $id): Model
     {
         return $this->query("SELECT * FROM {$this->table} WHERE id = ?", [$id], true);
     }
+    // public function find(string $col, $value): Model
+    // {
+    //     return $this->query("SELECT * FROM {$this->table} WHERE {$col} = ?", [$value]);
+    // }
     // supprime dans la table en fonction de l'id 
     public function delete(int $id): bool
     {

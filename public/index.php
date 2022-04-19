@@ -13,8 +13,8 @@ require '../vendor/autoload.php';
 // Les constantes : mes chemins vers les vues et les scripts
 
 define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR);
-define('VIEWSERRORS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR . 'errors' . DIRECTORY_SEPARATOR);
 define('VIEWSADMIN', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views');
+define('VIEWSERRORS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR . 'errors' . DIRECTORY_SEPARATOR);
 define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
 
 // création d'une nouvelle instance de la classe Router 
@@ -38,13 +38,6 @@ $router->post('register', 'App\Controllers\UserController@registerPost');
 
 /* -----FRONT----- */
 
-
-
-
-
-
-
-
 // La page d'accueil
 
 $router->get('/', 'App\Controllers\WelcomeController@welcome');
@@ -54,6 +47,9 @@ $router->get('/', 'App\Controllers\WelcomeController@welcome');
 
 $router->get('/articles', 'App\Controllers\BlogController@index');
 $router->get('/games', 'App\Controllers\GameController@index');
+
+
+$router->get('/categories', 'App\Controllers\GameController@categories');
 
 // Un article / Un jeu
 
@@ -66,22 +62,20 @@ $router->get('/games/:id', 'App\Controllers\GameController@show');
 $router->get('/tags/:id', 'App\Controllers\TagController@tag');
 $router->get('/categories/:id', 'App\Controllers\CategoryController@category');
 
+
+
+
 // Page contact / envoyer un email
 
 $router->get('contact', 'App\Controllers\ContactController@contact');
 $router->post('contact', 'App\Controllers\ContactController@postMail');
 
 
-
-
-
-
-
-
 // Commentaire / envoyer un commentaire
 
 $router->get('comment', 'App\Controllers\UserController@comment');
 $router->post('comment', 'App\Controllers\UserController@postComment');
+$router->get('comment', 'App\Controllers\UserController@getComment');
 
 
 

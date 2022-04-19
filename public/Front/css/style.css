@@ -1,137 +1,166 @@
-@charset "UTF-8";
-#form-register p,
-#form-login p, #form-contact .form-contact p, .container-article .tags, .blog-articles .tags, figure, .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* SOMMAIRE */
 
-.container-article .tags .tag, .blog-articles .tags .tag {
-  margin: 10px 0;
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  background: greenyellow;
-}
+/* MINI RESET CSS */
+/* STYLE COMMUN A TOUTES LES PAGES */
+/* VARIABLE CSS */
+/* HEADER */
+/* ACCUEIL */
+/* JEUX DE SOCIETE ET BLOG (INDEX)*/
+/* JEUX DE SOCIETE ET BLOG (SHOW)*/
+/* CONTACT */
+/* INSCRIPTION / SE CONNECTER */
+/* FOOTER */
+/* MEDIA QUERIES */
 
-.btn {
-  padding: 0 5px;
-  height: 30px;
-  background-color: rgba(37, 84, 138, 0.991);
-  margin: 20px auto 0;
-  color: #FFF;
-}
-.btn a {
-  color: #FFF;
-}
-.btn:hover {
-  transform: scale(1.02);
-  transition: 0.3s ease-in-out;
-  background-color: rgba(26, 60, 98, 0.991);
-}
+/* --------------------------------------------------------------------------------------- */
+/* MINI RESET */
+/* --------------------------------------------------------------------------------------- */
 
-#form-register p,
-#form-login p, #form-contact .form-contact p, .container-article .tags, .blog-articles .tags, figure, .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container-article .tags .tag, .blog-articles .tags .tag {
-  margin: 10px 0;
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  background: greenyellow;
-}
-
-/* mini reset css */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-size: 20px;
 }
-
 body {
-  background-color: antiquewhite;
+  background-color: #e7c6bf;
+  font-family: "Rajdhani", sans-serif;
+  overflow-x: hidden;
 }
-
 ul {
   list-style-type: none;
 }
-
 a {
   text-decoration: none;
+  z-index: 100;
 }
 
-button {
-  border: none;
-}
+/* --------------------------------------------------------------------------------------- */
+/* STYLE COMMUN A TOUTES LES PAGES */
+/* --------------------------------------------------------------------------------------- */
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
 }
-
-hr {
-  color: rgba(37, 84, 138, 0.991);
+.btn {
+  border: none;
+  padding: 10px;
+  margin: 10px auto;
+  display: flex;
+  background-color: var(--btn-color);
 }
-
+.btn a {
+  color: white;
+}
+.btn:hover {
+  transition: 100ms ease-in-out;
+  transform: scale(1.04);
+  background-color: var(--btn-color-hover);
+}
+.layout {
+  margin-top: 50px;
+}
 .title {
   text-align: center;
-  font-size: 2rem;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-weight: 100;
-  padding: 1rem;
+  font-weight: 200;
 }
-
-h2,
-h3,
-h4 {
-  text-align: center;
-  font-size: 1.7rem;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-  padding: 0.7rem;
-}
-
-::placeholder {
-  text-align: center;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .container-article .tags, .blog-articles .tags, figure, .btn {
+.flex {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+}
+h2 {
+  padding: 20px;
+  text-align: center;
+  font-style: italic;
+}
+.mousemove {
+  height: 30px;
+  width: 30px;
+  border: 2px solid var(--main-color);
+  position: absolute;
+  /* centrer le pointeur de la souris  */
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 30px;
+  z-index: -1;
 }
 
-.container-article .tags .tag, .blog-articles .tags .tag {
-  margin: 10px 0;
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  background: greenyellow;
+/* --------------------------------------------------------------------------------------- */
+/* VARIABLE CSS */
+/* --------------------------------------------------------------------------------------- */
+
+:root {
+  --main-color: rgba(0, 98, 107, 1);
+  --secondary-color: #0a91a4;
+  --btn-color: #0aa418;
+  --btn-color-hover: #0aa417ce;
+  --dark-color: #20462d;
+  --black: black;
+  --white: white;
+  --box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
-header {
-  background-color: rgba(37, 84, 138, 0.991);
-  height: auto;
-  color: rgba(3, 40, 100, 0.971);
-}
-header figure {
-  width: 40%;
-  padding: 20px 0 20px 20px;
-}
-header figure .logo {
+/* --------------------------------------------------------------------------------------- */
+/* HEADER */
+/* --------------------------------------------------------------------------------------- */
+
+#header {
   width: 100%;
+  height: 280px;
+  position: relative;
+  background: var(--main-color);
 }
-
+#header .banner-content {
+  width: 100%;
+  height: 100%;
+}
+.banner-content img {
+  width: 250px;
+  display: block;
+  margin: 0 auto;
+}
+#header p {
+  width: 110px;
+  font-size: 1.4rem;
+  margin: 10px auto;
+  padding: 5px;
+  background: var(--btn-color);
+  text-align: center;
+}
+#banner-btn {
+  position: absolute;
+  top: 255px;
+  left: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
+}
+.btn-social-networks {
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background: var(--btn-color);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.btn-social-networks a i {
+  color: var(--dark-color);
+  font-size: 1.8rem;
+  padding-top: 11px;
+}
+.btn-social-networks:hover,
+.btn-social-networks a i:hover {
+  color: var(--white);
+}
+/* le menu burger */
 .menu-wrap {
   position: fixed;
   margin: 5px;
@@ -139,7 +168,6 @@ header figure .logo {
   right: 0;
   z-index: 1000;
 }
-
 .menu-wrap .toggler {
   position: absolute;
   top: 0;
@@ -150,7 +178,6 @@ header figure .logo {
   height: 40px;
   opacity: 0;
 }
-
 .menu-wrap .hamburger {
   position: absolute;
   top: 0;
@@ -158,39 +185,23 @@ header figure .logo {
   z-index: 2000;
   width: 40px;
   height: 40px;
-  opacity: 0.5;
-  background: greenyellow;
+  background: var(--btn-color);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-/* hamburger line */
-/* les sélecteurs avancés css */
-/* div + p{
-	les éléments p du même niveau et suivant les éléments p
-}
-
-div > p{
-	les éléments p enfant des éléments div
-}
-
-div ~ p{
-	les éléments p frère des éléments div
-} */
-.menu-wrap .hamburger > div {
+/* les lignes du burger */
+.hamburger > div {
   position: relative;
   width: 30px;
   height: 2px;
-  background: white;
+  background-color: var(--main-color);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.4s ease-in-out;
 }
-
-.menu-wrap .hamburger > div::before,
-.menu-wrap .hamburger > div::after {
+.hamburger > div::before {
   content: "";
   position: absolute;
   z-index: 20;
@@ -199,45 +210,41 @@ div ~ p{
   height: 2px;
   background: inherit;
 }
-
-.menu-wrap .hamburger > div:after {
+.hamburger > div::after {
+  content: "";
+  position: absolute;
+  z-index: 20;
+  top: -10px;
+  width: 30px;
+  height: 2px;
+  background: inherit;
+}
+.hamburger > div:after {
   top: 10px;
 }
-
-/* toggler animate */
-.menu-wrap .toggler:checked + .hamburger > div {
+/* l'animation */
+.toggler:checked + .hamburger > div {
   transform: rotate(135deg);
 }
-
-/* turn lines into X */
-/* Les pseudo éléments
-::first-letter / ::first-line / ::selection / ::before / ::after */
-.menu-wrap .toggler:checked + .hamburger > div::before,
-.menu-wrap .toggler:checked + .hamburger > div::after {
+.toggler:checked + .hamburger > div::before,
+.toggler:checked + .hamburger > div::after {
   top: 0;
   transform: rotate(90deg);
 }
-
-/* rotate on hover when checked */
-.menu-wrap .toggler:checked + .hamburger > div {
+.toggler:checked + .hamburger > div {
   transform: rotate(225deg);
 }
-
-/* show menu */
-.menu-wrap .toggler:checked ~ .menu {
+.toggler:checked ~ .menu {
   visibility: visible;
 }
-
-.menu-wrap .toggler:checked ~ .menu > div {
+.toggler:checked ~ .menu > div {
   transform: scale(1);
 }
-
-.menu-wrap .toggler:checked ~ .menu > div > div {
+.toggler:checked ~ .menu > div > div {
   opacity: 1;
   transition: opacity 0.4s ease;
 }
-
-.menu-wrap .menu {
+.menu {
   position: fixed;
   top: 0;
   left: 0;
@@ -249,9 +256,8 @@ div ~ p{
   align-items: center;
   justify-content: center;
 }
-
 .menu-wrap .menu .menus {
-  background: #FFF;
+  background: #fff;
   opacity: 0.9;
   width: 100vh;
   height: 100vh;
@@ -261,9 +267,7 @@ div ~ p{
   transform: scale(0);
   transition: all 0.4s ease;
 }
-
-.menu-wrap .menu .menus #main-menu,
-.menu-wrap .menu .menus #register-menu {
+.menu-wrap .menu .menus #main-menu {
   margin-top: 20px;
   display: flex;
   justify-content: center;
@@ -272,264 +276,377 @@ div ~ p{
   opacity: 1;
   transition: opacity 0.4s ease;
 }
-
 .menu-wrap .menu .menus #main-menu ul li,
 .menu-wrap .menu .menus #register-menu ul li {
   padding: 10px;
 }
-
 .menu-wrap .menu .menus #main-menu ul li a,
 .menu-wrap .menu .menus #register-menu ul li a {
   color: black;
   font-size: 1.3rem;
 }
-
 .menu-wrap .menu .menus #main-menu ul li a:hover,
 .menu-wrap .menu .menus #register-menu ul li a:hover {
-  background-color: rgba(3, 40, 100, 0.971);
+  background-color: var(--main-color);
   padding: 10px 2px;
-  color: #FFF;
+  color: #fff;
 }
 
-#form-register p,
-#form-login p, #form-contact .form-contact p, .container-article .tags, .blog-articles .tags, figure, .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+/* --------------------------------------------------------------------------------------- */
+/* ACCUEIL */
+/* --------------------------------------------------------------------------------------- */
 
-.container-article .tags .tag, .blog-articles .tags .tag {
-  margin: 10px 0;
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  background: greenyellow;
-}
-
+.game-welcome,
 .article-welcome {
   width: 300px;
-  height: auto;
-  border-radius: 0 0 30px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  background-color: #FFF;
-  color: black;
-  margin: 0 auto 3rem;
-  padding: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .container-article .tags, .blog-articles .tags, figure, .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container-article .tags .tag, .blog-articles .tags .tag {
-  margin: 10px 0;
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  background: greenyellow;
-}
-
-figure {
-  width: 100%;
-}
-figure .img-game {
-  width: 300px;
-}
-
-#games, #game {
-  width: 300px;
-  background-color: #FFF;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   margin: 10px auto;
+  background-color: white;
 }
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .container-article .tags, .blog-articles .tags, .btn, figure {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.game-welcome h3,
+.article-welcome h3 {
+  padding: 20px;
 }
-
-.container-article .tags .tag, .blog-articles .tags .tag {
-  margin: 10px 0;
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  background: greenyellow;
-}
-
-/* gestion des articles du blog (index) */
-.blog-articles {
-  width: 300px;
-  background-color: #FFF;
-  margin: 0 auto 1rem;
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-.blog-articles__excerpt {
-  width: 80%;
-  margin: 1rem auto;
-}
-.blog-articles .tags .tag a {
-  color: black;
-  font-size: 0.7rem;
-}
-.blog-articles .tags .tag:hover {
-  transition: 0.2s ease-in-out;
-  transform: scale(1.1);
-}
-
-/* gestion d'un article du blog (show) */
-.blog-article .title {
-  padding: 2rem;
-  font-style: italic;
-}
-
-.container-article {
-  width: 300px;
-  height: auto;
-  border-radius: 0 0 30px;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  background-color: #FFF;
-  color: black;
-  margin: 0 auto 3rem;
-  padding: 1rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-}
-.container-article__content {
-  margin-top: 1rem;
-}
-
-figure {
+.game-welcome figure,
+.article-welcome figure {
   width: 100%;
 }
-figure .blog-img {
+.article-welcome figure:hover {
+  max-width: 300px;
+}
+.game-welcome figure img,
+.article-welcome figure img {
   width: 300px;
-  border-radius: 25px 0 0 0;
 }
 
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, figure, .blog-articles .tags, .container-article .tags {
+.game-welcome:hover,
+.article-welcome:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  transition: 0.4s ease-in-out;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+/* --------------------------------------------------------------------------------------- */
+/* JEUX DE SOCIETE ET BLOG (INDEX)*/
+/* --------------------------------------------------------------------------------------- */
+
+section#games,
+section#blog-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+  grid-gap: 20px;
+  justify-content: center;
+  margin: 30px auto;
+}
+.games,
+.blog-articles {
+  background-color: white;
+  border-radius: 30px 0;
+}
+.games figure,
+.blog-articles figure {
+  width: 300px;
+}
+.games figure img,
+.blog-articles figure img {
+  width: 100%;
+  /* width: 300px; */
+}
+.games .categories,
+.blog-articles .tags {
+  display: flex;
+  justify-content: center;
+}
+.games .categories .category,
+.blog-articles .tags .tag {
+  box-shadow: 2px 2px 2px gray;
+  background-color: var(--btn-color);
+  padding: 3px;
+  margin: 5px;
+  text-transform: uppercase;
+}
+.games .categories .category a,
+.blog-articles .tags .tag a {
+  color: var(--white);
+  text-align: center;
+}
+.blog-articles p {
+  padding: 0 20px;
+}
+.blog-articles .published {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 0 0;
+}
+
+/* le petit jeu des bulles */
+
+.play-game{
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: var(--white);
+  margin: 0 auto;
+  overflow: hidden;
+}
+.bubble {
+  position: absolute;
+  border-radius: 300px;
+  background: rgba(255,166, 0, 0.9);
+  opacity: 0.4;
+  animation: anim 8s ease-in-out forwards;
+  filter: hue-rotate(0deg);
+
+}
+@keyframes anim{
+    to{
+        top: -100px;
+        left: var(--left);
+        opacity: 1;
+        filter: hue-rotate(720deg);
+    }
+}
+.play-game h3{
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 20px;
+    color: rgba(128, 128, 128, 0.908);
+
+}
+
+
+/* --------------------------------------------------------------------------------------- */
+/* JEUX DE SOCIETE ET BLOG (SHOW)*/
+/* --------------------------------------------------------------------------------------- */
+.game,
+.blog-article {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.blog-articles .tags .tag, .container-article .tags .tag {
-  margin: 10px 0;
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  background: greenyellow;
+#game,
+#blog-article {
+  width: 300px;
+  background-color: var(--white);
+}
+
+#game figure,
+#blog-article figure {
+  width: 100%;
+}
+#game figure img,
+#blog-article figure img {
+  width: 300px;
+}
+#game h1,
+#blog-article h1 {
+  padding: 20px;
+}
+#game p,
+#blog-article p {
+  padding: 20px;
 }
 
 #form-comment {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#form-comment label {
+  display: block;
+  padding: 10px;
+  text-align: center;
+}
+#form-comment textarea {
+  width: 300px;
+  border: none;
+  box-shadow: var(--box-shadow);
+}
+#form-comment textarea::placeholder{
+  text-align: center;
+}
+#form-comment input {
+  color: var(--white);
+}
+
+/* --------------------------------------------------------------------------------------- */
+/* CONTACT*/
+/* --------------------------------------------------------------------------------------- */
+
+.form-contact {
+  width: 100%;
+  padding: 30px;
+  font-size: 20px;
+}
+
+#form-contact fieldset {
+  background: var(--secondary-color);
+  padding: 10px;
+  margin: 10px auto;
+  width: 90%;
+}
+
+#form-contact fieldset:hover {
+  box-shadow: 0px 0px 5px gray;
+}
+
+#form-contact legend {
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: var(--blanc);
+}
+
+#form-contact fieldset p {
+  padding: 10px 0;
+  color: var(--blanc);
+  max-width: 180px;
+  margin: 0 auto;
+  text-align: left;
+}
+#form-contact fieldset p label {
+  margin-top: 10px;
+}
+
+#form-contact fieldset p input[type="text"],
+#form-contact fieldset p input[type="email"] {
+  margin-top: 10px;
+  width: 180px;
+  height: 30px;
+}
+#form-contact fieldset p textarea {
+  width: 180px;
+  margin-top: 10px;
+}
+
+#form-contact fieldset .btn {
+  display: block;
+  margin: 20px auto 0;
+  color: white;
+}
+
+#form-contact fieldset ::placeholder {
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------------------- */
+/* INSCRIPTION / SE CONNECTER */
+/* --------------------------------------------------------------------------------------- */
+
+#form-login,
+#form-register {
+  padding: 20px;
   width: 100%;
 }
-#form-comment div {
-  width: 300px;
+#form-login p,
+#form-register p {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0 auto;
 }
-#form-comment div textarea {
-  width: 300px;
-  height: 100px;
-  border: none;
-  margin: 10px 0;
-}
-#form-comment div input {
-  margin: 0 0 10px 0;
-}
-
-#form-contact {
-  width: 100%;
-}
-#form-contact legend {
-  font-size: 2rem;
-  font-style: italic;
-}
-#form-contact .form-contact p {
-  flex-wrap: wrap;
-}
-#form-contact .form-contact p label {
-  width: 100%;
-  text-align: center;
-  padding: 10px;
-}
-#form-contact .form-contact p .btn {
-  margin: 10px 0;
-}
-
-.form-contact:hover {
-  box-shadow: 0px 0px 5px rgba(37, 84, 138, 0.991);
-}
-
-#form-register,
-#form-login {
-  width: 100%;
-}
-#form-register p,
-#form-login p {
-  margin: 10px 20px 0 0;
-  flex-wrap: wrap;
-}
-#form-register input,
-#form-login input {
+#form-login input,
+#form-register input {
   width: 200px;
 }
-#form-register .btn,
-#form-login .btn {
-  margin: 20px auto;
+#form-login label,
+#form-register label {
+  display: block;
+  width: 120px;
+  margin: 5px 0;
+}
+#form-login .btn,
+#form-register .btn {
+  color: white;
+  box-shadow: var(--box-shadow);
 }
 
-#form-login #username-login {
-  margin-left: 10px;
-}
-#form-login #password-login {
-  margin-left: 42px;
-}
-
-#form-register #username {
-  margin-left: 10px;
-}
-#form-register #password {
-  margin-left: 42px;
-}
-#form-register #email {
-  margin-left: 100px;
-}
-
-.btn, figure, .blog-articles .tags, .container-article .tags, #form-contact .form-contact p, #form-register p,
-#form-login p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.blog-articles .tags .tag, .container-article .tags .tag {
-  margin: 10px 0;
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  background: greenyellow;
-}
+/* --------------------------------------------------------------------------------------- */
+/* FOOTER*/
+/* --------------------------------------------------------------------------------------- */
 
 footer {
   width: 100%;
-  height: auto;
-  background: rgba(37, 84, 138, 0.991);
+  height: 150px;
+  margin: 20px 0 0 0;
+  background-color: var(--main-color);
+}
+footer a {
+  color: var(--white);
 }
 
-/*# sourceMappingURL=style.css.map */
+/* ------------------------------------------------ */
+
+@media screen and (min-width: 768px) {
+  /* --------------------------------------------------------------------------------------- */
+  /* HEADER*/
+  /* --------------------------------------------------------------------------------------- */
+
+  #header {
+    margin-top: 40px;
+  }
+
+  /* menu burger */
+
+  #header .menu-wrap .hamburger,
+  #header .menu-wrap .toggler {
+    display: none;
+  }
+  #header .menu {
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background-color: var(--secondary-color);
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  }
+  #header .menus {
+    background-color: var(--secondary-color);
+    height: 80px;
+    transform: scale(1);
+  }
+  #header #main-menu ul {
+    display: flex;
+  }
+  #header #main-menu ul li a {
+    font-size: 1rem;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  #header #main-menu ul li a:hover {
+    font-size: 1rem;
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  #game,
+  #blog-article {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin: 20px;
+    background-color: var(--white);
+  }
+  #game h1,
+  #blog-article h1 {
+    font-size: 1.3rem;
+    padding: 10px;
+  }
+  #game p,
+  #blog-article p {
+    padding: 40px 20px;
+    line-height: 1.5rem;
+  }
+  #game .btn,
+  #blog-article .btn {
+    position: absolute;
+    margin: 0;
+    right: 20px;
+    bottom: 20px;
+  }
+}
