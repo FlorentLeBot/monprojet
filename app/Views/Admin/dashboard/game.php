@@ -8,7 +8,7 @@
 
 <h2 class="main-title">Création et Edition d'une fiche de jeu</h2>
 
-<button><a href="/monprojet/admin/games/create">Créer une fiche</a></button>
+<span class="btn"><a href="/monprojet/admin/games/create">Créer une fiche</a></span>
 
 <div class="table">
     <h3 class="table-title">Id</h3>
@@ -25,7 +25,7 @@
         <li class="game-title"><?= $game->title ?></li>
         <li class="game-created-at"><?= $game->getCreatedAt() ?></li>
         <li>
-            <button><a href="/monprojet/admin/games/edit/<?= $game->id ?>">Modifier</a></button>
+            <span class="btn"><a href="/monprojet/admin/games/edit/<?= $game->id ?>">Modifier</a></span>
             <form action="/monprojet/admin/games/delete/<?= $game->id ?>" method="post">
                 <button type="submit">Supprimer</button>
             </form>

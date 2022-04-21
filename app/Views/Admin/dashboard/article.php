@@ -7,7 +7,7 @@
 
 <h2 class="main-title">Création et Edition d'un article</h2>
 
-<button><a href="/monprojet/admin/articles/create">Créer un article</a></button>
+<span class="btn"><a href="/monprojet/admin/articles/create">Créer un article</a></span>
 
 <div class="table">
     <h3 class="table-title">Id</h3>
@@ -24,7 +24,7 @@
         <li class="article-title"><?= $article->title ?></li>
         <li class="article-created-at"><?= $article->getCreatedAt() ?></li>
         <li>
-            <button><a href="/monprojet/admin/articles/edit/<?= $article->id ?>">Modifier</a></button>
+            <span class="btn"><a href="/monprojet/admin/articles/edit/<?= $article->id ?>">Modifier</a></span>
             
             <form action="/monprojet/admin/articles/delete/<?= $article->id ?>" method="post">
                 <button type="submit">Supprimer</button>
