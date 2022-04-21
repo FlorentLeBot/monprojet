@@ -1,18 +1,16 @@
-<h1 class="title">Jeux de société</h1>
-
 <div class="play-game">
     <h3>0</h3>
 </div>
 
 <section id="games">
+    <h1 class="title">Jeux de société</h1>
     <?php foreach ($params['games'] as $game) : ?>
 
     <article class="games">
 
         <h2><?= $game->title ?></h2>
         <figure>
-            <img title="<?= $game->img_name ?>" class="img-game" src="/monprojet/<?= $game->img ?? "" ?>"
-                alt="<?= $game->img_name ?>">
+            <img class="img-game" src="/monprojet/<?= $game->img ?? "" ?>" alt="<?= $game->img_name ?>">
         </figure>
 
         <div class="categories">

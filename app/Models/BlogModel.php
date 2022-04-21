@@ -14,7 +14,7 @@ class BlogModel extends Model
     {
         // syntaxe Heredoc (<<< / un identifiant / une nouvelle ligne / la chaîne de caractère / le même identifiant pour fermer la citation
         return <<<HTML
-        <button class="btn"><a href="/monprojet/articles/$this->id">Lire plus</a></button>
+        <span class="btn"><a href="/monprojet/articles/$this->id">Lire plus</a></span>
         HTML;
     }
 

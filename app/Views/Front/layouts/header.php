@@ -41,12 +41,12 @@
             </div>
 
             <!-- les boutons des réseaux sociaux -->
-
-            <section id="banner-btn">
+            <!-- utilisation d'une div : pas de titre pour l'utilisation d'une section -->
+            <div id="banner-btn">
                 <div class="btn-social-networks"><a href="#facebook"><i class="fab fa-facebook"></i></a></div>
                 <div class="btn-social-networks"><a href="#twitter"><i class="fab fa-twitter"></i></a></div>
                 <div class="btn-social-networks"><a href="#instagram"><i class="fab fa-instagram"></i></a></div>
-            </section>
+</div>
 
 
             <!-- le menu burger  -->
@@ -69,11 +69,11 @@
                                 <li><a title="nous contacter" href="/monprojet/contact">Contact</a></li>
                                 <li><a title="s'inscrire" href="/monprojet/register">Inscription</a></li>
                                 <?php if (isset($_SESSION['username'])) { ?>
-                                <li><a title="se déconnecter" href="/monprojet/logout" title="Se deconnecter">Se
+                                <li><a title="se déconnecter" href="/monprojet/logout">Se
                                         déconnecter
                                     </a></li>
                                 <?php } else { ?>
-                                <li><a title="se connecter" href="/monprojet/login" title="Se connecter">Se connecter
+                                <li><a title="se connecter" href="/monprojet/login">Se connecter
                                     </a></li>
                                 <?php }  ?>
                             </ul>

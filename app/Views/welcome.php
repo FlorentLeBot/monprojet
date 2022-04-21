@@ -9,11 +9,9 @@
             <img class="img-game" src="/monprojet/<?= $game->img ?? "" ?>"
                 alt="<?= $game->img_name ?>">
         </figure>
-        </div>
     </article>
     <?php endforeach ?>
 </section>
-<!-- ------------------------------------------------------------------------ -->
 
 <!-- affichage des 3 derniers articles -->
 

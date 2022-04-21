@@ -1,5 +1,6 @@
 <!-- le formulaire de contact -->
 <section class="form-contact">
+    <h1></h1>
     <form id="form-contact" class="" action="/monprojet/contact" method="POST">
         <fieldset>
             <legend>Laissez-nous un message</legend>
@@ -25,8 +26,8 @@
             </p>
 
             <p>
-                <input type="checkbox" id="accept" name="accept">J'accepte les conditions générales
-                d'utilisation</input>
+                <input type="checkbox" id="accept" name="accept">
+                <label for="accept">J'accepte les conditions générales</label>
             </p>
 
             <p><button class="btn" type="submit">Envoyer</button></p>
