@@ -13,6 +13,7 @@ class CategoryModel extends Model
         INNER JOIN board_game_card_category bgcc ON bgcc.board_game_card_id = bgc.id
         WHERE bgcc.category_id = ?", [$this->id]);
     }
+    // return $this->query("SELECT c.* FROM comment ")
 
    
     

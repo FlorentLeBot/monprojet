@@ -15,6 +15,15 @@ window.addEventListener("mouseup", () => {
   mousemove.style.transform = "scale(1) translate(-50%, -50%)";
   mousemove.style.border = "2px solid blue";
 });
+// window.addEventListener("click", (e) => {
+//   console.log(mousemove);
+//    e.preventDefault();
+//   console.log(e.target)
+//   mousemove.style.display = "none";
+//   e.target.click()
+
+// });
+
 
 
 

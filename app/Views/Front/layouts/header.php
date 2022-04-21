@@ -19,7 +19,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet"
-        href="<?= SCRIPTS . 'Front' . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR . 'style.css' ?>">
+        href="<?= SCRIPTS . 'Front' . "/" . 'css' . "/" . 'style.css' ?>">
 </head>
 
 <body>
@@ -52,7 +52,7 @@
             <!-- le menu burger  -->
             <div class="menu-wrap">
 
-                <input type="checkbox" class="toggler " />
+                <input type="checkbox" class="toggler" aria-label="menu burger" />
 
                 <div class="hamburger">
                     <!-- gestion des 3 lignes du burger grace a une div (after et before) -->
@@ -61,20 +61,19 @@
                 <div class="menu">
                     <div class="menus">
                         <!-- menu principal -->
-                        <nav id="main-menu" >
+                        <nav id="main-menu">
                             <ul class="container">
-                                <li><a title="" href="/monprojet/">Accueil</a></li>
-                                <li><a title="" href="/monprojet/games">Jeux de société</a></li>
-                                <li><a title="" href="/monprojet/articles">Blog</a></li>
-                                <li><a title="" href="/monprojet/contact">Contact</a></li>
-                                <li><a href="/monprojet/register">Inscription</a></li>
+                                <li><a title="l'accueil" href="/monprojet/">Accueil</a></li>
+                                <li><a title="les jeux de société" href="/monprojet/games">Jeux de société</a></li>
+                                <li><a title="le blog" href="/monprojet/articles">Blog</a></li>
+                                <li><a title="nous contacter" href="/monprojet/contact">Contact</a></li>
+                                <li><a title="s'inscrire" href="/monprojet/register">Inscription</a></li>
                                 <?php if (isset($_SESSION['username'])) { ?>
-                                <li><a href="/monprojet/logout" title="Se deconnecter">Se déconnecter<i
-                                            class="fa fa-user-circle" aria-hidden="true"></i>
+                                <li><a title="se déconnecter" href="/monprojet/logout" title="Se deconnecter">Se
+                                        déconnecter
                                     </a></li>
                                 <?php } else { ?>
-                                <li><a href="/monprojet/login" title="Se connecter">Se connecter<i
-                                             aria-hidden="true"></i>
+                                <li><a title="se connecter" href="/monprojet/login" title="Se connecter">Se connecter
                                     </a></li>
                                 <?php }  ?>
                             </ul>

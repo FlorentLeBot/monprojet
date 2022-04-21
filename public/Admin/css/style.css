@@ -6,18 +6,25 @@
 
 body {
   background-color: #fff;
+  font-size: 20px;
 }
 
 ul {
   list-style-type: none;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+}
+
 .global-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 250px 1fr;
 }
 
-/* Nav */
 .side-nav {
   position: fixed;
   width: 250px;
@@ -47,10 +54,6 @@ ul {
   text-decoration: none;
   padding: 20px 30px;
 }
-
-/* .bloc-link:hover {
-  background: #ccc;
-} */
 
 .bloc-link i {
   width: 20px;
@@ -143,6 +146,61 @@ ul {
   display: list-item;
 }
 
+button {
+  width: 140px;
+  height: 30px;
+  background-color: #35b970;
+  border: none;
+  margin: 2px;
+  cursor: pointer;
+  color: white;
+}
+/* formulaire article */
+
+h2 {
+  text-align: center;
+  padding: 30px;
+}
+#form-blog,
+#form-game {
+  width: 100%;
+  padding: 20px;
+}
+#form-blog p,
+#form-game p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+#form-blog label,
+#form-game label {
+  display: block;
+  width: 200px;
+  margin: 5px 0;
+}
+#form-blog input,
+#form-game input {
+  height: 30px;
+}
+
+#img-article,
+#form-blog input,
+#form-blog textarea,
+#form-blog select,
+#form-game input,
+#form-game textarea,
+#form-game select {
+  width: 200px;
+}
+/* la barre de recherche */
+
+.table-results{
+  display: list-item;
+  list-style-type: none;    
+ } 
+
 @media screen and (max-width: 1000px) {
   .global-container {
     grid-template-columns: 1fr;
@@ -173,6 +231,14 @@ ul {
     text-align: center;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
   }
+  .bloc-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+  }
+
 }
 
 /*# sourceMappingURL=style.css.map */

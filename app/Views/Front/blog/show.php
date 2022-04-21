@@ -35,6 +35,7 @@
     <div>
         <label for="comment">Ecrire un commentaire</label>
         <textarea name="content" id="comment" cols="20" rows="6" placeholder="Commentaire"></textarea>
+        <input type="hidden" value="<?= $params['article']->id ?>" name="id_article">
         <input class="btn" type="submit">
     </div>
 </form>

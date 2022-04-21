@@ -3,7 +3,7 @@
 
         <!-- les liens -->
 
-            <div id="">
+            <div class="col">
                 <a href="#">
                     <p>Politique de confidentialité</p>
                 </a>
@@ -14,7 +14,7 @@
 
             <!-- la fleche retour en haut -->
 
-            <div id="fleche"><a href="index.php"><i class="fas fa-arrow-circle-up "></i></a></div>
+            <div class="col"><a href="index.php"><i class="fas fa-arrow-circle-up "></i></a></div>
         
     </aside>
 
@@ -25,8 +25,8 @@
     </div>
 </footer>
 
-<script src="<?= SCRIPTS . 'Front' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . 'mousemove.js' ?>"></script>
-<script src="<?= SCRIPTS . 'Front' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . 'game.js' ?>"></script>
+<script src="<?= SCRIPTS . 'Front' . "/" . 'js' . "/" . 'mousemove.js' ?>"></script>
+<script src="<?= SCRIPTS . 'Front' . "/" . 'js' . "/" . 'game.js' ?>"></script>
 
 
 </body>

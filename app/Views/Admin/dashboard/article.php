@@ -2,7 +2,7 @@
     <label for="search">
         <i class="fa-solid fa-magnifying-glass"></i>
     </label>
-    <input type="text" onkeyup="search()" name="search" id="search" placeholder="chercher" />
+    <input type="text" name="search" id="search" placeholder="chercher" />
 </div>
 
 <h2 class="main-title">Création et Edition d'un article</h2>

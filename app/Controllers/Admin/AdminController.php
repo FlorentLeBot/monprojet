@@ -34,14 +34,14 @@ class AdminController extends Controller
         $articles = (new BlogModel($this->db))->all();
         return $this->viewAdmin('admin.dashboard.article', compact('articles'));
     }
-    // méthode affichage de la page game administration des fiches pour les jeux de société
+    // affichage de la page game administration des fiches pour les jeux de société
     public function game()
     {
         $this->isAdmin();
         $games = (new GameModel($this->db))->all();
         return $this->viewAdmin('admin.dashboard.game', compact('games'));
     }
-    // méthode affichage de la page contact récupération du formulaire de contact
+    // affichage de la page contact récupération du formulaire de contact
     public function contact()
     {
         $this->isAdmin();

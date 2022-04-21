@@ -11,10 +11,12 @@ class DBConnection
     public static function getPDO(): PDO
     {
         try {
+            $path = "mysql:host=" . $_ENV['DB_HOST'] . ":" . $_ENV['DB_PORT'] . ";dbname=" . $_ENV['DB_NAME'] . ";charset=utf8";
+            
             $db = new PDO(
-                "mysql:dbname=monprojet;host=localhost",
-                'root',
-                '',
+                $path,
+                $_ENV['DB_USERNAME'],
+                $_ENV['DB_PASSWORD'],
                 array(
                     // active le mode exception
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

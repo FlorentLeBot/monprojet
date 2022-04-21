@@ -1,3 +1,4 @@
+<!-- la barre de recherche -->
 <div class="input-control">
     <label for="search">
         <i class="fa-solid fa-magnifying-glass"></i>

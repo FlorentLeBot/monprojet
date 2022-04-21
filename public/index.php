@@ -5,17 +5,16 @@ use Exceptions\NotFoundException;
 
 require '../vendor/autoload.php';
 
-// if ($_SERVER['HTTP_HOST'] ===  "localhost") {
-//     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-//     $dotenv->load();
-// }
+$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 
 // Les constantes : mes chemins vers les vues et les scripts
 
-define('VIEWS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR);
-define('VIEWSADMIN', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views');
-define('VIEWSERRORS', dirname(__DIR__) . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'Views' .  DIRECTORY_SEPARATOR . 'errors' . DIRECTORY_SEPARATOR);
-define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . DIRECTORY_SEPARATOR);
+define('VIEWS', dirname(__DIR__) . "/" . 'app' . "/" . 'Views' .  "/");
+define('VIEWSADMIN', dirname(__DIR__) . "/" . 'app' . "/" . 'Views');
+define('VIEWSERRORS', dirname(__DIR__) . "/" . 'app' . "/" . 'Views' .  "/" . 'errors' . "/");
+define('SCRIPTS', dirname($_SERVER['SCRIPT_NAME']) . "/");
 
 // création d'une nouvelle instance de la classe Router 
 // paramètre $_GET['url'] configurer dans .htaccess
@@ -121,4 +120,10 @@ try {
     $router->run();
 } catch (NotFoundException $e) {
     return $e->error404();
-}
+} // TO DO
+// } catch (Exception $e){
+//     return $e->error404();
+// }
+//  catch (Error $e){
+//     return $e->error404();
+// }

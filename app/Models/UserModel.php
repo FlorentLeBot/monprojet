@@ -27,9 +27,10 @@ class UserModel extends Model
     }
 
     public function registerComment(string $comment){
-        
-        $stmt = $this->query("INSERT INTO `comment` (`content`) 
-                                    VALUES (?)",[$comment], true);   
+        // htmlSpecial...
+        $comment = htmlspecialchars($comment);
+        $stmt = $this->query("INSERT INTO `comment` (`content`,`id_user`, `id_article`) 
+                                    VALUES (?,?,?)",[$comment, $_SESSION['id'], $_POST['id_article']], true);   
         return $stmt;
     }
     public function getComment(){
