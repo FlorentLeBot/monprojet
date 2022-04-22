@@ -9,13 +9,13 @@
 
 <?php foreach ($params['contact'] as $contact) : ?>
 
-
 <div class="table-results">
     <ul class="table-item">
         <li class="contact-id"><?= $contact->firstname . " " . $contact->lastname ?></li>
         <li class="contact-title"><?= $contact->email ?></li>
-        <li class="contact-created-at"><?= $contact->content ?></li>
+        <li class="contact-created-at"><?= $contact->getExcerpt() ?></li>
         <li>
+            <span class="btn"><a href="/monprojet/admin/read/<?= $contact->id ?>">Lire le message</a></span>
             <form action="/monprojet/admin/contact/delete/<?= $contact->id ?>" method="post">
                 <button type="submit">Supprimer</button>
             </form>

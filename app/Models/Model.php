@@ -135,7 +135,7 @@ abstract class Model
     {
         // substr retourne un segnement de la chaîne de caractère
         // paramètre la chaîne de caractère, le début de la chaîne et sa fin
-        return mb_substr($this->content, 0, 116) . ' ...';
+        return mb_substr($this->content, 0, 120) . ' ...';
     }
 
     // enregistrement d'une image

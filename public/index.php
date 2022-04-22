@@ -111,6 +111,11 @@ $router->post('/admin/articles/edit/:id', 'App\Controllers\Admin\AdminController
 $router->get('/admin/games/edit/:id', 'App\Controllers\Admin\AdminController@editGame');
 $router->post('/admin/games/edit/:id', 'App\Controllers\Admin\AdminController@updateGame');
 
+// Lire
+
+$router->get('/admin/read/:id', 'App\Controllers\Admin\AdminController@readMessage');
+
+
 // Récupération des erreurs 
 
 try {

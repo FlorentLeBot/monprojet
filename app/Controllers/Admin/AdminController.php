@@ -19,6 +19,9 @@ use App\Controllers\Controller;
 - createGame
 - editArticle
 - editGame
+- deleteArticle
+- deleteGame
+- deleteMessage
 */
 
 class AdminController extends Controller
@@ -154,7 +157,7 @@ class AdminController extends Controller
 
     /* SUPPRIMER */
 
-    public function deleteArticle(int $id) 
+    public function deleteArticle(int $id)
     {
         $this->isAdmin();
         $article = new BlogModel($this->db);
@@ -173,16 +176,29 @@ class AdminController extends Controller
             return header("Location: /monprojet/admin/games");
         }
     }
-    public function deleteMessage(int $id) 
+    public function deleteMessage(int $id)
     {
         $this->isAdmin();
         $message = new ContactModel($this->db);
         $res = $message->delete($id);
-        var_dump($res); die();
-        if($res){
-            
+        // var_dump($res);
+        // die();
+        if ($res) {
+
             return header('Location: /monprojet/admin/contacts');
         }
+    }
+
+    // -------------------------------------------------------------------------------------------------------------------
+
+    /* LIRE */
+
+    function readMessage(int $id)
+    {
+        $this->isAdmin();
+        $msg = (new ContactModel($this->db))->findById($id);
+        return $this->viewAdmin('admin.dashboard.read', compact('msg'));
+
     }
 }
 // -------------------------------------------------------------------------------------------------------------------
