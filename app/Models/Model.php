@@ -30,7 +30,7 @@ abstract class Model
     }
 
     // méthode permettant de faire des rêquetes de manière dynamique
-    public function query(string $sql, array $param = null, bool $single = null)
+    public function query(string $sql, array $param = null, bool $single = null) : mixed
     {
         // création de la méthode
         // si $param est null alors faire une query sinon faire une requête prepare
@@ -78,14 +78,16 @@ abstract class Model
     // {
     //     return $this->query("SELECT * FROM {$this->table} WHERE {$col} = ?", [$value]);
     // }
-    // supprime dans la table en fonction de l'id 
+
+    // supprime dans une table en fonction de l'id 
     public function delete(int $id): bool
     {
         return $this->query("DELETE FROM {$this->table} WHERE id = ?", [$id]);
     }
 
     // mettre à jour dans la table les champs en fonction de l'id
-    public function update(array $data, $tag = null, $category = null){
+    public function update(array $data, $tag = null, $category = null) : mixed
+    {
 
         $sqlRequestPart = "";
         $i = 1;
@@ -105,7 +107,8 @@ abstract class Model
 
     // création d'un article de manière dynamique
     
-    public function create(array $data, ?array $tags = null, ?array $categories = null){
+    public function create(array $data, ?array $tags = null, ?array $categories = null)
+    {
         
         // les parenthèses de la requete
         $firstParenthesis = "";
@@ -136,7 +139,7 @@ abstract class Model
     }
 
     // enregistrement d'une image
-    public function upload(array $file)
+    public function upload(array $file) : string
     {
         // récupération des valeurs de $_FILES
         if (isset($file['img'])) {
@@ -153,7 +156,7 @@ abstract class Model
         // extensions accepté
         $extensions = ['jpg', 'png', 'jpeg', 'gif', 'webp'];
         // taille maximum d'une image
-        $maxSize = 40000000;
+        $maxSize = 4000000;
         $path = "";
         // si le nom de l'extension, la taille maximum et le code d'erreur est égal à 0 (aucune erreur de téléchargement)...
         if (in_array($extension, $extensions) && $size <= $maxSize && $error == 0) {

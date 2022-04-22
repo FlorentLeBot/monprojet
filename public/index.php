@@ -61,14 +61,10 @@ $router->get('/games/:id', 'App\Controllers\GameController@show');
 $router->get('/tags/:id', 'App\Controllers\TagController@tag');
 $router->get('/categories/:id', 'App\Controllers\CategoryController@category');
 
-
-
-
-// Page contact / envoyer un email
+// Page contact (affichage des messages) / envoyer un email 
 
 $router->get('contact', 'App\Controllers\ContactController@contact');
 $router->post('contact', 'App\Controllers\ContactController@postMail');
-
 
 // Commentaire / envoyer un commentaire
 
@@ -97,6 +93,7 @@ $router->get('/admin/contact', 'App\Controllers\Admin\AdminController@contact');
 
 $router->post('/admin/articles/delete/:id', 'App\Controllers\Admin\AdminController@deleteArticle');
 $router->post('/admin/games/delete/:id', 'App\Controllers\Admin\AdminController@deleteGame');
+$router->post('/admin/contact/delete/:id', 'App\Controllers\Admin\AdminController@deleteMessage');
 
 // Créer
 
@@ -120,10 +117,9 @@ try {
     $router->run();
 } catch (NotFoundException $e) {
     return $e->error404();
-} // TO DO
-// } catch (Exception $e){
-//     return $e->error404();
-// }
-//  catch (Error $e){
-//     return $e->error404();
-// }
+} 
+// catch (Exception $e){
+//     return $e;
+catch (Error $e){
+    require VIEWSERRORS . 'error.php';
+}

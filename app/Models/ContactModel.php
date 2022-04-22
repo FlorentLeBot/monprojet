@@ -16,9 +16,12 @@ class ContactModel extends Model
         $email = htmlentities($_POST['email']);
         $content = htmlentities($_POST['content']);
 
-        $stmt = $this->db->prepare("INSERT INTO {$this->table} ( `firstname`, `lastname`, `email`, `content`) VALUE(?, ?, ?, ?)");      
-        $stmt = $stmt->execute([$firstname, $lastname, $email, $content]);
+        $stmt = $this->query("INSERT INTO {$this->table} ( `firstname`, `lastname`, `email`, `content`) VALUE(?, ?, ?, ?)",[$firstname, $lastname, $email, $content]);      
         return $stmt;
+    }
+    public function getMail(){
+        $res = $this->query("SELECT `id`, `firstname`, `lastname`, `email`, `content` FROM {$this->table}");
+        return $res;
     }
     
 }

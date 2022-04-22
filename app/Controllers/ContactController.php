@@ -17,6 +17,6 @@ class ContactController extends Controller
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $postMail = (new ContactModel($this->db))->postMail($_POST['firstname'], $_POST['lastname'], $_POST['email'], $_POST['content']);
             return header('Location: /monprojet/contact');
-        }   
-    }
+        }
+    } 
 }

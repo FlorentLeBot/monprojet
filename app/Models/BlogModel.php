@@ -5,6 +5,14 @@ namespace App\Models;
 use DateTime;
 use Database\DBConnection;
 
+/* SOMMAIRE :
+- getButton
+- getTags
+- updateArticle
+- create
+-
+
+*/
 class BlogModel extends Model
 {
     protected $table = 'articles';
@@ -28,7 +36,7 @@ class BlogModel extends Model
     }
 
     // mise à jour d'un article du blog
-    public function updateKiss(int $id, array $tags)
+    public function updateArticle(int $id, array $tags)
     {
         $path = $this->upload($_FILES);
         $title = htmlspecialchars($_POST['title']);
@@ -58,7 +66,6 @@ class BlogModel extends Model
             return true;
         }
     }
-
 
     public function create(array $data, array $tags = null, array $categories = null)
     {

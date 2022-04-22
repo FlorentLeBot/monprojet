@@ -11,7 +11,7 @@
             <div class="bloc-links">
                 <a href="/monprojet/admin/articles" class="bloc-link">
                     <i class="fa-solid fa-database"></i>
-                    <span class="nav-links">Article</span>
+                    <span class="nav-links">Articles</span>
                 </a>
                 <a href="/monprojet/admin/games" class="bloc-link">
                     <i class="fa-solid fa-database"></i>

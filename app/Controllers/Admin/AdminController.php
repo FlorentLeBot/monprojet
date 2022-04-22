@@ -45,7 +45,8 @@ class AdminController extends Controller
     public function contact()
     {
         $this->isAdmin();
-        $contact = (new ContactModel($this->db))->all();
+        $contact = (new ContactModel($this->db))->getMail();
+        // var_dump($contact); die();
         return $this->viewAdmin('admin.dashboard.contact', compact('contact'));
     }
 
@@ -131,7 +132,7 @@ class AdminController extends Controller
         $article = new BlogModel($this->db);
         // array_pop() dépile et retourne la valeur du dernier élément du tableau array, le raccourcissant d'un élément.
         $tags = array_pop($_POST);
-        $res = $article->updateKiss($id, $tags);
+        $res = $article->updateArticle($id, $tags);
         // redirection
         if ($res) {
             return header('Location: /monprojet/admin/articles');
@@ -153,7 +154,7 @@ class AdminController extends Controller
 
     /* SUPPRIMER */
 
-    public function deleteArticle(int $id)
+    public function deleteArticle(int $id) 
     {
         $this->isAdmin();
         $article = new BlogModel($this->db);
@@ -170,6 +171,17 @@ class AdminController extends Controller
         $res = $game->delete($id);
         if ($res) {
             return header("Location: /monprojet/admin/games");
+        }
+    }
+    public function deleteMessage(int $id) 
+    {
+        $this->isAdmin();
+        $message = new ContactModel($this->db);
+        $res = $message->delete($id);
+        var_dump($res); die();
+        if($res){
+            
+            return header('Location: /monprojet/admin/contacts');
         }
     }
 }
