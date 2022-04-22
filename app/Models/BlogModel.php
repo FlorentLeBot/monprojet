@@ -7,7 +7,7 @@ use Database\DBConnection;
 
 /* SOMMAIRE :
 - getButton
-- getTags
+- getTags !
 - updateArticle
 - create
 -
@@ -26,8 +26,8 @@ class BlogModel extends Model
         HTML;
     }
 
-    // récupération des tags
-    public function getTags()
+    // récupération des tags 
+    public function getTags() : string
     {
         return $this->query("SELECT t.* FROM tags t
                             INNER JOIN article_tag art ON art.tag_id = t.id
@@ -36,7 +36,7 @@ class BlogModel extends Model
     }
 
     // mise à jour d'un article du blog
-    public function updateArticle(int $id, array $tags)
+    public function updateArticle(int $id, array $tags) : bool
     {
         $path = $this->upload($_FILES);
         $title = htmlspecialchars($_POST['title']);
@@ -67,7 +67,7 @@ class BlogModel extends Model
         }
     }
 
-    public function create(array $data, array $tags = null, array $categories = null)
+    public function create(array $data, array $tags = null, array $categories = null) : bool
     {
         $path = $this->upload($_FILES);
         $title = htmlspecialchars($_POST['title']);

@@ -10,7 +10,6 @@ class ContactController extends Controller
     {
         return $this->view('front.contact.contact');
     }
-
     function postMail()
     {
         $email = $_POST['email'];
@@ -19,5 +18,5 @@ class ContactController extends Controller
             return header('Location: /monprojet/contact');
         }
     }
-     
+   
 }

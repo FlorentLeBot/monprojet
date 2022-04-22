@@ -6,12 +6,12 @@ use App\Models\WelcomeModel;
 
 class WelcomeController extends Controller
 {
-    // affichage de la page d'accueil
-    public function welcome()
+    // affichage de la page d'accueil (les 3 derniers jeux de société et les 3 derniers articles)
+    public function welcome() : void
     {
         $req = new WelcomeModel;
         $articles = $req->getLasterArticles();
         $games = $req->getLasterGames();
-        return $this->view('welcome', compact('games', 'articles'));
+        $this->view('welcome', compact('games', 'articles'));
     }
 }

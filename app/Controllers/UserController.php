@@ -15,24 +15,24 @@ use App\Validation\Validator;
 
 class UserController extends Controller
 {
-    public function register()
+    public function register(): void
     {
-        return $this->view('auth.register');
+        $this->view('auth.register');
     }
     // enregistrement d'un nouvel utilisateur et redirection vers la page d'accueil
-    public function registerPost()
+    public function registerPost(): void
     {
         $_POST['password'] = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $newUser = (new UserModel($this->db))->registerUser($_POST['username'], $_POST['password'], $_POST['email']);
-        return header('Location: /monprojet/');
+        header('Location: /monprojet/');
     }
 
-    public function login()
+    public function login() : void
     {
-        return $this->view('auth.login');
+        $this->view('auth.login');
     }
 
-    public function loginPost()
+    public function loginPost() : void
     {
         $validator = new Validator($_POST);
         $errors = $validator->validate([
@@ -53,32 +53,32 @@ class UserController extends Controller
             $_SESSION['id'] = (int) $user->id;
             $_SESSION['username'] = $user->username;
 
-            return header('Location: /monprojet/admin/articles?success=true');
+            header('Location: /monprojet/admin/articles?success=true');
         } elseif (password_verify($_POST['password'], $user->password) && $user->role === 0) {
             $_SESSION['id'] = (int) $user->id;
             $_SESSION['username'] = $user->username;
-            return header('Location: /monprojet/articles?success=true');
+            header('Location: /monprojet/articles?success=true');
         } else {
             var_dump('else');
-            return header('Location: /monprojet/login');
+            header('Location: /monprojet/login');
         }
     }
-    public function logout()
+    public function logout() : void
     {
         session_destroy();
-        return header('Location: /monprojet/');
+        header('Location: /monprojet/');
     }
 
     // les commentaires
 
-    public function comment()
+    public function comment() : void
     {
-        return $this->view('auth.comment'); 
+        $this->view('auth.comment');
     }
-    
+
     public function postComment()
     {
         $comment = (new UserModel($this->db))->registerComment($_POST['content']);
-        // return $this->view('auth.comment');;
+        
     }
 }

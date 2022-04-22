@@ -30,50 +30,55 @@ class AdminController extends Controller
 
     // -----------------------------------------------------------------------------------------------------
 
-    public function article()
+    public function article(): void
     {
         $this->isAdmin();
         // nouvelle instance de BlogModel affichage de tous les articles
         $articles = (new BlogModel($this->db))->all();
-        return $this->viewAdmin('admin.dashboard.article', compact('articles'));
+        $this->viewAdmin('admin.dashboard.article', compact('articles'));
     }
     // affichage de la page game administration des fiches pour les jeux de société
-    public function game()
+    public function game(): void
     {
         $this->isAdmin();
         $games = (new GameModel($this->db))->all();
-        return $this->viewAdmin('admin.dashboard.game', compact('games'));
+        $this->viewAdmin('admin.dashboard.game', compact('games'));
     }
     // affichage de la page contact récupération du formulaire de contact
-    public function contact()
+    public function contact(): void
     {
         $this->isAdmin();
         $contact = (new ContactModel($this->db))->getMail();
         // var_dump($contact); die();
-        return $this->viewAdmin('admin.dashboard.contact', compact('contact'));
+        $this->viewAdmin('admin.dashboard.contact', compact('contact'));
+    }
+    public function readMessage(int $id): void
+    {
+        $this->isAdmin();
+        $msg = (new ContactModel($this->db))->findById($id);
+        $this->viewAdmin('admin.dashboard.read', compact('msg'));
     }
 
     // -----------------------------------------------------------------------------------------------------
 
-    public function createTag()
+    public function createTag(): void
     {
         $this->isAdmin();
         $tags = (new TagModel($this->db))->all();
-        return $this->viewAdmin('admin.dashboard.formBlog', compact('tags'));
+        $this->viewAdmin('admin.dashboard.formBlog', compact('tags'));
     }
-
-    public function createCategory()
+    public function createCategory(): void
     {
         $this->isAdmin();
         $categories = (new CategoryModel($this->db))->all();
-        return $this->viewAdmin('admin.dashboard.formGame', compact('categories'));
+        $this->viewAdmin('admin.dashboard.formGame', compact('categories'));
     }
 
     // -------------------------------------------------------------------------------------------------------------------
 
     // CREER
 
-    public function createArticle()
+    public function createArticle(): void
     {
         $this->isAdmin();
         $article = new BlogModel($this->db);
@@ -81,14 +86,13 @@ class AdminController extends Controller
             // array_pop() dépile et retourne la valeur du dernier élément du tableau, le raccourcissant d'un élément.
             $tags = array_pop($_POST);
             $res = $article->create($_POST, $tags);
-            return header('Location: /monprojet/admin/articles');
+            header('Location: /monprojet/admin/articles');
         } else {
             $res = $article->create($_POST);
-            return header('Location: /monprojet/admin/articles');
+            header('Location: /monprojet/admin/articles');
         }
     }
-
-    public function createGame()
+    public function createGame(): void
     {
         $this->isAdmin();
         $game = new GameModel($this->db);
@@ -96,10 +100,10 @@ class AdminController extends Controller
             // array_pop() dépile et retourne la valeur du dernier élément du tableau, le raccourcissant d'un élément.
             $categories = array_pop($_POST);
             $res = $game->create($_POST, $categories);
-            return header('Location: /monprojet/admin/articles');
+            header('Location: /monprojet/admin/articles');
         } else {
             $res = $game->create($_POST);
-            return header('Location: /monprojet/admin/articles');
+            header('Location: /monprojet/admin/articles');
         }
     }
 
@@ -113,6 +117,7 @@ class AdminController extends Controller
         $article = (new BlogModel($this->db))->findById($id);
         $tags = (new TagModel($this->db))->all();
         $res = $this->viewAdmin('admin.dashboard.formBlog', compact('article', 'tags'));
+        var_dump(gettype($res)); die;
         return $res;
     }
 
@@ -138,18 +143,18 @@ class AdminController extends Controller
         $res = $article->updateArticle($id, $tags);
         // redirection
         if ($res) {
-            return header('Location: /monprojet/admin/articles');
+            header('Location: /monprojet/admin/articles');
         }
     }
-    public function updateGame(int $id)
+    public function updateGame(int $id) : void
     {
         $this->isAdmin();
         $game = new GameModel($this->db);
         $categories = array_pop($_POST);
-        $res = $game->updateKiss($id, $categories);
+        $res = $game->updateGame($id, $categories);
         // redirection
         if ($res) {
-            return header('Location: /monprojet/admin/games');
+            header('Location: /monprojet/admin/games');
         }
     }
 
@@ -157,26 +162,26 @@ class AdminController extends Controller
 
     /* SUPPRIMER */
 
-    public function deleteArticle(int $id)
+    public function deleteArticle(int $id) : void
     {
         $this->isAdmin();
         $article = new BlogModel($this->db);
         $res = $article->delete($id);
         if ($res) {
-            return header("Location: /monprojet/admin/articles");
+            header("Location: /monprojet/admin/articles");
         }
     }
 
-    public function deleteGame(int $id)
+    public function deleteGame(int $id) : void
     {
         $this->isAdmin();
         $game = new GameModel($this->db);
         $res = $game->delete($id);
         if ($res) {
-            return header("Location: /monprojet/admin/games");
+            header("Location: /monprojet/admin/games");
         }
     }
-    public function deleteMessage(int $id)
+    public function deleteMessage(int $id): void
     {
         $this->isAdmin();
         $message = new ContactModel($this->db);
@@ -185,20 +190,7 @@ class AdminController extends Controller
         // die();
         if ($res) {
 
-            return header('Location: /monprojet/admin/contacts');
+            header('Location: /monprojet/admin/contact');
         }
     }
-
-    // -------------------------------------------------------------------------------------------------------------------
-
-    /* LIRE */
-
-    function readMessage(int $id)
-    {
-        $this->isAdmin();
-        $msg = (new ContactModel($this->db))->findById($id);
-        return $this->viewAdmin('admin.dashboard.read', compact('msg'));
-
-    }
 }
-// -------------------------------------------------------------------------------------------------------------------

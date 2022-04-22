@@ -30,7 +30,7 @@ abstract class Model
     }
 
     // méthode permettant de faire des rêquetes de manière dynamique
-    public function query(string $sql, array $param = null, bool $single = null) : mixed
+    public function query(string $sql, array $param = null, bool $single = null): mixed
     {
         // création de la méthode
         // si $param est null alors faire une query sinon faire une requête prepare
@@ -66,7 +66,8 @@ abstract class Model
     {
         return $this->query("SELECT * FROM {$this->table} ORDER BY created_at DESC");
     }
-    public function allCategories(): array{
+    public function allCategories(): array
+    {
         return $this->query("SELECT * FROM {$this->table}");
     }
     // sélectionne tout dans la table en fonction de l'id
@@ -86,36 +87,36 @@ abstract class Model
     }
 
     // mettre à jour dans la table les champs en fonction de l'id
-    public function update(array $data, $tag = null, $category = null) : mixed
+    public function update(array $data, $tag = null, $category = null): mixed
     {
 
         $sqlRequestPart = "";
         $i = 1;
 
         //récupération des champs d'un formulaire 
-        foreach ($data as $key => $value){
+        foreach ($data as $key => $value) {
             $comma = $i === count($data) ? '' : ', ';
             $i++;
-            if($key === "id" ) { continue; }
+            if ($key === "id") {
+                continue;
+            }
             $sqlRequestPart .= "{$key} = :{$key}{$comma}";
         }
 
         return $this->query("UPDATE {$this->table} SET {$sqlRequestPart} 
                             WHERE id = :id", $data);
-
     }
 
     // création d'un article de manière dynamique
-    
-    public function create(array $data, ?array $tags = null, ?array $categories = null)
+
+    public function create(array $data, ?array $tags = null, ?array $categories = null) : mixed
     {
-        
         // les parenthèses de la requete
         $firstParenthesis = "";
         $secondParenthesis = "";
-        $i= 1;
+        $i = 1;
 
-        foreach ($data as $key => $value){
+        foreach ($data as $key => $value) {
             $comma = $i === count($data) ? "" : ", ";
             $firstParenthesis .= "{$key}{$comma}";
             $secondParenthesis .= ":{$key}{$comma}";
@@ -139,7 +140,7 @@ abstract class Model
     }
 
     // enregistrement d'une image
-    public function upload(array $file) : string
+    public function upload(array $file): string
     {
         // récupération des valeurs de $_FILES
         if (isset($file['img'])) {
@@ -173,5 +174,4 @@ abstract class Model
         $path = htmlspecialchars($path);
         return $path;
     }
-
 }

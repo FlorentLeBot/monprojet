@@ -17,7 +17,6 @@ class GameModel extends Model
 {
     protected $table = 'board_game_card';
 
-
     // affichage du bouton Lire plus
     public function getButton(): string
     {
@@ -27,7 +26,7 @@ class GameModel extends Model
         HTML;
     }
 
-    public function getCategories()
+    public function getCategories() : string
     {
         return $this->query("SELECT c.* FROM categories c
                             INNER JOIN board_game_card_category AS bgcc ON bgcc.categorie_id = c.id
@@ -35,7 +34,7 @@ class GameModel extends Model
                             ", [$this->id]);
     }
 
-    public function updateKiss(int $id, array $categories)
+    public function updateGame(int $id, array $categories) : bool
     {
         $path = $this->upload($_FILES);
         $title = htmlspecialchars($_POST['title']);
@@ -64,7 +63,7 @@ class GameModel extends Model
     }
 
 
-    public function create(array $data, ?array $tags = null, ?array $categories = null)
+    public function create(array $data, ?array $tags = null, ?array $categories = null) : bool
     {
 
         $path = $this->upload($_FILES);
