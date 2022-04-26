@@ -40,6 +40,8 @@ $router->post('register', 'App\Controllers\UserController@registerPost');
 // La page d'accueil
 
 $router->get('/', 'App\Controllers\WelcomeController@welcome');
+// $router->get('/game/:id', 'App\Controllers\WelcomeController@show');
+// $router->get('/article/:id', 'App\Controllers\WelcomeController@show');
 
 
 // Tous les articles / Tous les jeux
@@ -47,8 +49,7 @@ $router->get('/', 'App\Controllers\WelcomeController@welcome');
 $router->get('/articles', 'App\Controllers\BlogController@index');
 $router->get('/games', 'App\Controllers\GameController@index');
 
-
-$router->get('/categories', 'App\Controllers\GameController@categories');
+// $router->get('/categories', 'App\Controllers\GameController@categories');
 
 // Un article / Un jeu
 
@@ -71,15 +72,6 @@ $router->post('contact', 'App\Controllers\ContactController@postMail');
 $router->get('comment', 'App\Controllers\UserController@comment');
 $router->post('comment', 'App\Controllers\UserController@postComment');
 $router->get('comment', 'App\Controllers\UserController@getComment');
-
-
-
-
-
-
-
-
-
 
 /* -----ADMINISTRATION----- */
 
@@ -111,10 +103,13 @@ $router->post('/admin/articles/edit/:id', 'App\Controllers\Admin\AdminController
 $router->get('/admin/games/edit/:id', 'App\Controllers\Admin\AdminController@editGame');
 $router->post('/admin/games/edit/:id', 'App\Controllers\Admin\AdminController@updateGame');
 
-// Lire
+// Lire les messages
 
 $router->get('/admin/read/:id', 'App\Controllers\Admin\AdminController@readMessage');
 
+// Pagination
+
+$router->get('/articles/:id', 'App\Controllers\Front\BlogController@pagination');
 
 // Récupération des erreurs 
 
@@ -123,8 +118,9 @@ try {
 } catch (NotFoundException $e) {
     return $e->error404();
 } 
-// catch (Exception $e){
-//     return $e;
 catch (Error $e){
     require VIEWSERRORS . 'error.php';
+}
+catch (Exception $e){
+    require VIEWSERRORS . 'exception.php'; 
 }

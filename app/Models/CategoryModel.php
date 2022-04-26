@@ -8,7 +8,7 @@ class CategoryModel extends Model
 {
     protected $table = 'categories';
 
-    public function getGames() : string
+    public function getGames() : array
     {
         return $this->query("SELECT bgc.* FROM board_game_card bgc
         INNER JOIN board_game_card_category bgcc ON bgcc.board_game_card_id = bgc.id

@@ -3,61 +3,60 @@
 @import "../Utils/_placeholders.scss";
 @import "../Utils/_functions.scss";
 
+// les articles
 
-// -------------------------------------------------------------------
 
-/* gestion des articles du blog (index) */
 
-.blog-articles {
-
-    width: 300px;
-    background-color: $white-color;
-    margin: 0 auto 1rem;
-
-    border-radius: 8px;
-    box-shadow: $box-shadow;
-
-    &__excerpt {
-        width: 80%;
-        margin: 1rem auto;
-    }
-
-    & .tags {
-        @extend %flex-center;
-
-        & .tag {
-            @extend %tag;
-
-            & a {
-                color: black;
-                font-size: 0.7rem;
-            }
-        }
-
-        & .tag:hover {
-            transition: 0.2s ease-in-out;
-            transform: scale(1.1);
-        }
-    }
-}
-
-// -------------------------------------------------------------------
-
-/* gestion d'un article du blog (show) */
+// un article
 
 .blog-article {
-    & .title {
-        padding: 2rem;
-        font-style: italic
+    @extend %flex-center;
+}
+
+#blog-article {
+    @include style-article(100%, auto, 0 0 0, $box-shadow, $white-color, black);
+    margin: 50px 10px 20px;
+
+    & figure {
+        width: 100%;
+
+        & img {
+            width: 100%;
+        }
     }
 }
+
+.container-article {
+    & .content-article {
+        padding: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+   
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // .container-article {
 
-//     @include style-article(300px, auto, 0 0 30px, $box-shadow, $white-color, black);
-//     margin: 0 auto 3rem;
-//     padding: 1rem;
-//     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
+
 
 //     & .tags {
 //         @extend %flex-center;
@@ -67,7 +66,7 @@
 //         }
 //     }
 
-//     &__content {
+//     & .content {
 //         margin-top: 1rem;
 //     }
 // }
@@ -83,37 +82,37 @@
 
 // }
 
-// @media screen and (min-width: 768px) {
-//     #article {
-//         width: 100%;
-//         display: flex;
-//         @include style-article(auto, auto, 0 0 0px, $box-shadow, $white-color, black);
-//         margin: 50px auto ;
-//         max-height: auto;
-//         background-color: $white-color;
-        
-//         & h1 {
-//             display: block;
-//             width: 300px;
-            
-           
-            
-//         }
-       
+// // @media screen and (min-width: 768px) {
+// //     #article {
+// //         width: 100%;
+// //         display: flex;
+// //         @include style-article(auto, auto, 0 0 0px, $box-shadow, $white-color, black);
+// //         margin: 50px auto ;
+// //         max-height: auto;
+// //         background-color: $white-color;
+
+// //         & h1 {
+// //             display: block;
+// //             width: 300px;
+
+
+
+// //         }
 
 
 
 
 
-//         & .container-article {
-            
-           
-//             // width: $width;
-//             // height: $height;
-//             // border-radius: $border-raduis;
-//             // box-shadow: $box-shadow;
-//             // background-color: $bg;
-//             // color: $color;
-//         }
-//     }
-// }
+
+// //         & .container-article {
+
+
+// //             // width: $width;
+// //             // height: $height;
+// //             // border-radius: $border-raduis;
+// //             // box-shadow: $box-shadow;
+// //             // background-color: $bg;
+// //             // color: $color;
+// //         }
+// //     }
+// // }

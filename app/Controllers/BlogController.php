@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Model;
 use App\Models\BlogModel;
 use App\Models\CommentModel;
 
@@ -22,6 +23,13 @@ class BlogController extends Controller
         $article = $req->findById($id);     
         return $this->view('front.blog.show', compact('article'));
     }
+    public function pagination($id){
+        $req = new Model;
+        $articles = $req->pagination($id);     
+        return $this->view('front.blog.show', compact('page'));
+    }
+    
+    
    
      
 }

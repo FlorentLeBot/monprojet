@@ -1,22 +1,17 @@
-
 <footer>
     <aside id="main-footer" class="container">
 
         <!-- les liens -->
 
-            <div class="col">
-                <a href="#">
-                    <p>Politique de confidentialité</p>
-                </a>
-                <a href="#">
-                    <p>Mentions légales</p>
-                </a>
-            </div>
+        <ul class="col">
+            <li><a title="politique de confidentialité" href="#">Politique de confidentialité</a></li>
+            <li><a title="mentions légales" href="#">Mentions légales</a></li>
+        </ul>
 
-            <!-- la fleche retour en haut -->
+        <!-- la fleche retour en haut -->
 
-            <div class="col"><a href="index.php"><i class="fas fa-arrow-circle-up "></i></a></div>
-        
+        <div class="col"><a href="index.php"><i class="fas fa-arrow-circle-up "></i></a></div>
+
     </aside>
 
     <!-- le copyright -->

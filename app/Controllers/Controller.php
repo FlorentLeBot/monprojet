@@ -66,4 +66,5 @@ abstract class Controller
             header('Location: /monprojet/login');
         }
     }
+    
 }

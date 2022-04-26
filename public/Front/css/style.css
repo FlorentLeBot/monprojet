@@ -1,139 +1,243 @@
-/* SOMMAIRE */
-
-/* MINI RESET CSS */
-/* STYLE COMMUN A TOUTES LES PAGES */
-/* VARIABLE CSS */
-/* HEADER */
-/* ACCUEIL */
-/* JEUX DE SOCIETE ET BLOG (INDEX)*/
-/* JEUX DE SOCIETE ET BLOG (SHOW)*/
-/* CONTACT */
-/* INSCRIPTION / SE CONNECTER */
-/* FOOTER */
-/* MEDIA QUERIES */
-
-/* --------------------------------------------------------------------------------------- */
-/* MINI RESET */
-/* --------------------------------------------------------------------------------------- */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  background-color: #e7c6bf;
-  font-family: "Rajdhani", sans-serif;
-  overflow-x: hidden;
-  font-size: 18px;
-}
-ul {
-  list-style-type: none;
-}
-a {
-  text-decoration: none;
-  z-index: 100;
-}
-
-/* --------------------------------------------------------------------------------------- */
-/* STYLE COMMUN A TOUTES LES PAGES */
-/* --------------------------------------------------------------------------------------- */
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.btn {
-  border: none;
-  padding: 10px;
-  margin: 10px auto;
-  display: flex;
-  background-color: var(--btn-color);
-}
-.btn a {
-  color: white;
-}
-.btn:hover {
-  transition: 100ms ease-in-out;
-  transform: scale(1.04);
-  background-color: var(--btn-color-hover);
-}
-.layout {
-  margin-top: 50px;
-}
-.title {
-  text-align: center;
-  font-weight: 200;
-}
-.flex {
-  width: 100%;
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
+.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 }
-h2 {
-  padding: 20px;
-  text-align: center;
-  font-style: italic;
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
 }
-.mousemove {
-  height: 30px;
-  width: 30px;
-  border: 2px solid var(--main-color);
+
+.menu-wrap .hamburger, .menu-wrap .toggler {
   position: absolute;
-  /* centrer le pointeur de la souris  */
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-  border-radius: 30px;
-  z-index: -1;
+  top: 0;
+  right: 0;
 }
 
-/* --------------------------------------------------------------------------------------- */
-/* VARIABLE CSS */
-/* --------------------------------------------------------------------------------------- */
-
-:root {
-  --main-color: rgba(0, 98, 107, 1);
-  --secondary-color: #0a91a4;
-  --btn-color: #0aa418;
-  --btn-color-hover: #0aa417ce;
-  --dark-color: #20462d;
-  --black: black;
-  --white: white;
-  --box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
+.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* --------------------------------------------------------------------------------------- */
-/* HEADER */
-/* --------------------------------------------------------------------------------------- */
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
 
-#header {
-  width: 100%;
+.menu-wrap .hamburger, .menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
+.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .hamburger, .menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
+.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .hamburger, .menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
+.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .hamburger, .menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* mini reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+}
+
+body {
+  background-color: #0a92a4;
+  font-family: "Rajdhani", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+i {
+  color: white;
+}
+
+button {
+  border: none;
+}
+
+h2, h3 {
+  text-align: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 100;
+  padding: 2.5rem 0 1rem;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
+.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .hamburger, .menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
+.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .hamburger, .menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
+.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .hamburger, .menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+header {
+  background-color: #00626b;
   height: 280px;
-  position: relative;
-  background: var(--main-color);
+  color: #0a92a4;
 }
-#header .banner-content {
+header figure {
   width: 100%;
-  height: 100%;
 }
-.banner-content img {
+header figure .logo {
   width: 250px;
   display: block;
   margin: 0 auto;
 }
-#header p {
-  width: 110px;
+header .welcome {
+  width: 160px;
   font-size: 1.4rem;
-  margin: 10px auto;
+  margin: 15px auto;
   padding: 5px;
-  background: var(--btn-color);
+  background: #626b00;
+  color: white;
   text-align: center;
 }
-#banner-btn {
+
+#btn-social-networks {
   position: absolute;
   top: 255px;
   left: 25%;
@@ -143,25 +247,7 @@ h2 {
   flex-wrap: wrap;
   width: 50%;
 }
-.btn-social-networks {
-  text-align: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  background: var(--btn-color);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
-    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-}
-.btn-social-networks a i {
-  color: var(--dark-color);
-  font-size: 1.8rem;
-  padding-top: 11px;
-}
-.btn-social-networks:hover,
-.btn-social-networks a i:hover {
-  color: var(--white);
-}
-/* le menu burger */
+
 .menu-wrap {
   position: fixed;
   margin: 5px;
@@ -170,9 +256,6 @@ h2 {
   z-index: 1000;
 }
 .menu-wrap .toggler {
-  position: absolute;
-  top: 0;
-  right: 0;
   z-index: 3000;
   cursor: pointer;
   width: 40px;
@@ -180,29 +263,21 @@ h2 {
   opacity: 0;
 }
 .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
   z-index: 2000;
   width: 40px;
   height: 40px;
-  background: var(--btn-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #626b00;
+  /* les lignes du burger */
 }
-/* les lignes du burger */
-.hamburger > div {
+.menu-wrap .hamburger > div {
   position: relative;
   width: 30px;
   height: 2px;
-  background-color: var(--main-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: white;
   transition: all 0.4s ease-in-out;
 }
-.hamburger > div::before {
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger > div::after {
   content: "";
   position: absolute;
   z-index: 20;
@@ -211,19 +286,10 @@ h2 {
   height: 2px;
   background: inherit;
 }
-.hamburger > div::after {
-  content: "";
-  position: absolute;
-  z-index: 20;
-  top: -10px;
-  width: 30px;
-  height: 2px;
-  background: inherit;
-}
-.hamburger > div:after {
+.menu-wrap .hamburger > div:after {
   top: 10px;
 }
-/* l'animation */
+
 .toggler:checked + .hamburger > div {
   transform: rotate(135deg);
 }
@@ -235,6 +301,7 @@ h2 {
 .toggler:checked + .hamburger > div {
   transform: rotate(225deg);
 }
+
 .toggler:checked ~ .menu {
   visibility: visible;
 }
@@ -245,6 +312,7 @@ h2 {
   opacity: 1;
   transition: opacity 0.4s ease;
 }
+
 .menu {
   position: fixed;
   top: 0;
@@ -253,12 +321,10 @@ h2 {
   height: 100%;
   visibility: hidden;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.menu-wrap .menu .menus {
-  background: #fff;
+
+.container-menu {
+  background: white;
   opacity: 0.9;
   width: 100vh;
   height: 100vh;
@@ -266,57 +332,119 @@ h2 {
   align-items: center;
   justify-content: center;
   transform: scale(0);
-  transition: all 0.4s ease;
+  transition: all 0.4s ease-in-out;
 }
-.menu-wrap .menu .menus #main-menu {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+#main-menu {
+  margin: 20px 0 0;
   text-align: left;
   opacity: 1;
   transition: opacity 0.4s ease;
 }
-.menu-wrap .menu .menus #main-menu ul li,
-.menu-wrap .menu .menus #register-menu ul li {
+#main-menu ul li {
   padding: 10px;
 }
-.menu-wrap .menu .menus #main-menu ul li a,
-.menu-wrap .menu .menus #register-menu ul li a {
+#main-menu ul li a {
   color: black;
-  font-size: 1.3rem;
 }
-.menu-wrap .menu .menus #main-menu ul li a:hover,
-.menu-wrap .menu .menus #register-menu ul li a:hover {
-  background-color: var(--main-color);
-  padding: 10px 2px;
-  color: #fff;
+#main-menu ul li a:hover {
+  background-color: #0a92a4;
+  padding: 10px 0;
+  color: white;
 }
 
-/* --------------------------------------------------------------------------------------- */
-/* ACCUEIL */
-/* --------------------------------------------------------------------------------------- */
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
+.game-welcome figure, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-.game-welcome,
-.article-welcome {
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
+.game-welcome figure, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
+.game-welcome figure, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.article-welcome,
+.game-welcome {
   width: 300px;
-  margin: 10px auto;
+  height: auto;
+  border-radius: 0 0 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
   background-color: white;
+  color: black;
+  margin: 3rem auto;
+  padding: 1rem;
 }
-.game-welcome h3,
-.article-welcome h3 {
-  padding: 20px;
+.article-welcome h3,
+.game-welcome h3 {
+  margin: 0 0 10px;
 }
-.game-welcome figure,
-.article-welcome figure {
+.article-welcome figure,
+.game-welcome figure {
   width: 100%;
 }
+.article-welcome figure img,
+.game-welcome figure img {
+  width: 300px;
+}
+
 .article-welcome figure:hover {
   max-width: 300px;
-}
-.game-welcome figure img,
-.article-welcome figure img {
-  width: 300px;
 }
 
 .game-welcome:hover,
@@ -325,347 +453,551 @@ h2 {
   opacity: 0.9;
   transition: 0.4s ease-in-out;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.48) 6px 2px 16px 0px,
-    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  box-shadow: rgba(0, 0, 0, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
-/* --------------------------------------------------------------------------------------- */
-/* JEUX DE SOCIETE ET BLOG (INDEX)*/
-/* --------------------------------------------------------------------------------------- */
 
-section#games,
-section#blog-articles {
+.published {
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0.4rem;
+  margin: 15px 0 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
+.game-welcome figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
+.game-welcome figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
+.game-welcome figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#games {
   display: grid;
   grid-template-columns: repeat(auto-fill, 300px);
-  grid-gap: 20px;
+  grid-gap: 40px;
   justify-content: center;
   margin: 30px auto;
 }
-.games,
-.blog-articles {
+
+.games {
   background-color: white;
   border-radius: 30px 0;
 }
-.games figure,
-.blog-articles figure {
-  width: 300px;
-}
-.games figure img,
-.blog-articles figure img {
+.games figure {
   width: 100%;
-  /* width: 300px; */
 }
-.games .categories,
-.blog-articles .tags {
-  display: flex;
-  justify-content: center;
-}
-.games .categories .category,
-.blog-articles .tags .tag {
-  box-shadow: 2px 2px 2px gray;
-  background-color: var(--btn-color);
-  padding: 3px;
-  margin: 5px;
-  text-transform: uppercase;
-}
-.games .categories .category a,
-.blog-articles .tags .tag a {
-  color: var(--white);
-  text-align: center;
-}
-.blog-articles p {
-  padding: 0 20px;
-}
-.blog-articles .published {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0 0 0;
-}
-
-/* le petit jeu des bulles */
-
-.play-game{
-  position: relative;
+.games figure img {
   width: 300px;
-  height: 300px;
-  background-color: var(--white);
-  margin: 0 auto;
-  overflow: hidden;
 }
-.bubble {
-  position: absolute;
-  border-radius: 300px;
-  background: rgba(255,166, 0, 0.9);
-  opacity: 0.4;
-  animation: anim 8s ease-in-out forwards;
-  filter: hue-rotate(0deg);
-
+.games .categories {
+  flex-wrap: wrap;
 }
-@keyframes anim{
-    to{
-        top: -100px;
-        left: var(--left);
-        opacity: 1;
-        filter: hue-rotate(720deg);
-    }
+.games .categories .category {
+  margin: 10px;
 }
-.play-game h3{
-    font-size: 3rem;
-    text-align: center;
-    margin-top: 20px;
-    color: rgba(128, 128, 128, 0.908);
-
+.games .categories .category a {
+  color: white;
+  font-size: 0.7rem;
 }
 
-
-/* --------------------------------------------------------------------------------------- */
-/* JEUX DE SOCIETE ET BLOG (SHOW)*/
-/* --------------------------------------------------------------------------------------- */
-.game,
-.blog-article {
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
+.game-welcome figure, .games figure, .games .categories {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#game,
-#blog-article {
-  width: 300px;
-  background-color: var(--white);
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
 }
 
-#game figure,
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
+.game-welcome figure, .games figure, .games .categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .blog-article, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
+.game-welcome figure, .games figure, .games .categories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#blog-article {
+  width: 100%;
+  height: auto;
+  border-radius: 0 0 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background-color: white;
+  color: black;
+  margin: 50px 10px 20px;
+}
 #blog-article figure {
   width: 100%;
 }
-#game figure img,
 #blog-article figure img {
-  width: 300px;
-}
-#game h1,
-#blog-article h1 {
-  padding: 20px;
-}
-#game p,
-#blog-article p {
-  padding: 20px;
+  width: 100%;
 }
 
-#form-comment {
-  margin: 10px auto;
+.container-article .content-article {
+  padding: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .blog-article {
+    display: grid;
+    grid-template-columns: 3fr 6fr;
+    grid-gap: 10px;
+    justify-content: center;
+    grid-template-areas: "title title" "img img" "content content" "button button";
+    margin: 30px 20px;
+  }
+
+  figure {
+    grid-area: img;
+    background-color: #ccc;
+    border: solid 1px black;
+  }
+
+  .content-article {
+    grid-area: content;
+    background-color: #bbbbda;
+    border: solid 1px #1a1a35;
+  }
+
+  .title {
+    grid-area: title;
+    background-color: #bbbbda;
+    border: solid 1px #1a1a35;
+  }
+
+  button {
+    grid-area: button;
+    background-color: #bbbbda;
+    border: solid 1px #1a1a35;
+  }
+}
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
+.game-welcome figure, .games figure, .games .categories, .blog-article {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#form-comment label {
-  display: block;
-  padding: 10px;
-  text-align: center;
-}
-#form-comment textarea {
-  width: 300px;
-  border: none;
-  box-shadow: var(--box-shadow);
-}
-#form-comment textarea::placeholder{
-  text-align: center;
-}
-#form-comment input {
-  color: var(--white);
-}
 
-/* --------------------------------------------------------------------------------------- */
-/* CONTACT*/
-/* --------------------------------------------------------------------------------------- */
-
-.form-contact {
-  width: 100%;
-  padding: 30px;
-  font-size: 20px;
-}
-
-#form-contact fieldset {
-  background: var(--secondary-color);
-  padding: 10px;
-  margin: 10px auto;
-  width: 90%;
-}
-
-#form-contact fieldset:hover {
-  box-shadow: 0px 0px 5px gray;
-}
-
-#form-contact legend {
-  font-weight: 400;
+.games .categories .category {
+  padding: 5px;
   text-transform: uppercase;
-  font-size: 1.5rem;
-  color: var(--blanc);
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
 }
 
-#form-contact fieldset p {
-  padding: 10px 0;
-  color: var(--blanc);
-  max-width: 180px;
-  margin: 0 auto;
-  text-align: left;
-}
-#form-contact fieldset p label {
-  margin-top: 10px;
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
-#form-contact fieldset p input[type="text"],
-#form-contact fieldset p input[type="email"] {
-  margin-top: 10px;
-  width: 180px;
-  height: 30px;
-}
-#form-contact fieldset p textarea {
-  width: 180px;
-  margin-top: 10px;
-}
-
-#form-contact fieldset .btn {
-  display: block;
-  margin: 20px auto 0;
-  color: white;
-}
-
-#form-contact fieldset ::placeholder {
-  text-align: center;
-}
-
-/* --------------------------------------------------------------------------------------- */
-/* INSCRIPTION / SE CONNECTER */
-/* --------------------------------------------------------------------------------------- */
-
-#form-login,
-#form-register {
-  padding: 20px;
-  width: 100%;
-}
-#form-login p,
-#form-register p {
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
+.game-welcome figure, .games figure, .games .categories, .blog-article {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-}
-#form-login input,
-#form-register input {
-  width: 200px;
-}
-#form-login label,
-#form-register label {
-  display: block;
-  width: 120px;
-  margin: 5px 0;
-}
-#form-login .btn,
-#form-register .btn {
-  color: white;
-  box-shadow: var(--box-shadow);
 }
 
-/* --------------------------------------------------------------------------------------- */
-/* FOOTER*/
-/* --------------------------------------------------------------------------------------- */
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
+.game-welcome figure, .games figure, .games .categories, .blog-article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
 footer {
-  position: relative;
   width: 100%;
   height: 150px;
-  margin: 20px 0 0 0;
-  background-color: var(--main-color);
+  position: relative;
+  background: #00626b;
 }
-footer a {
-  color: var(--white);
-}
-#copyright{
-  position: absolute;
-  width: 100%;
-  height: 30px;
-  background-color: var(--secondary-color);
-  bottom: 0;
-  text-align: center;
-}
-footer aside {
+footer #main-footer {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 20px;
-} 
-footer aside .col i{
+}
+footer a {
+  color: white;
+  font-size: 1rem;
+}
+footer i {
   font-size: 2rem;
 }
-
-/* ------------------------------------------------ */
-
-@media screen and (min-width: 768px) {
-  /* --------------------------------------------------------------------------------------- */
-  /* HEADER*/
-  /* --------------------------------------------------------------------------------------- */
-
-  #header {
-    margin-top: 40px;
-  }
-
-  /* menu burger */
-
-  #header .menu-wrap .hamburger,
-  #header .menu-wrap .toggler {
-    display: none;
-  }
-  #header .menu {
-    visibility: visible;
-    display: flex;
-    align-items: center;
-    height: 40px;
-    background-color: var(--secondary-color);
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  }
-  #header .menus {
-    background-color: var(--secondary-color);
-    height: 80px;
-    transform: scale(1);
-  }
-  #header #main-menu ul {
-    display: flex;
-  }
-  #header #main-menu ul li a {
-    font-size: 1rem;
-    color: var(--white);
-    text-transform: uppercase;
-  }
-  #header #main-menu ul li a:hover {
-    font-size: 1rem;
-    padding: 10px 0;
-    margin: 0;
-  }
-
-  #game,
-  #blog-article {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    margin: 20px;
-    background-color: var(--white);
-  }
-  #game h1,
-  #blog-article h1 {
-    font-size: 1.3rem;
-    padding: 10px;
-  }
-  #game p,
-  #blog-article p {
-    padding: 40px 20px;
-    line-height: 1.5rem;
-  }
-  #game .btn,
-  #blog-article .btn {
-    position: absolute;
-    margin: 0;
-    right: 20px;
-    bottom: 20px;
-  }
+footer #copyright {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  background-color: #0a92a4;
+  bottom: 0;
+  text-align: center;
 }
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
+.game-welcome figure, .games figure, .games .categories, .blog-article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
+.game-welcome figure, .games figure, .games .categories, .blog-article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .btn, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
+.game-welcome figure, .games figure, .games .categories, .blog-article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.btn {
+  background-color: #00626b;
+  margin: 5px auto;
+  width: 50%;
+  color: white;
+}
+.btn a {
+  color: white;
+}
+.btn:hover {
+  transform: scale(1.02);
+  transition: 0.3s ease-in-out;
+  background-color: #003338;
+}
+
+.btn-social-networks {
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background: #626b00;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+.btn-social-networks:hover {
+  background: #333800;
+}
+.btn-social-networks i {
+  font-size: 1.5rem;
+  margin: 11px 0 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
+.game-welcome figure, .games figure, .games .categories, .blog-article, .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
+.game-welcome figure, .games figure, .games .categories, .blog-article, .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-register p,
+#form-login p, #form-contact .form-contact p, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
+.game-welcome figure, .games figure, .games .categories, .blog-article, .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.games .categories .category {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  background: #626b00;
+}
+
+.menu-wrap .toggler, .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#form-comment {
+  width: 100%;
+}
+#form-comment div {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+#form-comment div textarea {
+  width: 300px;
+  height: 100px;
+  border: none;
+  margin: 10px 0;
+}
+#form-comment div textarea::placeholder {
+  text-align: center;
+}
+#form-comment div input {
+  margin: 0 0 10px 0;
+}
+
+#form-contact {
+  width: 100%;
+}
+#form-contact legend {
+  font-size: 2rem;
+  font-style: italic;
+}
+#form-contact .form-contact p {
+  flex-wrap: wrap;
+}
+#form-contact .form-contact p .btn {
+  margin: 10px 0;
+}
+
+.form-contact:hover {
+  box-shadow: 0px 0px 5px #00626b;
+}
+
+#form-register,
+#form-login {
+  width: 100%;
+}
+#form-register p,
+#form-login p {
+  margin: 10px 20px 0 0;
+  flex-wrap: wrap;
+}
+#form-register input,
+#form-login input {
+  width: 200px;
+}
+#form-register label,
+#form-login label {
+  display: block;
+  width: 200px;
+}
+#form-register .btn,
+#form-login .btn {
+  margin: 20px auto;
+}
+
+/*# sourceMappingURL=style.css.map */

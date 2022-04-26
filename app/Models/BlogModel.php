@@ -22,12 +22,12 @@ class BlogModel extends Model
     {
         // syntaxe Heredoc (<<< / un identifiant / une nouvelle ligne / la chaîne de caractère / le même identifiant pour fermer la citation
         return <<<HTML
-        <span class="btn"><a href="/monprojet/articles/$this->id">Lire plus</a></span>
+        <p class="btn"><a href="/monprojet/articles/$this->id">Lire plus</a></p>
         HTML;
     }
 
     // récupération des tags 
-    public function getTags() : string
+    public function getTags() : array
     {
         return $this->query("SELECT t.* FROM tags t
                             INNER JOIN article_tag art ON art.tag_id = t.id

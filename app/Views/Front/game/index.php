@@ -1,9 +1,10 @@
-<div class="play-game">
+<!-- <div class="play-game">
     <h3>0</h3>
-</div>
+</div> -->
 
-<section id="games">
-    <h1 class="title">Jeux de société</h1>
+<h1 class="title">Jeux de société</h1>
+<div id="games">
+
     <?php foreach ($params['games'] as $game) : ?>
 
     <article class="games">
@@ -16,13 +17,13 @@
         <div class="categories">
             <?php foreach($game->getCategories() as $category) : ?>
 
-            <span class="category">
+            <p class="category">
                 <a href="/monprojet/category/<?= $category->id ?>"><?= $category->name ?></a>
-            </span>
+            </p>
             <?php endforeach ?>
         </div>
 
         <?= $game->getButton() ?>
     </article>
     <?php endforeach ?>
-</section>
+</div>

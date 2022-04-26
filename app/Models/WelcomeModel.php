@@ -14,4 +14,5 @@ class WelcomeModel extends Model {
         $res = $this->query("SELECT * FROM articles ORDER BY created_at DESC LIMIT 3");
         return $res;
     }
+   
 }

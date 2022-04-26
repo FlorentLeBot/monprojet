@@ -66,10 +66,10 @@ abstract class Model
     {
         return $this->query("SELECT * FROM {$this->table} ORDER BY created_at DESC");
     }
-    public function allCategories(): array
-    {
-        return $this->query("SELECT * FROM {$this->table}");
-    }
+    // public function allCategories(): array
+    // {
+    //     return $this->query("SELECT * FROM {$this->table}");
+    // }
     // sélectionne tout dans la table en fonction de l'id
     public function findById(int $id): Model
     {
@@ -174,4 +174,11 @@ abstract class Model
         $path = htmlspecialchars($path);
         return $path;
     }
+    public function pagination(int $id){
+        $req = $this->query("SELECT COUNT(id) as cpt FROM {this->table} ORDER BY created_at DESC");
+        $elements = 1;
+        $nb_page = ceil($req[0]["cpt"]/$elements);
+        var_dump($nb_page);
+    }
+  
 }

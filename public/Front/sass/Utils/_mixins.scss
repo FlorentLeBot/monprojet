@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./placeholders";
 
 @mixin style-header($bg, $height, $color) {
     background-color: $bg;
@@ -14,6 +15,8 @@
     background-color: $bg;
     color: $color;
 }
+
+
 
 // $txt-input-palette: (active: (bg: $colour-primary,
 //         border: $colour-primary,

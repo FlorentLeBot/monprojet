@@ -18,8 +18,7 @@
         href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Rajdhani:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet"
-        href="<?= SCRIPTS . 'Front' . "/" . 'css' . "/" . 'style.css' ?>">
+    <link rel="stylesheet" href="<?= SCRIPTS . 'Front' . "/" . 'css' . "/" . 'style.css' ?>">
 </head>
 
 <body>
@@ -28,7 +27,7 @@
 
             <!-- logo et bienvenue -->
 
-            <div class="banner-content">
+            <div class="header-content">
 
                 <figure>
                     <a href="/monprojet/">
@@ -37,16 +36,16 @@
                     </a>
                 </figure>
 
-                <p>Bienvenue</p>
+                <p class="welcome">Bienvenue</p>
             </div>
 
             <!-- les boutons des réseaux sociaux -->
             <!-- utilisation d'une div : pas de titre pour l'utilisation d'une section -->
-            <div id="banner-btn">
-                <div class="btn-social-networks"><a href="#facebook"><i class="fab fa-facebook"></i></a></div>
-                <div class="btn-social-networks"><a href="#twitter"><i class="fab fa-twitter"></i></a></div>
-                <div class="btn-social-networks"><a href="#instagram"><i class="fab fa-instagram"></i></a></div>
-</div>
+            <div id="btn-social-networks">
+                <a class="btn-social-networks" href="#facebook"><i class="fab fa-facebook"></i></a>
+                <a class="btn-social-networks" href="#twitter"><i class="fab fa-twitter"></i></a>
+                <a class="btn-social-networks" href="#instagram"><i class="fab fa-instagram"></i></a>
+            </div>
 
 
             <!-- le menu burger  -->
@@ -59,7 +58,7 @@
                     <div></div>
                 </div>
                 <div class="menu">
-                    <div class="menus">
+                    <div class="container-menu">
                         <!-- menu principal -->
                         <nav id="main-menu">
                             <ul class="container">
@@ -69,13 +68,10 @@
                                 <li><a title="nous contacter" href="/monprojet/contact">Contact</a></li>
                                 <li><a title="s'inscrire" href="/monprojet/register">Inscription</a></li>
                                 <?php if (isset($_SESSION['username'])) { ?>
-                                <li><a title="se déconnecter" href="/monprojet/logout">Se
-                                        déconnecter
-                                    </a></li>
+                                <li><a title="se déconnecter" href="/monprojet/logout">Se déconnecter</a></li>
                                 <?php } else { ?>
-                                <li><a title="se connecter" href="/monprojet/login">Se connecter
-                                    </a></li>
-                                <?php }  ?>
+                                <li><a title="se connecter" href="/monprojet/login">Se connecter</a></li>
+                                <?php } ?>
                             </ul>
                         </nav>
                     </div>

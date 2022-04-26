@@ -22,11 +22,11 @@ class GameModel extends Model
     {
         // syntaxe Heredoc (<<< / un identifiant / une nouvelle ligne / la chaîne de caractère / le même identifiant pour fermer la citation
         return <<<HTML
-        <span class="btn"><a href="/monprojet/games/$this->id">Voir le jeu</a></span>
+        <p class="btn"><a href="/monprojet/games/$this->id">Voir le jeu</a></p>
         HTML;
     }
 
-    public function getCategories() : string
+    public function getCategories() : array
     {
         return $this->query("SELECT c.* FROM categories c
                             INNER JOIN board_game_card_category AS bgcc ON bgcc.categorie_id = c.id
@@ -61,7 +61,6 @@ class GameModel extends Model
             return true;
         }
     }
-
 
     public function create(array $data, ?array $tags = null, ?array $categories = null) : bool
     {

@@ -14,4 +14,11 @@ class WelcomeController extends Controller
         $games = $req->getLasterGames();
         $this->view('welcome', compact('games', 'articles'));
     }
+    // public function show(int $id) : void
+    // {
+    //     $req = new WelcomeModel;
+    //     $article = $req->findById($id);
+    //     $game = $req->findById($id);
+    //     $this->view('welcome.show', compact('game', 'article'));
+    // }
 }

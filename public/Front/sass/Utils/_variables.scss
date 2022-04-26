@@ -1,10 +1,14 @@
-$primary-color: rgba(37, 84, 138, 0.991);
+$primary-color:rgba(0, 98, 107, 1);
 
-$secondary-color: rgba(3, 40, 100, 0.971);
+$secondary-color: rgba(10, 146, 164, 1);
 
-$yellow-color: rgba(255, 203, 16, 0.974);
+// $btn-color : rgba(10, 164, 23, 1);
 
-$white-color: #FFF;
+$btn-color: rgba(98, 107, 0, 1);
 
-$box-shadow:rgba(0, 0, 0, 0.19) 0px 10px 20px,
-rgba(0, 0, 0, 0.23) 0px 6px 6px;
+$white-color: rgba(255, 255, 255, 1);
+
+$black-color: rgba(0, 0, 0, 1);
+
+$box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+
