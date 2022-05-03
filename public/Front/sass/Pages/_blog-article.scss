@@ -3,40 +3,39 @@
 @import "../Utils/_placeholders.scss";
 @import "../Utils/_functions.scss";
 
-// les articles
+// // les articles
 
 
 
-// un article
+// // un article
 
-.blog-article {
-    @extend %flex-center;
-}
+// .blog-article {
+//     @extend %flex-center;
+// }
 
-#blog-article {
-    @include style-article(100%, auto, 0 0 0, $box-shadow, $white-color, black);
-    margin: 50px 10px 20px;
+// #blog-article {
+//     @include style-article(100%, auto, 0 0 0, $box-shadow, $white-color, black);
+//     margin: 50px 10px 20px;
 
-    & figure {
-        width: 100%;
+//     & figure {
+//         width: 100%;
 
-        & img {
-            width: 100%;
-        }
-    }
-}
+//         & img {
+//             width: 100%;
+//         }
+//     }
+// }
 
-.container-article {
-    & .content-article {
-        padding: 15px;
-    }
-}
+// .container-article {
+//     & .content-article {
+//         padding: 15px;
+//     }
+// }
 
-@media screen and (min-width: 768px) {
+// @media screen and (min-width: 768px) {
 
-   
     
-}
+// }
 
 
 

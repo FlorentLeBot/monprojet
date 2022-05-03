@@ -9,7 +9,7 @@
             <p>Vous êtes connecté !</p>
             <?php endif ?>
             <div class="bloc-links">
-                <a href="/monprojet/admin/articles" class="bloc-link">
+                <a href="/monprojet/admin/articles" class="bloc-link active">
                     <i class="fa-solid fa-database"></i>
                     <span class="nav-links">Articles</span>
                 </a>

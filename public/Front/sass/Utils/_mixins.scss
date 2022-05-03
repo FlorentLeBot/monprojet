@@ -16,6 +16,18 @@
     color: $color;
 }
 
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin position-menu{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
 
 
 // $txt-input-palette: (active: (bg: $colour-primary,

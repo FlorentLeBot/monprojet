@@ -31,8 +31,6 @@ class Route
 
         if (preg_match($pathToMatch, $url, $matches)) {
             $this->matches = $matches;
-            // var_dump($this->matches);die();
-            // var_dump($url);die();
             return true;
         } else {
             return false;

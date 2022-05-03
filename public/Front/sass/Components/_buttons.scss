@@ -3,39 +3,46 @@
 @import "../Utils/_placeholders.scss";
 @import "../Utils/_functions.scss";
 
-.btn {
-    
-    background-color: $primary-color;
-    @extend %flex-center;
-    margin:  5px auto ;
-    width: 50%;
-    color: $white-color;
 
-    & a {
-        color: $white-color;
-    }
+// .btn {
 
-    &:hover {
-        transform: scale(1.02);
-        transition: 0.3s ease-in-out;
-        background-color: darken($primary-color, 10%);
-    }
-}
+//     background-color: $primary-color;
+//     @extend %flex-center;
+//     margin: 5px auto;
+//     width: 50%;
+//     color: $white-color;
+
+//     & a {
+//         color: $white-color;
+//     }
+
+//     &:hover {
+//         transform: scale(1.02);
+//         transition: 0.3s ease-in-out;
+//         background-color: darken($primary-color, 10%);
+//     }
+// }
 
 .btn-social-networks {
     text-align: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 1.5rem;
     background: $btn-color;
     box-shadow: $box-shadow;
-    &:hover{
+
+    &:hover {
         background: darken($btn-color, 10%);
     }
-    & i{
-        font-size: 1.5rem;
-        margin: 11px 0 0
-    }
-    
 
+    i {
+        font-size: 1.5rem;
+        margin: 0.64rem 0 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .btn-social-networks {
+        margin-top: 40px;
+    }
 }

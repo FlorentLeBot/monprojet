@@ -178,7 +178,7 @@ abstract class Model
         $req = $this->query("SELECT COUNT(id) as cpt FROM {this->table} ORDER BY created_at DESC");
         $elements = 1;
         $nb_page = ceil($req[0]["cpt"]/$elements);
-        var_dump($nb_page);
+        
     }
   
 }

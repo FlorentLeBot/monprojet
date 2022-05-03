@@ -1,123 +1,17 @@
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
-.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* VARIABLE CSS */
+:root {
+  --font-size: 18px;
 }
 
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .hamburger, .menu-wrap .toggler {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
-.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .hamburger, .menu-wrap .toggler {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
-.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .hamburger, .menu-wrap .toggler {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
-.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .hamburger, .menu-wrap .toggler {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
-.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .hamburger, .menu-wrap .toggler {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-/* mini reset css */
+/* MINI RESET CSS */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 1.2rem;
+  font-size: var(--font-size);
 }
 
 body {
-  background-color: #0a92a4;
   font-family: "Rajdhani", sans-serif;
 }
 
@@ -137,125 +31,62 @@ button {
   border: none;
 }
 
-h2, h3 {
-  text-align: center;
-}
-
 .title {
   text-align: center;
-  font-size: 1.8rem;
+  padding: 3rem 0 0;
+  font-size: 2rem;
   font-weight: 100;
-  padding: 2.5rem 0 1rem;
 }
 
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
-.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.container {
+  max-width: 70rem;
+  margin: 0 auto;
 }
 
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .hamburger, .menu-wrap .toggler {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
-.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .hamburger, .menu-wrap .toggler {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
-.game-welcome figure, #main-menu, .menu, .menu-wrap .hamburger > div, .menu-wrap .hamburger {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .hamburger, .menu-wrap .toggler {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-header {
+#header {
   background-color: #00626b;
-  height: 280px;
+  height: 15.55rem;
   color: #0a92a4;
 }
-header figure {
+#header figure {
   width: 100%;
 }
-header figure .logo {
-  width: 250px;
+#header figure .logo {
+  width: 13.9rem;
   display: block;
   margin: 0 auto;
 }
-header .welcome {
-  width: 160px;
-  font-size: 1.4rem;
-  margin: 15px auto;
-  padding: 5px;
-  background: #626b00;
+#header .welcome {
+  width: 9rem;
+  font-size: 1.5rem;
+  margin: 0.9rem auto;
+  padding: 0.2rem;
+  background: #f5c46e;
   color: white;
   text-align: center;
 }
 
-#btn-social-networks {
+#header #btn-social-networks {
   position: absolute;
-  top: 255px;
+  top: 14.2rem;
   left: 25%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   width: 50%;
 }
 
 .menu-wrap {
   position: fixed;
-  margin: 5px;
+  margin: 0.2rem;
   top: 0;
   right: 0;
   z-index: 1000;
 }
 .menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  right: 0;
   z-index: 3000;
   cursor: pointer;
   width: 40px;
@@ -263,21 +94,29 @@ header .welcome {
   opacity: 0;
 }
 .menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  right: 0;
   z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 40px;
   height: 40px;
-  background: #626b00;
+  background: #f5c46e;
   /* les lignes du burger */
 }
 .menu-wrap .hamburger > div {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 30px;
   height: 2px;
   background: white;
   transition: all 0.4s ease-in-out;
 }
-.menu-wrap .hamburger > div::before,
-.menu-wrap .hamburger > div::after {
+.menu-wrap .hamburger > div::before, .menu-wrap .hamburger > div::after {
   content: "";
   position: absolute;
   z-index: 20;
@@ -293,8 +132,7 @@ header .welcome {
 .toggler:checked + .hamburger > div {
   transform: rotate(135deg);
 }
-.toggler:checked + .hamburger > div::before,
-.toggler:checked + .hamburger > div::after {
+.toggler:checked + .hamburger > div::before, .toggler:checked + .hamburger > div::after {
   top: 0;
   transform: rotate(90deg);
 }
@@ -310,10 +148,13 @@ header .welcome {
 }
 .toggler:checked ~ .menu > div > div {
   opacity: 1;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.6s ease-in-out;
 }
 
 .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -336,115 +177,105 @@ header .welcome {
 }
 
 #main-menu {
-  margin: 20px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 0;
   text-align: left;
   opacity: 1;
   transition: opacity 0.4s ease;
 }
 #main-menu ul li {
-  padding: 10px;
+  padding: 0.5rem;
 }
 #main-menu ul li a {
   color: black;
 }
 #main-menu ul li a:hover {
   background-color: #0a92a4;
-  padding: 10px 0;
+  padding: 0.5rem 0;
   color: white;
 }
 
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
-.game-welcome figure, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@media screen and (min-width: 768px) {
+  #header {
+    margin-top: 40px;
+  }
 
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
+  /* menu burger */
+  #header .menu-wrap .hamburger,
+#header .menu-wrap .toggler {
+    display: none;
+  }
 
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
+  .menu {
+    visibility: visible;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background-color: #0a92a4;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  }
 
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
-.game-welcome figure, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .container-menu {
+    width: 100%;
+    background-color: #0a92a4;
+    height: 80px;
+    transform: scale(1);
+  }
 
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
+  #main-menu ul {
+    display: flex;
+  }
+  #main-menu ul li {
+    margin: 0 5px;
+  }
+  #main-menu ul li a {
+    font-size: 1rem;
+    color: white;
+    text-transform: uppercase;
+  }
+  #main-menu ul li a:hover {
+    background: #00626b;
+  }
 }
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .article-welcome figure,
-.game-welcome figure, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
+.card h2 {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
 }
 
 .article-welcome,
 .game-welcome {
-  width: 300px;
-  height: auto;
+  position: relative;
+  width: 16rem;
+  height: 25rem;
   border-radius: 0 0 0;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background-color: white;
+  background-color: #eee;
   color: black;
-  margin: 3rem auto;
-  padding: 1rem;
+  margin: 0 auto 2rem;
 }
 .article-welcome h3,
 .game-welcome h3 {
   margin: 0 0 10px;
+  height: 70px;
+  padding: 20px;
 }
 .article-welcome figure,
 .game-welcome figure {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .article-welcome figure img,
 .game-welcome figure img {
-  width: 300px;
-}
-
-.article-welcome figure:hover {
-  max-width: 300px;
+  width: 16rem;
+  height: 300px;
+  object-fit: cover;
 }
 
 .game-welcome:hover,
@@ -452,552 +283,52 @@ header .welcome {
   transform: scale(1.05);
   opacity: 0.9;
   transition: 0.4s ease-in-out;
-  border-radius: 10px;
+  border-radius: 0.5rem;
   box-shadow: rgba(0, 0, 0, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 }
 
 .published {
   font-size: 0.8rem;
-  text-align: center;
   padding: 0.4rem;
-  margin: 15px 0 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
-.game-welcome figure {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
   position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
-.game-welcome figure {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .games .categories, .games figure, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
-.game-welcome figure {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#games {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
-  grid-gap: 40px;
-  justify-content: center;
-  margin: 30px auto;
-}
-
-.games {
-  background-color: white;
-  border-radius: 30px 0;
-}
-.games figure {
-  width: 100%;
-}
-.games figure img {
-  width: 300px;
-}
-.games .categories {
-  flex-wrap: wrap;
-}
-.games .categories .category {
-  margin: 10px;
-}
-.games .categories .category a {
-  color: white;
-  font-size: 0.7rem;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
-.game-welcome figure, .games figure, .games .categories {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
-.game-welcome figure, .games figure, .games .categories {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .blog-article, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
-.game-welcome figure, .games figure, .games .categories {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#blog-article {
-  width: 100%;
-  height: auto;
-  border-radius: 0 0 0;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background-color: white;
-  color: black;
-  margin: 50px 10px 20px;
-}
-#blog-article figure {
-  width: 100%;
-}
-#blog-article figure img {
-  width: 100%;
-}
-
-.container-article .content-article {
-  padding: 15px;
+  bottom: 5px;
+  left: 80px;
 }
 
 @media screen and (min-width: 768px) {
-  .blog-article {
-    display: grid;
-    grid-template-columns: 3fr 6fr;
-    grid-gap: 10px;
-    justify-content: center;
-    grid-template-areas: "title title" "img img" "content content" "button button";
-    margin: 30px 20px;
+  .card {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
   }
 
-  figure {
-    grid-area: img;
-    background-color: #ccc;
-    border: solid 1px black;
-  }
-
-  .content-article {
-    grid-area: content;
-    background-color: #bbbbda;
-    border: solid 1px #1a1a35;
-  }
-
-  .title {
-    grid-area: title;
-    background-color: #bbbbda;
-    border: solid 1px #1a1a35;
-  }
-
-  button {
-    grid-area: button;
-    background-color: #bbbbda;
-    border: solid 1px #1a1a35;
+  .game-welcome {
+    width: 300px;
+    margin-left: 50px;
   }
 }
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
-.game-welcome figure, .games figure, .games .categories, .blog-article {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
-.game-welcome figure, .games figure, .games .categories, .blog-article {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
-.game-welcome figure, .games figure, .games .categories, .blog-article {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-footer {
-  width: 100%;
-  height: 150px;
-  position: relative;
-  background: #00626b;
-}
-footer #main-footer {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-footer a {
-  color: white;
-  font-size: 1rem;
-}
-footer i {
-  font-size: 2rem;
-}
-footer #copyright {
-  position: absolute;
-  width: 100%;
-  height: 30px;
-  background-color: #0a92a4;
-  bottom: 0;
-  text-align: center;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
-.game-welcome figure, .games figure, .games .categories, .blog-article {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
-.game-welcome figure, .games figure, .games .categories, .blog-article {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .btn, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
-.game-welcome figure, .games figure, .games .categories, .blog-article {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.btn {
-  background-color: #00626b;
-  margin: 5px auto;
-  width: 50%;
-  color: white;
-}
-.btn a {
-  color: white;
-}
-.btn:hover {
-  transform: scale(1.02);
-  transition: 0.3s ease-in-out;
-  background-color: #003338;
-}
-
 .btn-social-networks {
   text-align: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  background: #626b00;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 1.5rem;
+  background: #f5c46e;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 .btn-social-networks:hover {
-  background: #333800;
+  background: #f2b13e;
 }
 .btn-social-networks i {
   font-size: 1.5rem;
-  margin: 11px 0 0;
+  margin: 0.64rem 0 0;
 }
 
-#form-register p,
-#form-login p, #form-contact .form-contact p, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
-.game-welcome figure, .games figure, .games .categories, .blog-article, .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
-.game-welcome figure, .games figure, .games .categories, .blog-article, .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-register p,
-#form-login p, #form-contact .form-contact p, .menu-wrap .hamburger, .menu-wrap .hamburger > div, .menu, #main-menu, .article-welcome figure,
-.game-welcome figure, .games figure, .games .categories, .blog-article, .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.games .categories .category {
-  padding: 5px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-  background: #626b00;
-}
-
-.menu-wrap .toggler, .menu-wrap .hamburger {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#form-comment {
-  width: 100%;
-}
-#form-comment div {
-  width: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-#form-comment div textarea {
-  width: 300px;
-  height: 100px;
-  border: none;
-  margin: 10px 0;
-}
-#form-comment div textarea::placeholder {
-  text-align: center;
-}
-#form-comment div input {
-  margin: 0 0 10px 0;
-}
-
-#form-contact {
-  width: 100%;
-}
-#form-contact legend {
-  font-size: 2rem;
-  font-style: italic;
-}
-#form-contact .form-contact p {
-  flex-wrap: wrap;
-}
-#form-contact .form-contact p .btn {
-  margin: 10px 0;
-}
-
-.form-contact:hover {
-  box-shadow: 0px 0px 5px #00626b;
-}
-
-#form-register,
-#form-login {
-  width: 100%;
-}
-#form-register p,
-#form-login p {
-  margin: 10px 20px 0 0;
-  flex-wrap: wrap;
-}
-#form-register input,
-#form-login input {
-  width: 200px;
-}
-#form-register label,
-#form-login label {
-  display: block;
-  width: 200px;
-}
-#form-register .btn,
-#form-login .btn {
-  margin: 20px auto;
+@media screen and (min-width: 768px) {
+  .btn-social-networks {
+    margin-top: 40px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

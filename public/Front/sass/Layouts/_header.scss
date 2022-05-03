@@ -5,53 +5,58 @@
 
 // HEADER
 
-header {
-    @include style-header($primary-color, 280px, $secondary-color);
+#header {
+    // 15.55rem = 280px sur la base de root font-size de 18px
+    @include style-header($primary-color, 15.55rem, $secondary-color);
 
     // LOGO DU HEADER
     & figure {
         width: 100%;
 
-        & .logo {
-            width: 250px;
+        .logo {
+            width: 13.9rem;
             display: block;
             margin: 0 auto;
         }
     }
 
-    & .welcome {
-        width: 160px;
-        font-size: 1.4rem;
-        margin: 15px auto;
-        padding: 5px;
+    .welcome {
+        width: 9rem;
+        font-size: 1.5rem;
+        margin: 0.9rem auto;
+        padding: 0.2rem;
         background: $btn-color;
         color: $white-color;
         text-align: center;
     }
 }
 
-#btn-social-networks {
+#header #btn-social-networks {
     position: absolute;
-    top: 255px;
+    top: 14.2rem;
     left: 25%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
     width: 50%;
 }
 
 // positionnement du menu burger
 
+// les z-index : 
+// - menu-wrap : 1000
+// - toggler : 3000
+// - hamburger : 2000
+
 .menu-wrap {
     position: fixed;
-    margin: 5px;
+    margin: 0.2rem;
     top: 0;
     right: 0;
     z-index: 1000;
 
-    & .toggler {
-        @extend %position-menu;
+    .toggler {
+        @include position-menu;
         z-index: 3000;
         cursor: pointer;
         width: 40px;
@@ -59,10 +64,10 @@ header {
         opacity: 0;
     }
 
-    & .hamburger {
-        @extend %position-menu;
-        @extend %flex-center;
+    .hamburger {
+        @include position-menu;
         z-index: 2000;
+        @include flex-center;
         width: 40px;
         height: 40px;
         background: $btn-color;
@@ -71,28 +76,28 @@ header {
         // le sélecteur d'enfant cible seulement le descendant direct
         >div {
             position: relative;
-            @extend %flex-center;
+            @include flex-center;
             width: 30px;
             height: 2px;
             background: $white-color;
             transition: all 0.4s ease-in-out;
-        }
 
-        // création de la ligne du haut puis du milieu... 
-        // Les pseudo-éléments before et after servent à générer en CSS du contenu esthétique voir textuel avant ou après l'élément ciblé.
-        >div::before,
-        >div::after {
-            content: "";
-            position: absolute;
-            z-index: 20;
-            top: -10px;
-            width: 30px;
-            height: 2px;
-            background: inherit;
+            // création de la ligne du haut puis du milieu... 
+            // Les pseudo-éléments before et after servent à générer en CSS du contenu esthétique voir textuel avant ou après l'élément ciblé.
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: 20;
+                top: -10px;
+                width: 30px;
+                height: 2px;
+                background: inherit;
+            }
         }
 
         // ... puis du bas
-        &>div:after {
+        >div:after {
             top: 10px;
         }
     }
@@ -100,20 +105,19 @@ header {
 
 // toggler 
 // (:checked) Cette pseudo-classe cible uniquement les éléments de formulaire qui ont été cochés, bouton radio ou case à cocher. 
-// (+) 
+
 .toggler:checked+.hamburger {
 
-    &>div {
+    >div {
         transform: rotate(135deg);
-    }
 
-    &>div::before,
-    >div::after {
-        top: 0;
-        transform: rotate(90deg);
+        &::before,
+        &::after {
+            top: 0;
+            transform: rotate(90deg);
+        }
     }
-
-    &>div {
+    >div {
         transform: rotate(225deg);
     }
 }
@@ -121,18 +125,18 @@ header {
 .toggler:checked~.menu {
     visibility: visible;
 
-    &>div {
+    >div {
         transform: scale(1);
 
-        &>div {
+        >div {
             opacity: 1;
-            transition: opacity 0.4s ease;
+            transition: opacity 0.6s ease-in-out;
         }
     }
 }
 
 .menu {
-    @extend %flex-center;
+    @include flex-center;
     position: fixed;
     top: 0;
     left: 0;
@@ -155,23 +159,75 @@ header {
 }
 
 #main-menu {
-    @extend %flex-center;
-    margin: 20px 0 0;
+    @include flex-center;
+    margin: 1rem 0 0;
     text-align: left;
     opacity: 1;
     transition: opacity 0.4s ease;
 
     & ul li {
-        padding: 10px;
+        padding: 0.5rem;
 
-        & a {
+        a {
             color: $black-color;
-        }
 
-        & a:hover {
-            background-color: $secondary-color;
-            padding: 10px 0;
-            color: $white-color;
+            &:hover {
+                background-color: $secondary-color;
+                padding: 0.5rem 0;
+                color: $white-color;
+            }
+        }
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+
+    #header {
+        margin-top: 40px;
+    }
+
+    /* menu burger */
+
+    #header .menu-wrap .hamburger,
+    #header .menu-wrap .toggler {
+        display: none;
+    }
+
+    .menu {
+        visibility: visible;
+        display: flex;
+        align-items: center;
+        height: 40px;
+        background-color: $secondary-color;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px
+    }
+
+    .container-menu {
+        width: 100%;
+        background-color: $secondary-color;
+        height: 80px;
+        transform: scale(1)
+    }
+
+    #main-menu {
+
+        & ul {
+            display: flex;
+
+            & li {
+                margin: 0 5px;
+            }
+
+            & li a {
+                font-size: 1rem;
+                color: $white-color;
+                text-transform: uppercase;
+
+                &:hover {
+                    background: $primary-color;
+                }
+            }
         }
     }
 }

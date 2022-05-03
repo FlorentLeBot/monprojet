@@ -3,82 +3,115 @@
 @import "../Utils/_placeholders.scss";
 @import "../Utils/_functions.scss";
 
-// formulaire commentaire 
+// // formulaire commentaire 
 
-#form-comment {
-    width: 100%;
+// #form-comment {
+//     width: 100%;
 
-    & div {
-        width: 300px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        margin: 0 auto;
+//     & div {
+//         width: 300px;
+//         display: flex;
+//         justify-content: center;
+//         align-items: center;
+//         flex-wrap: wrap;
+//         margin: 0 auto;
 
-        & textarea {
-            width: 300px;
-            height: 100px;
-            border: none;
-            margin: 10px 0;
-            &::placeholder{
-                text-align: center;
-            }
-        }
+//         & textarea {
+//             width: 300px;
+//             height: 100px;
+//             border: none;
+//             margin: 10px 0;
+//             &::placeholder{
+//                 text-align: center;
+//             }
+//         }
 
-        & input {
-            margin: 0 0 10px 0;
-        }
-    }
-}
+//         & input {
+//             margin: 0 0 10px 0;
+//         }
+//     }
+// }
 
-// formulaire de contact
+// // formulaire de contact
 
-#form-contact {
-    width: 100%;
+// /* --------------------------------------------------------------------------------------- */
+//   /* CONTACT*/
+//   /* --------------------------------------------------------------------------------------- */
+  
+//   .form-contact {
+//     width: 100%;
+//     padding: 2rem;
+//   }
+  
+//   #form-contact fieldset {
+//     padding: 1rem;
+//     margin: 1rem auto;
+//   }
+  
+//   #form-contact fieldset:hover {
+//     box-shadow: $box-shadow;
+//   }
+  
+//   #form-contact legend {
+//     font-weight: 200;
+//     text-transform: uppercase;
+//     font-size: 1.3rem;
+//     color: $white-color;
+//   }
+  
+//   #form-contact fieldset p {
+//     padding: 1rem 0;
+//     color: $white-color;
+//     width: 100%;
+//     margin: 0 auto;
+//     text-align: center;
+//   }
 
-    & legend {
-        font-size: 2rem;
-        font-style: italic;
-    }
+//   #form-contact fieldset p input[type="text"],
+//   #form-contact fieldset p input[type="email"], 
+//   #form-contact fieldset p input[type="email"] {
+//     margin-top: 10px;
+//     width: 80%;
+//     height: 30px;
+//   }
+//   #form-contact fieldset p input[type="checkbox"]{
+//     width: 20px;
+//     height: 20px;
+//   }
+  
+//   #form-contact fieldset .btn {
+//     display: block;
+//     margin: 20px auto 0;
+//     color: white;
+//   }
+  
+//   #form-contact fieldset ::placeholder {
+//     text-align: center;
+//   }
 
-    & .form-contact p {
-        @extend %flex-center;
-        flex-wrap: wrap;
+  
 
-       
+// // formulaire connexion / inscription
 
-        & .btn {
-            margin: 10px 0;
-        }
-    }
-}
+// #form-register,
+// #form-login {
+//     width: 100%;
 
-.form-contact:hover {
-    box-shadow: 0px 0px 5px $primary-color;
-}
+//     & p {
+//         margin: 10px 20px 0 0;
+//         @extend %flex-center;
+//         flex-wrap: wrap;
+//     }
 
-// formulaire connexion / inscription
-
-#form-register,
-#form-login {
-    width: 100%;
-
-    & p {
-        margin: 10px 20px 0 0;
-        @extend %flex-center;
-        flex-wrap: wrap;
-    }
-
-    & input {
-        width: 200px;
-    }
-    & label{
-        display: block;
-        width: 200px;
-    }
-    & .btn {
-        margin: 20px auto;
-    }
-}
+//     & input {
+//         width: 200px;
+//     }
+//     & label{
+//         display: block;
+//         width: 200px;
+//     }
+//     & .btn {
+//         margin: 20px auto;
+//     }
+// }
 

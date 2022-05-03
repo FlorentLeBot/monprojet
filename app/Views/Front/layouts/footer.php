@@ -22,7 +22,7 @@
 </footer>
 
 <script src="<?= SCRIPTS . 'Front' . "/" . 'js' . "/" . 'mousemove.js' ?>"></script>
-<script src="<?= SCRIPTS . 'Front' . "/" . 'js' . "/" . 'game.js' ?>"></script>
+<script src="<?= SCRIPTS . 'Front' . "/" . 'js' . "/" . 'active.js' ?>"></script>
 
 
 </body>

@@ -30,14 +30,14 @@ class AdminController extends Controller
 
     // -----------------------------------------------------------------------------------------------------
 
+    // affichage de la page article - administration des articles
     public function article(): void
     {
         $this->isAdmin();
-        // nouvelle instance de BlogModel affichage de tous les articles
         $articles = (new BlogModel($this->db))->all();
         $this->viewAdmin('admin.dashboard.article', compact('articles'));
     }
-    // affichage de la page game administration des fiches pour les jeux de société
+    // affichage de la page game - administration des fiches pour les jeux de société
     public function game(): void
     {
         $this->isAdmin();
@@ -52,6 +52,7 @@ class AdminController extends Controller
         // var_dump($contact); die();
         $this->viewAdmin('admin.dashboard.contact', compact('contact'));
     }
+    // lire le message complet
     public function readMessage(int $id): void
     {
         $this->isAdmin();
@@ -117,7 +118,7 @@ class AdminController extends Controller
         $article = (new BlogModel($this->db))->findById($id);
         $tags = (new TagModel($this->db))->all();
         $res = $this->viewAdmin('admin.dashboard.formBlog', compact('article', 'tags'));
-        var_dump(gettype($res)); die;
+
         return $res;
     }
 

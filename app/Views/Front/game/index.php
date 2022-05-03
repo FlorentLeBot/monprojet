@@ -9,7 +9,7 @@
 
     <article class="games">
 
-        <h2><?= $game->title ?></h2>
+        <h2 class="title-game"><?= $game->title ?></h2>
         <figure>
             <img class="img-game" src="/monprojet/<?= $game->img ?? "" ?>" alt="<?= $game->img_name ?>">
         </figure>

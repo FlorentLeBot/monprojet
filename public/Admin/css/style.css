@@ -59,18 +59,17 @@ a {
   width: 20px;
 }
 
-.bloc-link.active {
+.active, .bloc-link:hover{
   background: #ccc;
+  color: #35b970;
 }
 
 .nav-links {
   margin-left: 14px;
 }
 
-.bloc-link.active .nav-links {
-  color: #35b970;
-  font-weight: 500;
-}
+
+
 
 /* Main  */
 .main-content {
@@ -214,6 +213,9 @@ h2 {
   list-style-type: none;    
  } 
 
+
+
+
 @media screen and (max-width: 1000px) {
   .global-container {
     grid-template-columns: 1fr;
@@ -255,3 +257,7 @@ h2 {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* style du lien actif */
+
+

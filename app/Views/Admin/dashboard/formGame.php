@@ -5,17 +5,17 @@
     <!-- TITRE -->
     <p>
         <label for="title-game">Nom du jeu</label>
-        <input id='title-game' type="text" name="title" value="<?= $params['game']->title ?? '' ?>">
+        <input required="required" id='title-game' type="text" name="title" value="<?= $params['game']->title ?? '' ?>">
     </p>
     <!-- CONTENU -->
     <p>
         <label for="content-game">Descriptif</label>
-        <textarea name="content" id="content-game" cols="30" rows="8"><?= $params['game']->content ?? ' ' ?></textarea>
+        <textarea required="required" name="content" id="content-game" cols="30" rows="8"><?= $params['game']->content ?? ' ' ?></textarea>
     </p>
     <!-- IMAGE -->
     <p>
         <label for="img-game">Ajouter une image</label>
-        <input type="file" name="img" id="img-game">
+        <input required="required" type="file" name="img" id="img-game">
     </p>
     <p>
         <img src="../../..><?=$params['game']->img ?? "" ?>" alt="">

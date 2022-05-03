@@ -4,39 +4,64 @@
 @import "../Utils/_functions.scss";
 
 
-#games {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
-    grid-gap: 40px;
-    justify-content: center;
-    margin: 30px auto;
-}
+// #games {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fill, 300px);
+//     grid-gap: 60px;
+//     justify-content: center;
+//     margin: 20px auto 60px ;
+// }
 
-.games {
-    background-color: white;
-    border-radius: 30px 0;
+// .games {
+//     position: relative;
+//     height: auto;
+//     background-color: white;
+//     border-radius: 30px 0;
 
-    & figure {
-        width: 100%;
-        @extend %flex-center;
+//     & figure {
+//         width: 100%;
+//         @extend %flex-center;
 
-        & img {
-            width: 300px;
-        }
-    }
+//         & img {
+//             width: 300px;
+         
 
-    & .categories {
-        @extend %flex-center;
-        flex-wrap: wrap;
+//         }
+//     }
+//     & .btn{
+//         position: absolute;
+//         bottom: -50px;
+//         left: 75px;
+//         &:hover{
+//             border-radius: 10px;
+//         }
 
-        & .category {
-            @extend %category;
-            margin: 10px;
+//     }
+//     & .title-game{
+//         padding: 25px;
+        
+//     }
 
-            & a {
-                color: $white-color;
-                font-size: 0.7rem;
-            }
-        }
-    }
-}
+//     & .categories {
+//         @extend %flex-center;
+//         flex-wrap: wrap;
+
+//         & .category {
+//             @extend %category;
+//             margin: 10px;
+
+//             & a {
+//                 color: $white-color;
+//                 font-size: 0.7rem;
+//             }
+//         }
+//     }
+// }
+
+// @media screen and (min-width: 768px) {
+    
+//     // .games{
+
+//     // }
+    
+// }
